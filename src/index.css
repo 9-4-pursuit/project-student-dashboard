@@ -1,0 +1,22 @@
+.titlebar {
+
+}
+
+.student .clickable {
+
+}
+
+.navigationbar .clickable {
+
+}
+
+/* HTML reference, remove U+ prefix, add /0 prefix
+U+1F603 grinning face with big eyes
+U+1F631 face screaming in fear
+ */
+.student .textToggleOff {
+    display: none;
+}
+.student .textToggleOn {
+    content: "/01F631"
+}
