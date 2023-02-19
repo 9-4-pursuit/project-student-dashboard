@@ -1,10 +1,6 @@
 
 
-export default function Students(props) {
-
-  //assign the props to variables
-  const students = props.students;
-  const studentCount = props.studentCount;
+export default function Students({students, studentCount}) {
 
   //function to convert birthday to proper format
   function getBirthday(birthDate) {
@@ -32,11 +28,11 @@ export default function Students(props) {
 
         <section className="profile-info">
 
-          <h3>{student.names.preferredName} {student.names.middleName}. {student.names.surname}</h3>
+          <h3>{student.names.preferredName} {student.names.middleName[0]}. {student.names.surname}</h3>
           <p>{student.username}</p>
           <p><span>Birthday:</span> {getBirthday(student.dob)}</p>
 
-          <button>Show More</button>
+          <button><u>Show More...</u></button>
         </section>
 
 

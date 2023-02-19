@@ -1,11 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function Cohorts(props) {
-
-  //assign the props to variables
-  const setStudentCount = props.setStudentCount;
-  const setStudents = props.setStudents;
-  const data = props.data;
+export default function Cohorts({setStudentCount, setStudents, data}) {
 
   //create a state for the cohorts list
   const [cohorts, setCohorts] = useState([]);
@@ -42,12 +37,11 @@ export default function Cohorts(props) {
         return (seasons.indexOf(b.slice(0, -4)) - seasons.indexOf(a.slice(0, -4)));
       }
     })
-    console.log("hi")
     setCohorts(cohortArr);
   }
 
   //call the function only once on page load
-  useEffect(() => getCohorts(), [])
+  useEffect(() => getCohorts(), []);
 
   //function to update the students depending on the cohort
   function showCohortStudents( specificCohort) {
@@ -78,7 +72,7 @@ export default function Cohorts(props) {
         return <li
           key={cohort}
           onClick={() => showCohortStudents(cohort)}>
-            <b>{cohort.slice(-4)} {cohort.slice(0, -4)}</b>
+          <b>{cohort.slice(0, -4)} {cohort.slice(-4)}</b>
         </li>
       })}
     </ul>
