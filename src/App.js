@@ -11,6 +11,8 @@ function App() {
   const [students, setStudents] = useState(data);
   //create state for the number of students
   const [studentCount, setStudentCount] = useState(students.length)
+  //create a state for class title
+  const [classTitle, setClassTitle] = useState("All Students")
 
   
 
@@ -27,11 +29,13 @@ function App() {
         students={students}
         setStudents={setStudents}
         setStudentCount={setStudentCount}
-        data={data}/>
+        data={data}
+        setClassTitle={setClassTitle}/>
 
       <Students 
         students={students}
-        studentCount={studentCount}/>
+        studentCount={studentCount}
+        classTitle={classTitle}/>
     </div>
   );
 }

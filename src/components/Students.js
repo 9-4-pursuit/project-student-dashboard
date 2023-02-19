@@ -1,6 +1,6 @@
 
 
-export default function Students({students, studentCount}) {
+export default function Students({students, studentCount, classTitle}) {
 
   //function to convert birthday to proper format
   function getBirthday(birthDate) {
@@ -12,8 +12,9 @@ export default function Students({students, studentCount}) {
 
   return (<div
     className="Students">
-    <h2>All Students</h2>
-    <p>Total Students: <span>{studentCount}</span></p>
+    <h2>{classTitle}</h2>
+    <p 
+    className="count">Total Students: <span>{studentCount}</span></p>
 
     {/* iterate through students */}
     {students.map((student) => {

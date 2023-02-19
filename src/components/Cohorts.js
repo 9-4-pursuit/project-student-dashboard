@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function Cohorts({setStudentCount, setStudents, data}) {
+export default function Cohorts({setStudentCount, setStudents, setClassTitle, data}) {
 
   //create a state for the cohorts list
   const [cohorts, setCohorts] = useState([]);
@@ -9,6 +9,7 @@ export default function Cohorts({setStudentCount, setStudents, data}) {
   function showAllStudents() {
     setStudents(data);
     setStudentCount(data.length);
+    setClassTitle("All Students")
   }
 
   //create empty array
@@ -50,9 +51,10 @@ export default function Cohorts({setStudentCount, setStudents, data}) {
       return student.cohort.cohortCode === specificCohort;
     })
 
-    //set the state to the new array
+    //set the states to the new data
     setStudents(studentsInCohort);
     setStudentCount(studentsInCohort.length);
+    setClassTitle(specificCohort.slice(0, -4) + " " + specificCohort.slice(-4));
   }
   
 
