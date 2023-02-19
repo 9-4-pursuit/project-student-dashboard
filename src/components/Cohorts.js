@@ -1,4 +1,4 @@
-
+import { useEffect, useState } from "react";
 
 export default function Cohorts(props) {
 
@@ -6,6 +6,9 @@ export default function Cohorts(props) {
   const setStudentCount = props.setStudentCount;
   const setStudents = props.setStudents;
   const data = props.data;
+
+  //create a state for the cohorts list
+  const [cohorts, setCohorts] = useState([]);
 
   //set student state back to the data;
   function showAllStudents() {
@@ -39,8 +42,12 @@ export default function Cohorts(props) {
         return (seasons.indexOf(b.slice(0, -4)) - seasons.indexOf(a.slice(0, -4)));
       }
     })
-    console.log(cohortArr)
+    console.log("hi")
+    setCohorts(cohortArr);
   }
+
+  //call the function only once on page load
+  useEffect(() => getCohorts(), [])
 
   //function to update the students depending on the cohort
   function showCohortStudents( specificCohort) {
@@ -48,33 +55,30 @@ export default function Cohorts(props) {
     let studentsInCohort = data.filter((student) => {
       return student.cohort.cohortCode === specificCohort;
     })
-    console.log(studentsInCohort)
+
     //set the state to the new array
     setStudents(studentsInCohort);
     setStudentCount(studentsInCohort.length);
   }
-  getCohorts()
+  
 
   return (<div
     className="Cohorts">
     <h2>Choose a Class by Start Date</h2>
 
-    {/* display each of the cohorts (Season Year) */}
-    {/* when clicked change the students state */}
-    {/* check using data.filter(student)
-    student.cohort.cohortCode (ie Winter2025)*/}
     <ul
       className="cohort-list" >
       <li
-        onClick={showAllStudents}>All Students
+        onClick={showAllStudents}>
+          <b>All Students</b>
       </li>
 
       {/* display each cohort and give it a click event */}
-      {cohortArr.map((cohort) => {
+      {cohorts.map((cohort) => {
         return <li
           key={cohort}
           onClick={() => showCohortStudents(cohort)}>
-          {cohort.slice(-4)} {cohort.slice(0, -4)}
+            <b>{cohort.slice(-4)} {cohort.slice(0, -4)}</b>
         </li>
       })}
     </ul>

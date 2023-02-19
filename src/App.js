@@ -12,6 +12,7 @@ function App() {
   //create state for the number of students
   const [studentCount, setStudentCount] = useState(students.length)
 
+  
 
   return (
     <div 
