@@ -12,7 +12,9 @@ header {
   background-color: #5B946E;
   color: white;
   height: 120px;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .Cohorts {
@@ -24,6 +26,10 @@ header {
 .Students {
   grid-area: students;
 
-
   border: 1px solid black;
+}
+
+
+.Cohorts h2 {
+  text-align: center;
 }
