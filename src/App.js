@@ -3,20 +3,15 @@ import StudentList from "./components/StudentList";
 import data from './data/data.json'
 import { useState } from "react";
 
-
-
-
 function App() {
 
   const [studentList, setStudentList] = useState([]);
 
   function displayAllStudents() {
-    
-    setStudentList(studentList => [...studentList, data])
-    // Call function that displays each card
-    
+    // sets the state to be equal to data
+    setStudentList(studentList => [...studentList, ...data])
   }
-  console.log(studentList)
+  
 
   return (
     <div className="App">
@@ -25,7 +20,6 @@ function App() {
       </header>
       <ClassList displayAllStudents={displayAllStudents}/>
       <StudentList studentList={studentList} />
-      
     </div>
   );
 }

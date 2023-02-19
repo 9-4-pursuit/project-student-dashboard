@@ -1,6 +1,6 @@
 
 
-export default function ClassList({displayAllStudents}) {
+export default function ClassList({ displayAllStudents }) {
   return (
     <div className="ClassList">
       <aside>

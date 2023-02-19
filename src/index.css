@@ -1,6 +1,7 @@
 .App {
     display: grid;
     grid-template-areas: "header header" "aside main";
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header {
@@ -8,6 +9,8 @@ header {
     height: 150px;
     width: auto;
     grid-area: header;
+    text-align: center;
+    color: white;
 }
 
 .StudentList {
