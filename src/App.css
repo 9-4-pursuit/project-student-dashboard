@@ -1,7 +1,7 @@
 .App {
   display: grid;
-  grid-template-areas: "h1 h1 h1"
-    "cohorts students students";
+  grid-template-areas: "h1 h1 h1 h1"
+    "cohorts students students students";
   /* find correct font later */
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 

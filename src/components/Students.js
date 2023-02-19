@@ -9,7 +9,13 @@ export default function Students(props) {
   //create state for the number of students
   const [studentCount, setStudentCount] = useState(students.length)
 
-  
+  //function to convert birthday to proper format
+  function getBirthday(birthDate) {
+    //convert the date into a new date object
+    const birthDateObj = new Date(birthDate);
+
+    return(birthDateObj.toLocaleDateString("en-US", {month: "long", day: "numeric", year: "numeric"}));
+  }
 
   return (<div
     className="Students">
@@ -28,10 +34,10 @@ export default function Students(props) {
           className="profile-pic"/>
 
         <section className="profile-info">
-          
+
           <h3>{student.names.preferredName} {student.names.middleName}. {student.names.surname}</h3>
           <p>{student.username}</p>
-          <p><span>Birthday:</span> {student.dob}</p>
+          <p><span>Birthday:</span> {getBirthday(student.dob)}</p>
 
           <button>Show More</button>
         </section>
