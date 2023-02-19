@@ -1,7 +1,8 @@
 .App {
   display: grid;
-  grid-template-areas: "h1 h1 h1 h1"
-    "cohorts students students students";
+  grid-template-areas: "h1 h1"
+    "cohorts students";
+  grid-template-columns: 1fr 2fr;
   /* find correct font later */
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
@@ -19,13 +20,11 @@ header {
 
 .Cohorts {
   grid-area: cohorts;
-
   border: 1px solid black;
 }
 
 .Students {
   grid-area: students;
-
   border: 1px solid black;
 }
 
@@ -44,4 +43,12 @@ header {
 
 span {
   color: #5B946E;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.cohort-list li:hover {
+  cursor: pointer;
 }

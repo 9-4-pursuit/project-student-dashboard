@@ -1,26 +1,23 @@
 
-import { useState } from "react";
 
 export default function Students(props) {
 
   //assign the props to variables
   const students = props.students;
-
-  //create state for the number of students
-  const [studentCount, setStudentCount] = useState(students.length)
+  const studentCount = props.studentCount;
 
   //function to convert birthday to proper format
   function getBirthday(birthDate) {
     //convert the date into a new date object
     const birthDateObj = new Date(birthDate);
 
-    return(birthDateObj.toLocaleDateString("en-US", {month: "long", day: "numeric", year: "numeric"}));
+    return (birthDateObj.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" }));
   }
 
   return (<div
     className="Students">
     <h2>All Students</h2>
-    <h4>Total Students: <span>{studentCount}</span></h4>
+    <p>Total Students: <span>{studentCount}</span></p>
 
     {/* iterate through students */}
     {students.map((student) => {
@@ -28,10 +25,10 @@ export default function Students(props) {
         key={student.id}
         className="profile">
         {/* display each students basic information*/}
-        <img 
-          src={student.profilePhoto} 
+        <img
+          src={student.profilePhoto}
           alt={student.names.preferredName}
-          className="profile-pic"/>
+          className="profile-pic" />
 
         <section className="profile-info">
 
@@ -41,7 +38,7 @@ export default function Students(props) {
 
           <button>Show More</button>
         </section>
-        
+
 
       </div>)
     })}

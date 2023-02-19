@@ -9,6 +9,8 @@ function App() {
 
   //create a state for the students, with the data being default
   const [students, setStudents] = useState(data);
+  //create state for the number of students
+  const [studentCount, setStudentCount] = useState(students.length)
 
 
   return (
@@ -23,11 +25,12 @@ function App() {
       <Cohorts 
         students={students}
         setStudents={setStudents}
+        setStudentCount={setStudentCount}
         data={data}/>
 
       <Students 
         students={students}
-        />
+        studentCount={studentCount}/>
     </div>
   );
 }
