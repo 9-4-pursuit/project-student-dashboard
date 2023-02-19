@@ -1,24 +1,46 @@
 body{
     display: grid;
-    grid-template-rows: auto auto;
-    grid-template-areas: 
-    ""
-    "head side";
-
+    grid-template-columns: 4;
+    grid-template-columns: 2;
+    overflow: hidden;
 }
 
 .header{
     background-color: #5c946f;
     text-align: center;
     color: white;
-    padding: 15px;
-    grid-area: head;
+    padding: 10px;
+    grid-template-columns: 4fr;
 }
 
+.main{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
 
 .cohorts li{
     font-weight: bold;
     list-style: none;
     border-bottom: 2px solid #5c946f ;
-    padding: 15px;
+    padding: 12px;
+}
+
+.students{
+    padding-left: 45px;
+    overflow: hidden;
+    margin-top: 4%; 
+}
+
+.students ul{
+    overflow: scroll;
+    height: 12%;
+    width: auto;
+}
+
+.green{
+    color: #5c946f;
+}
+
+li{
+    list-style: none;
 }
