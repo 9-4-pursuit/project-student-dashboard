@@ -6,7 +6,9 @@ import Students from "./components/Students";
 function App() {
   return (
     <div className="App">
-      <h1>Student Dashboard</h1>
+      <header>
+        <h1>Student Dashboard</h1>
+      </header>
       <Cohorts />
       <Students />
     </div>

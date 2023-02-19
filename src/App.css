@@ -1,0 +1,29 @@
+.App {
+  display: grid;
+  grid-template-areas: "h1 h1 h1"
+    "cohorts students students";
+  /* find correct font later */
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+header {
+  grid-area: h1;
+  background-color: #5B946E;
+  color: white;
+  height: 120px;
+  text-align: center;
+}
+
+.Cohorts {
+  grid-area: cohorts;
+
+  border: 1px solid black;
+}
+
+.Students {
+  grid-area: students;
+
+
+  border: 1px solid black;
+}

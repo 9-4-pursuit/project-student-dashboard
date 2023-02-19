@@ -1,7 +1,7 @@
 
-export default function StudentDetails(){
+export default function StudentDetails() {
 
-    return(<div className="Student-details">
-        
-    </div>)
+  return (<div className="Student-details">
+
+  </div>)
 }
