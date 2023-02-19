@@ -1,0 +1,105 @@
+/*===================================================App===================================================*/
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  height: 150px;
+  background-color: #5c936e;
+  color: white;
+  line-height: 100px;
+}
+main {
+  margin-top: 170px;
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+}
+.students {
+  grid-column-start: 2;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+.cohorts {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  text-align: center;
+}
+.cohorts h2{
+    margin-bottom: 20px;
+}
+
+/*===================================================Student===================================================*/
+.student-main {
+  display: flex;
+  flex-direction: row;
+}
+.student-card{
+    border: solid 1px #5c936e;
+    padding: 20px;
+    margin-bottom: 10px;
+}
+.student-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+}
+.student-card p {
+  margin: 2px;
+}
+.student-card aside {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.student-card button {
+  background-color: transparent;
+  border: none;
+  color: #5c936e;
+  margin-top: 20px;
+}
+.student-card button:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.highlight {
+  color: #5c936e;
+}
+.more-details{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.more-details p{
+    font-size: medium;
+    margin:20px;
+    margin-left: 0;
+}
+.codewars{
+grid-column-start: 1;
+text-align: left;
+}
+.scores{
+grid-column-start: 2;
+}
+.certs{
+grid-column-start: 3;
+}
+
+/*===================================================Cohort===================================================*/
+.cohort{
+    background-color: transparent;
+    text-align: left;
+    display: block;
+    width:100%;
+    border:none;
+    border-bottom: #5c936e solid 2px;
+
+}
+.cohort:hover{
+    cursor: pointers;
+}
+.cohort h3{
+    margin:20px 0 10px 0;
+}
