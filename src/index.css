@@ -1,0 +1,36 @@
+.App {
+display: grid;
+grid-template-areas: "header header" "aside main";
+}
+ul {
+    list-style: none;
+}
+.img {
+grid-area: "img ";
+height: 100px;
+width: 100px;
+}
+header {
+    background-color: #659367;
+    height: 150 px;
+    width: auto;
+    grid-area: header;
+    text-align: center;
+    color: white;
+}
+
+.CohortList {
+    display: grid;
+    background-color: teal;
+    grid-area: aside;
+}
+
+.StudentList {
+    display: grid;
+    grid-area: main;
+    background-color: aquamarine;
+}
+
+/* .StudentCard {
+
+} */
