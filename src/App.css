@@ -29,7 +29,19 @@ header {
   border: 1px solid black;
 }
 
-
 .Cohorts h2 {
   text-align: center;
+}
+
+.profile {
+  border: 2px solid #5B946E;
+}
+
+.profile-pic {
+  height:100px;
+  border-radius: 5%;
+}
+
+span {
+  color: #5B946E;
 }

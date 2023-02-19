@@ -13,7 +13,7 @@ export default function Cohorts(props) {
 
     {/* display each of the cohorts (Season Year) */}
     {/* when clicked change the students state */}
-    {/* check using data.map(student)
+    {/* check using data.filter(student)
     student.cohort.cohortCode (ie Winter2025)*/}
 
   </div>)
