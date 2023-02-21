@@ -48,7 +48,6 @@ h2 {
   margin-top: 10px;
   display: grid;
   grid-template-areas: "pic basic";
-  height: 170px;
 }
 
 .profile button {
@@ -86,6 +85,16 @@ h2 {
   grid-area: basic;
   margin: 45px 0px;
 
+  border: 1px solid black;
+}
+
+.Student-details {
+  
+  border: 1px solid black;
+}
+
+.Student-notes {
+  
   border: 1px solid black;
 }
 

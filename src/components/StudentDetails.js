@@ -1,10 +1,22 @@
 
 export default function StudentDetails() {
 
-  return (<div 
+  return (<div
     className="Student-details">
+    <div
+      className="codewars">
+      <h4>Codewars:</h4>
+    </div>
 
-    {/* display details when show more is clicked */}
+    <div
+      className="scores">
+      <h4>Scores:</h4>
+    </div>
+
+    <div
+      className="certifications">
+      <h4>Certifications:</h4>
+    </div>
 
   </div>)
 }

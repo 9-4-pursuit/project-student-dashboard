@@ -39,17 +39,21 @@ export default function StudentCard(props) {
 
       <button
         onClick={toggleDetails}>
-        <u>{showDetails ? "Hide Details" : "Show Details..."}</u>
+        <u>{showDetails ? "Show Less..." : "Show Details..."}</u>
       </button>
-
-      {showDetails ?
-        (<div>
-          <StudentDetails />
-          <StudentNotes />
-        </div>)
-        : ("")
-      }
-
     </section>
+
+    {showDetails ?
+      (<div
+        className="more-details">
+        <StudentDetails
+          student={student} />
+        <hr></hr>
+        <StudentNotes
+          student={student} />
+      </div>)
+      : null
+    }
+
   </div>);
 }
