@@ -47,7 +47,8 @@ h2 {
   border: 2px solid #5B946E;
   margin-top: 10px;
   display: grid;
-  grid-template-areas: "pic basic";
+  grid-template-areas: "pic basic"
+  "more more";
 }
 
 .profile button {
@@ -83,18 +84,28 @@ h2 {
 
 .profile-info {
   grid-area: basic;
-  margin: 45px 0px;
+  margin: 45px 0px 5px;
+
+  border: 1px solid black;
+}
+
+.more-details {
+  grid-area: more;
 
   border: 1px solid black;
 }
 
 .Student-details {
-  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
   border: 1px solid black;
 }
 
+
+
 .Student-notes {
-  
+
   border: 1px solid black;
 }
 
