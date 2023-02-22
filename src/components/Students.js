@@ -11,12 +11,10 @@ export default function Students({ students, studentCount, classTitle }) {
 
     {/* iterate through students */}
     {students.map((student) => {
-      return (<StudentCard 
+      return (<StudentCard
         student={student}
         key={student.id}/>)
     })}
-
-    {/* later implement details and notes section for each person (in the map function) */}
 
   </div>)
 }

@@ -1,8 +1,5 @@
 
-export default function StudentDetails(props) {
-
-  //assign the student prop to a variable
-  const student = props.student;
+export default function StudentDetails({student}) {
 
   //function for determining codewars percentage color
   function compareCodewars() {
