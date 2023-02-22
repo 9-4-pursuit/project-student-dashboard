@@ -23,6 +23,21 @@ export default function StudentCard(props) {
     setDetails(!showDetails);
   }
 
+  //function to calculate if the student is ontrack to graduate
+  function ontrackGraduate() {
+    //check if the certifications are all there and if they reached the necessary codewars score
+    if(student.certifications.resume &&
+      student.certifications.linkedin &&
+      student.certifications.github &&
+      student.certifications.mockInterview && 
+      student.codewars.current.total >= 600) {
+        return "On Track to Graduate";
+      } else {
+        return "";
+      }
+
+  }
+
   return (<div
     className="profile">
     {/* display each students basic information*/}
@@ -43,12 +58,15 @@ export default function StudentCard(props) {
       </button>
     </section>
 
+    {/* call the  */}
+    <span className="ontrack">{ontrackGraduate()}</span>
+
     {showDetails ?
       (<section
         className="more-details">
         <StudentDetails
           student={student} />
-        <hr></hr>
+
         <StudentNotes
           student={student} />
       </section>)
