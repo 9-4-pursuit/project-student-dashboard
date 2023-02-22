@@ -1,5 +1,6 @@
 
 import StudentCard from "./StudentCard";
+import { useState, useEffect } from "react";
 
 export default function Students({ students, studentCount, classTitle }) {
 
@@ -13,7 +14,8 @@ export default function Students({ students, studentCount, classTitle }) {
     {students.map((student) => {
       return (<StudentCard
         student={student}
-        key={student.id}/>)
+        key={student.id}
+      />)
     })}
 
   </div>)

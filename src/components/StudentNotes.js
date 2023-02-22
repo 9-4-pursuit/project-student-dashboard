@@ -1,6 +1,4 @@
 
-
-
 export default function StudentNotes({notes, setNotes}) {
 
   //function for submitting a new note

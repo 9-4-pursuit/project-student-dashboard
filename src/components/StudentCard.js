@@ -2,7 +2,7 @@ import StudentDetails from "./StudentDetails"
 import StudentNotes from "./StudentNotes"
 import { useState } from "react";
 
-export default function StudentCard({student}) {
+export default function StudentCard({ student}) {
 
   //create state for showing the details
   const [showDetails, setDetails] = useState(false);
@@ -25,15 +25,15 @@ export default function StudentCard({student}) {
   //function to calculate if the student is ontrack to graduate
   function ontrackGraduate() {
     //check if the certifications are all there and if they reached the necessary codewars score
-    if(student.certifications.resume &&
+    if (student.certifications.resume &&
       student.certifications.linkedin &&
       student.certifications.github &&
-      student.certifications.mockInterview && 
+      student.certifications.mockInterview &&
       student.codewars.current.total >= 600) {
-        return "On Track to Graduate";
-      } else {
-        return "";
-      }
+      return "On Track to Graduate";
+    } else {
+      return "";
+    }
 
   }
 
@@ -68,7 +68,7 @@ export default function StudentCard({student}) {
 
         <StudentNotes
           notes={notes}
-          setNotes={setNotes}/>
+          setNotes={setNotes} />
       </section>)
       : null
     }
