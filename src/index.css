@@ -6,7 +6,13 @@ ul {
     list-style: none;
 }
 .img {
-grid-area: "img ";
+display: grid; 
+margin-top: 20px;
+margin-right: 10px;
+margin-left: 10px;
+border: 1px solid yellow;
+float: left;
+grid-template-areas: "auto";
 height: 100px;
 width: 100px;
 }
@@ -23,6 +29,7 @@ header {
     display: grid;
     background-color: teal;
     grid-area: aside;
+    text-decoration: underline;
 }
 
 .StudentList {
@@ -31,6 +38,7 @@ header {
     background-color: aquamarine;
 }
 
-/* .StudentCard {
-
-} */
+.StudentCard {
+border: 1px solid;
+margin-bottom: 10px;
+}
