@@ -8,14 +8,16 @@ export default function Students({ students, studentCount, classTitle }) {
     <h2>{classTitle}</h2>
     <p
       className="count">Total Students: <span>{studentCount}</span></p>
-
-    {/* iterate through students */}
+    <div className="student-list">
+      {/* iterate through students */}
     {students.map((student) => {
       return (<StudentCard
         student={student}
         key={student.id}
       />)
     })}
+    </div>
+    
 
   </div>)
 }

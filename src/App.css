@@ -26,6 +26,11 @@ header {
   grid-area: students;
 }
 
+.student-list {
+  overflow-y: scroll;
+  height: 525px;
+}
+
 h2 {
   margin: 35px 0px 0px 0px;
 }
