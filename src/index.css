@@ -1,0 +1,36 @@
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+.App {
+    display: grid;
+    grid-template-areas: "header header" "aside main";
+
+}
+
+.main {
+    overflow-y: scroll;
+}
+
+header {
+    background-color: #659367;
+    height: 150px;
+    width: auto;
+    grid-area: header;
+}
+
+.StudentList {
+    display: grid;
+    grid-area: main;
+}
+
+.ClassList {
+    display: grid;
+    background-color: cadetblue;
+    grid-area: aside;
+}
+
+ul {
+    list-style: none;
+}

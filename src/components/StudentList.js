@@ -1,8 +1,9 @@
 
 import StudentCard from './StudentCard'
 
-export default function StudentList({ studentList }) {
 
+export default function StudentList({ studentList }) {
+  
   return (
     <div className='studentList'>
       <main>
@@ -11,7 +12,7 @@ export default function StudentList({ studentList }) {
         <ul>
             {
                 studentList.map((student) => {
-                    return <li><StudentCard student={student}/></li>
+                    return <li key={student.id}> <StudentCard student={student}/></li>
                 })
             }
         </ul>
