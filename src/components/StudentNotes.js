@@ -9,11 +9,17 @@ export default function StudentNotes(props) {
   //create a state for the notes array 
   const [notes, setNotes] = useState([...student.notes])
 
+  //function for submitting a new note
+  function noteSubmit() {
+
+  }
+
   return (<div
     className="Student-notes">
     <h4>1-on-1 notes</h4>
 
-    <form>
+    <form
+      /*onSubmit={}*/>
       <label
         htmlFor="commentor">Commentor Name</label> 
       <input
@@ -33,8 +39,10 @@ export default function StudentNotes(props) {
       className="note-button">Add Note</button>
     </form>
 
-    {/* when show more is clicked, under details */}
-    {/* show form from new notes and all previous notes under the form */}
+    {/* the comments will go here */}
+    <ul>
+
+    </ul>
 
   </div>)
 }

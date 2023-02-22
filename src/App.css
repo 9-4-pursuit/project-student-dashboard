@@ -58,10 +58,6 @@ h2 {
   margin: 15px 0px 0px;
 }
 
-.profile-info button:hover {
-  cursor: pointer;
-}
-
 .profile-info h3 {
   margin: 5px 0;
 }
@@ -105,11 +101,32 @@ h2 {
   border-bottom: 2px solid #5B946E;
 }
 
-
-
 .Student-notes {
+  padding-left: 10px;
 
   border: 1px solid black;
+}
+
+form {
+  padding: 20px;
+
+  border: 1px solid black;
+}
+
+label, input {
+  margin: 2px 3px;
+}
+
+.Student-notes .note-button {
+  color:white;
+  background-color: #5B946E;
+  margin: auto;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 span {
