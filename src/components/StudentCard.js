@@ -44,14 +44,14 @@ export default function StudentCard(props) {
     </section>
 
     {showDetails ?
-      (<div
+      (<section
         className="more-details">
         <StudentDetails
           student={student} />
         <hr></hr>
         <StudentNotes
           student={student} />
-      </div>)
+      </section>)
       : null
     }
 

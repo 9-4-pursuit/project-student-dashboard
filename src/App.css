@@ -85,12 +85,11 @@ h2 {
 .profile-info {
   grid-area: basic;
   margin: 45px 0px 5px;
-
-  border: 1px solid black;
 }
 
 .more-details {
   grid-area: more;
+  padding: 10px;
 
   border: 1px solid black;
 }
@@ -98,8 +97,7 @@ h2 {
 .Student-details {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-
-  border: 1px solid black;
+  padding-left: 10px;
 }
 
 
