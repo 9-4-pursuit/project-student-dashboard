@@ -4,28 +4,49 @@ body {
 }
 
 .App {
+    /* height: 500px; */
     display: grid;
     grid-template-areas: "header header" "aside main";
 
 }
 
 .main {
+    /* height: 500px; */
     overflow-y: scroll;
 }
 
 header {
     background-color: #659367;
+    text-align: center;
     height: 150px;
     width: auto;
     grid-area: header;
 }
 
-.StudentList {
+.student-card {
+    /* height: 500px; */
+    border: 1px solid black;
+    margin-top: 20px;
+}
+
+.cohort-list {
+    height: 100%;
     display: grid;
+    background-color: bisque;
+    grid-area: aside;
+    text-decoration: underline;
+}
+
+.studentList {
+    max-height: 100%;
+    display: grid;
+    background-color: rgb(red, rgba(64, 28, 131, 0.498), blue);
     grid-area: main;
+    overflow: hidden;
 }
 
 .ClassList {
+    /* height: 500px; */
     display: grid;
     background-color: cadetblue;
     grid-area: aside;
@@ -33,4 +54,6 @@ header {
 
 ul {
     list-style: none;
+    margin-right: 5px;
+    padding: 10px;
 }
