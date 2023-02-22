@@ -1,6 +1,5 @@
 
 import StudentCard from "./StudentCard";
-import { useState, useEffect } from "react";
 
 export default function Students({ students, studentCount, classTitle }) {
 

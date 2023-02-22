@@ -1,5 +1,10 @@
 
-export default function StudentNotes({notes, setNotes}) {
+import { useState } from "react";
+
+export default function StudentNotes({ student }) {
+
+  //create a state for the notes array 
+  const [notes, setNotes] = useState([...student.notes])
 
   //function for submitting a new note
   function noteSubmit(event) {
@@ -19,11 +24,14 @@ export default function StudentNotes({notes, setNotes}) {
         "comment": userComment
       }
 
+      //push into the original data array
+      student.notes.push(commentObject);
+
       //clear the fields
       event.target.commenter.value = "";
       event.target.comment.value = "";
       //set the state to be the comment array plus the new comment
-      setNotes([...notes, commentObject])
+      setNotes([...student.notes])
     }
 
   }
@@ -58,7 +66,7 @@ export default function StudentNotes({notes, setNotes}) {
       {notes.map((note, index) => {
         return (<li
           key={index}>
-            {note.commenter} says "{note.comment}" 
+          {note.commenter} says "{note.comment}"
         </li>)
       })}
     </ul>

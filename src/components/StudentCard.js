@@ -2,12 +2,10 @@ import StudentDetails from "./StudentDetails"
 import StudentNotes from "./StudentNotes"
 import { useState } from "react";
 
-export default function StudentCard({ student}) {
+export default function StudentCard({ student }) {
 
   //create state for showing the details
   const [showDetails, setDetails] = useState(false);
-  //create a state for the notes array 
-  const [notes, setNotes] = useState([...student.notes])
 
   //function to convert birthday to proper format
   function getBirthday(birthDate) {
@@ -66,9 +64,8 @@ export default function StudentCard({ student}) {
         <StudentDetails
           student={student} />
 
-        <StudentNotes
-          notes={notes}
-          setNotes={setNotes} />
+        <StudentNotes 
+          student={student}/>
       </section>)
       : null
     }
