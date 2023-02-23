@@ -4,7 +4,7 @@ export default function StudentDetails({}){
 
     return(
         <div className="studentDetails">
-            
+            <OneOnOne />
         </div>
     )
 }
