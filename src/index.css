@@ -2,7 +2,7 @@ body{
     display: grid;
     grid-template-columns: 4;
     grid-template-columns: 2;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .header{
@@ -31,16 +31,50 @@ body{
     margin-top: 4%; 
 }
 
-.students ul{
+#mainUl{
     overflow: scroll;
-    height: 12%;
+    height: 8%;
     width: auto;
+}
+
+#mainLi{
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 1.5fr;
+    padding: 8px;
+    border: 2px solid #5c946f;
+    margin: 5px;
 }
 
 .green{
     color: #5c946f;
 }
 
-li{
-    list-style: none;
+
+.moreBlock p{
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+}
+
+hr{
+    background-color: #5c946f;
+    height: 1px;
+    border: 0.25px solid #5c946f;
+}
+
+.oneBox{
+    border: 2px solid black;
+    padding: 25px;
+    margin: 15px;
+}
+
+.oneBox button{
+    color: white;
+    background-color: #5c946f;
+    border: none;
+    border-radius: 7%;
+}
+
+.oneList{
+    border: none;
+    list-style:disc;
 }
