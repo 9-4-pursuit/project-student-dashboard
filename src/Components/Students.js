@@ -12,6 +12,7 @@ function Students({ data, studentsData, settingDob, stuHead, defaultStatus, show
             <ul id="mainUl">
                 {
                     studentsData.map((stu) => {
+                        let codewarsGoal = (((stu.codewars.current.total / stu.codewars.goal.total) * 100).toFixed(0))
                         return (
                             <li id="mainLi" key={stu.id}>
 
@@ -37,7 +38,7 @@ function Students({ data, studentsData, settingDob, stuHead, defaultStatus, show
                                             <p><span className="green">Current Total:</span> {stu.codewars.current.total}</p>
                                             <p><span className="green">Last Week:</span> {stu.codewars.current.lastWeek}</p>
                                             <p><span className="green">Goal:</span> {stu.codewars.goal.total}</p>
-                                            <p><span className="green">Percent of Goal Achieved:</span> {((stu.codewars.current.total / stu.codewars.goal.total) * 100).toFixed(0)}%</p>
+                                            <p><span className="green">Percent of Goal Achieved:</span><span style={codewarsGoal >= 50 ? codewarsGoal >=100 ? {color: "green"} : {color: "#8B8000"} : {color: "red"}}> {codewarsGoal}%</span></p>
                                         </div>
                                         <div>
                                             <strong>Scores</strong>

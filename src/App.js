@@ -44,9 +44,17 @@ if (event.target.id === "name"){
 
   }
 
+  function resetForm(){
+    setForm({
+      commenter: "",
+      comment: ""
+    })
+  }
+
   function handleSubmit(e) {
     e.preventDefault()
     addComment()
+    resetForm()
     console.log(comments)
   }
 
