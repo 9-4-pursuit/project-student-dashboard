@@ -2,12 +2,12 @@ import React from "react";
 import StudentCard from "./StudentCard";
 
 
-export default function StudentList({ studentList }) {
+export default function StudentList({ studentList, typeCohort  }) {
   return (
     <div className="StudentList">
       <main>
-        <h2>All Students</h2>
-        <p>Total Students: {studentList.length}</p>
+        <h2>{typeCohort}</h2>
+        <h4>Total Students: {studentList.length}</h4>
         <ul>
           {studentList.map((student) => {
             return (
