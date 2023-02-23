@@ -18,8 +18,12 @@ header {
     grid-area: main;
 }
 
-.ClassList {
+.CohortList {
     display: grid;
     background-color: cadetblue;
     grid-area: aside;
+}
+
+.list {
+    list-style-type: none;
 }

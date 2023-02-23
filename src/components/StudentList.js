@@ -1,17 +1,17 @@
 import StudentCard from './StudentCard'
 
-export default function StudentList({ studentList }) {
+export default function StudentList({ studentList, listTitle }) {
 
 
     return (
         <div className='studentList'>
         <main>
-            <h2>All Students</h2>
+            <h2>{listTitle}</h2>
             <p>Total Students: {studentList.length}</p>
-            <ul>
+            <ul className='list'>
                 {
-                    studentList.map((student, index) => {
-                        return <li><StudentCard student={student} key={index}/></li>
+                    studentList.map((student) => {
+                        return <li><StudentCard student={student} key={student.id} /></li>
                     })
                 }
             </ul>
