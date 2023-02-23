@@ -1,0 +1,46 @@
+.app {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    background-color: beige;
+    grid-template-areas: "header header" "aside main";
+
+}
+
+
+header {
+
+    background-color: #659367;
+    height: 100px;
+    width: auto;
+    text-align: center;
+    grid-area: header;
+}
+
+.studentlist {
+    display: grid;
+    grid-area: main;
+    background-color: rgb(59, 58, 52);
+    
+
+}
+
+.cohort-list {
+    display: grid;
+    background-color: rgb(190, 232, 232);
+    grid-area: aside;
+}
+
+.pic {
+
+}
+
+.card {
+    border: 1px solid black;
+    margin: 20px;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
