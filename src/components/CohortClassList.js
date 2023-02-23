@@ -17,7 +17,7 @@ export default function ClassList({displayAllStudents, sortCohort}) {
           <hr></hr>
           <h4 onClick={() => sortCohort("Winter2025")}>Winter 2025</h4>
           <hr></hr>
-          <h4 vonClick={() => sortCohort("Fall2025")}>Fall 2025</h4>
+          <h4 onClick={() => sortCohort("Fall2025")}>Fall 2025</h4>
           <hr></hr>
           <h4 onClick={() => sortCohort("Summer2025")}>Summer 2025</h4>
           <hr></hr>

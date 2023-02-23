@@ -37,12 +37,22 @@ header {
     text-decoration: underline;
 }
 
-.studentList {
+.student-list {
     max-height: 100%;
     display: grid;
     background-color: rgb(red, rgba(64, 28, 131, 0.498), blue);
     grid-area: main;
     overflow: hidden;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.info h4 {
+    text-decoration: underline;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .ClassList {
@@ -56,4 +66,9 @@ ul {
     list-style: none;
     margin-right: 5px;
     padding: 10px;
+}
+
+.img {
+    height: 100px;
+    width: 100px;
 }
