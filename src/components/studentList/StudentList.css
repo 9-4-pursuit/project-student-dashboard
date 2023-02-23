@@ -1,0 +1,43 @@
+.student-list-container {
+  padding: 0 30px;
+}
+
+.student-list {
+  list-style: none;
+  padding: 0;
+}
+.student-list .student {
+  margin-bottom: 15px;
+  border: 1px solid #5c936e;
+}
+.card {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  /* grid-template-rows: 1fr 1fr; */
+  padding: 20px;
+}
+
+.card .profile-pic {
+  width: 100%;
+}
+.profile-pic img {
+  display: block;
+  width: 100%;
+}
+.card .info {
+  padding: 0 30px;
+  padding-right: 0;
+}
+
+.card .on-track {
+  margin-top: 20px;
+}
+
+.total-students {
+  color: #5c936e;
+  font-weight: bold;
+}
+
+.personal-info p {
+  margin-top: 0;
+}
