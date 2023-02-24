@@ -1,6 +1,7 @@
 
-import React from "react";
+
 import { useState } from "react";
+
 
 export default function StudentCard({ student }) {
   const [toggleMore, setToggleMore] = useState(false);
@@ -8,10 +9,17 @@ export default function StudentCard({ student }) {
 function showMore() {
   setToggleMore(!toggleMore);
 }
+const baseURL = "https://robohash.org/"
+let randomNumber = Math.floor(Math.random() * 10000)
+let Photo = `${baseURL}${randomNumber}`
+
+
 
   return (
       <div className="student-card">
-          <img className="img" src={student.profilePhoto} alt={student.username}/>
+
+          <img className="img" src={Photo} alt="" />
+          
           <h6><strong>{student.names.preferredName} {student.names.middleName[0].toUpperCase()}. {student.names.surname}</strong></h6>
           <p>{student.username}</p>
           <p>Birthday: {student.dob} </p>
@@ -51,4 +59,6 @@ function showMore() {
   )
 }
 
-    // ✔ ✘
+  
+
+    // {/* <img className="img" src={student.profilePhoto} alt={student.username}/> */}

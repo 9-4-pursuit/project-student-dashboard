@@ -1,17 +1,25 @@
+:root {
+    height: 100%;
+}
+
+
 body {
     height: 100vh;
     width: 100vw;
+    height: 100%;
+    width: 100%;
 }
 
 .App {
-    /* height: 500px; */
+    box-sizing: border-box;
+    height: 100%;
     display: grid;
     grid-template-areas: "header header" "aside main";
 
 }
 
 .main {
-    /* height: 500px; */
+    height: 100%;
     overflow-y: scroll;
 }
 
@@ -27,6 +35,7 @@ header {
     /* height: 500px; */
     border: 1px solid black;
     margin-top: 20px;
+    cursor: pointer;
 }
 
 .cohort-list {
@@ -38,11 +47,12 @@ header {
 }
 
 .student-list {
-    max-height: 100%;
-    display: grid;
+    /* box-sizing: border-box; */
+    max-height: 600px;
+    /* display: grid;
     background-color: rgb(red, rgba(64, 28, 131, 0.498), blue);
-    grid-area: main;
-    overflow: hidden;
+    grid-area: main; */
+    overflow-y: scroll;
 }
 
 .info {
@@ -56,19 +66,22 @@ header {
 }
 
 .ClassList {
-    /* height: 500px; */
+    box-sizing: border-box;
+    height: max-content;
     display: grid;
     background-color: cadetblue;
     grid-area: aside;
+    cursor: pointer;
 }
 
 ul {
+    height: 100%;
     list-style: none;
     margin-right: 5px;
     padding: 10px;
 }
 
 .img {
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
 }
