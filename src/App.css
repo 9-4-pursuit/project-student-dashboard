@@ -1,0 +1,44 @@
+
+body {
+    display: grid;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.header {
+    display: grid;
+    height: 111px;
+    align-items: center;
+    justify-content: center;
+    padding: 44px;
+    background-color: rgb(245, 245, 245);
+    border-bottom: solid 3px lightslategray;
+}
+
+h1 {
+    color: rgb(140, 139, 140);
+    justify-content: center;
+}
+
+.showcase {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.students {
+    display: grid; 
+    text-align: center;
+    justify-content: center;
+}
+
+.studentAmount {
+    margin-top: 0;
+}
+
+.chooseClassH2 {
+    display: grid;
+    text-align: center;
+} 
+
+h2 {
+    color: darkslategray;
+}
