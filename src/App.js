@@ -24,7 +24,6 @@ function App() {
         setStudentList(studentList => [...studentList, student])
       }
     })
-    
     clickedCohort = clickedCohort.substring(0, clickedCohort.length - 4) + ' ' + clickedCohort.substring(clickedCohort.length - 4, clickedCohort.length)
     setListTitle(clickedCohort);
   }
