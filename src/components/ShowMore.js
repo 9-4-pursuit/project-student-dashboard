@@ -25,8 +25,8 @@ function ShowMore({ student }) {
         })
     }
 
+    let score = (student.codewars.current.total / student.codewars.goal.total) * 100;
     function handleScores(percent) {
-        let percent = (student.codewars.current.total / student.codewars.goal.total) * 100;
         return percent >=100 ? "green" : percent >= 50 ? "yellow" : "red"; 
     }
 
@@ -59,7 +59,7 @@ function ShowMore({ student }) {
                     <li>Current Total: {student.codewars.current.total}</li>
                     <li>Last Week: {student.codewars.current.lastWeek}</li>
                     <li>Goal: {student.codewars.goal.total} </li>
-                    <li>Percent of Goal Achieved: <span>{handleScores(percent.toFixed(0))}%</span></li>
+                    <li>Percent of Goal Achieved: <span>{handleScores(score.toFixed(0))}%</span></li>
                     
                     <h3><strong>Scores</strong></h3>
                     <li>Assignments: {student.cohort.scores.assignments * 100}%</li>

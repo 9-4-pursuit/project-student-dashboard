@@ -1,6 +1,5 @@
-import students from "../data/data.json";
-import ShowMore from "./ShowMore";
 import React from "react";
+import ShowMore from "./ShowMore";
 
 //this section sorts student list by cohorts code 'winter2025, and start date '12/2/25'
 //map thru and adjusts date to humanreadable
