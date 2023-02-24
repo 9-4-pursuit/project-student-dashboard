@@ -18,12 +18,12 @@ function App() {
 
   function displayCohortStudents(clickedCohort) {
     
-    // setStudentList([]);
-    // data.map((student) => {
-    //   if (student.cohort.cohortCode === clickedCohort) {
-    //     setStudentList(studentList => [...studentList, student])
-    //   }
-    // })
+    setStudentList([]);
+    data.map((student) => {
+      if (student.cohort.cohortCode === clickedCohort) {
+        setStudentList(studentList => [...studentList, student])
+      }
+    })
     
     clickedCohort = clickedCohort.substring(0, clickedCohort.length - 4) + ' ' + clickedCohort.substring(clickedCohort.length - 4, clickedCohort.length)
     setListTitle(clickedCohort);
