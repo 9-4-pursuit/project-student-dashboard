@@ -1,7 +1,10 @@
+import { useStateContext } from "../../contexts/ContextProvider";
 import Student from "../student/Student";
 import "./StudentList.css";
 
-export default function StudentList({ students, selectedCohort }) {
+export default function StudentList() {
+  const { filteredStudents, selectedCohort } = useStateContext();
+  // console.log(filteredStudents);
   return (
     <div className="student-list-container">
       <h3>
@@ -11,11 +14,11 @@ export default function StudentList({ students, selectedCohort }) {
       </h3>
       <p>
         Total Students:
-        <span className="total-students"> {students.length}</span>
+        <span className="total-students"> {filteredStudents.length}</span>
       </p>
       <ul className="student-list">
-        {students &&
-          students.map((student) => (
+        {filteredStudents &&
+          filteredStudents.map((student) => (
             <Student student={student} key={student.id} />
           ))}
       </ul>

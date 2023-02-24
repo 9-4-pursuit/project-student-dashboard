@@ -50,7 +50,7 @@ export default function Student({ student }) {
             </div>
 
             <p className="show" onClick={() => setShowMore(!showMore)}>
-              {showMore ? "Show Less..." : "Show More..."}
+              {showMore ? "Show Less" : "Show More..."}
             </p>
           </div>
         </div>
