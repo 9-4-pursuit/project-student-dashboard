@@ -6,7 +6,7 @@ export default function StudentList({ studentList, typeCohort }) {
   
   return (
     <div className='student-list'>
-      {/* <main> */}
+      <main>
         <h2>{typeCohort}</h2>
         <p>Total Students: {studentList.length}</p>
         <ul>
@@ -16,7 +16,7 @@ export default function StudentList({ studentList, typeCohort }) {
                 })
             }
         </ul>
-      {/* </main> */}
+      </main>
     </div>
   )
 }

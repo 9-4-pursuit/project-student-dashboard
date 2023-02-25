@@ -1,77 +1,80 @@
 :root {
     height: 100%;
+    border: 30px;
 }
-
-
 body {
     height: 100vh;
     width: 100vw;
     height: 100%;
     width: 100%;
 }
-
 .App {
     box-sizing: border-box;
     height: 100%;
     display: grid;
     grid-template-areas: "header header" "aside main";
-
 }
 
 .main {
     height: 100%;
-    overflow-y: scroll;
 }
-
 header {
+    display: grid;
+    place-items: center;
+    color: white;
     background-color: #659367;
-    text-align: center;
     height: 150px;
-    width: auto;
+    /* width: auto; */
     grid-area: header;
 }
 
+header h1 {
+    font-size: 38px;
+    font-weight: 600;
+}
+
 .student-card {
-    /* height: 500px; */
-    border: 1px solid black;
+    border: 3px solid red;
     margin-top: 20px;
     cursor: pointer;
 }
-
 .cohort-list {
+    border: 20px;
     height: 100%;
     display: grid;
+    padding-left: 20px;
+    padding-right: 20px;
     background-color: bisque;
     grid-area: aside;
-    text-decoration: underline;
+    cursor: pointer;
+}
+
+.cohort-list h4 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.cohort-list hr {
+    border-top: 2px solid black;
 }
 
 .student-list {
-    /* box-sizing: border-box; */
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr, 2fr;
     max-height: 600px;
-    /* display: grid;
-    background-color: rgb(red, rgba(64, 28, 131, 0.498), blue);
-    grid-area: main; */
     overflow-y: scroll;
 }
 
 .info {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    margin-left: 20px;
 }
 
 .info h4 {
     text-decoration: underline;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-.ClassList {
-    box-sizing: border-box;
-    height: max-content;
-    display: grid;
-    background-color: cadetblue;
-    grid-area: aside;
-    cursor: pointer;
 }
 
 ul {
@@ -81,7 +84,51 @@ ul {
     padding: 10px;
 }
 
-.img {
-    height: 200px;
-    width: 200px;
+.onTrack {
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    float: right;
 }
+
+.img {
+    margin-top: 20px;
+    margin-right: 10px;
+    margin-left: 20px;
+    border: 1px solid black;
+    display: grid;
+    float: left;
+    grid-template-areas: "auto";
+    height: 160px;
+    width: 160px;
+}
+
+
+
+/* max-content */
+
+/* .ClassList {
+    
+    padding-left: 20px;
+    border: 20px;
+    box-sizing: border-box;
+    height: 100%;
+    display: grid;
+    background-color: cadetblue;
+    grid-area: aside;
+    cursor: pointer;
+} */
+
+/* .ClassList {
+    box-sizing: border-box;
+    height: 100%;
+    display: grid;
+    background-color: cadetblue;
+    grid-area: aside;
+    cursor: pointer;
+} */
+
+    /* height: 500px; */
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "image" "info" "ontrack"; */

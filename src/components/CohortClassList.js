@@ -2,9 +2,10 @@
 export default function ClassList({displayAllStudents, sortCohort}) {
     return (
         
-      <div className="ClassList">
+      <div className="cohort-list">
         <aside>
-          <h2>Choose a Class by Start Date</h2>
+          <br></br>
+          <h2>Choose a Class by Start Date</h2><br></br>
           <h4 onClick={displayAllStudents}>All Students</h4>
           <hr></hr>
           <h4 onClick={() => sortCohort("Winter 2026")}>Winter 2026</h4>

@@ -13,16 +13,21 @@ const baseURL = "https://robohash.org/"
 let randomNumber = Math.floor(Math.random() * 10000)
 let Photo = `${baseURL}${randomNumber}`
 
+let studentDate = new Date(student.dob).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+
 
 
   return (
       <div className="student-card">
 
           <img className="img" src={Photo} alt="" />
-          
-          <h6><strong>{student.names.preferredName} {student.names.middleName[0].toUpperCase()}. {student.names.surname}</strong></h6>
+          <div className="onTrack"><strong>On Track to Graduate</strong></div>
+          {/* <img className="img" src={student.profilePhoto} alt={student.username}/> */}
+          <h3><strong>{student.names.preferredName} {student.names.middleName[0].toUpperCase()}. {student.names.surname}</strong></h3>
           <p>{student.username}</p>
-          <p>Birthday: {student.dob} </p>
+          <p>Birthday: {studentDate} </p>
+          {/* <p>On Track to Graduate</p> */}
           <br></br>
 
           <p onClick={() => showMore()}>{toggleMore ? "Show Less..." : "Show More..."}</p>
@@ -58,7 +63,3 @@ let Photo = `${baseURL}${randomNumber}`
       </div>
   )
 }
-
-  
-
-    // {/* <img className="img" src={student.profilePhoto} alt={student.username}/> */}
