@@ -13,7 +13,7 @@ function StudentsInfo({ student }) {
     setShowMore(!showMore);
   }
 
-  function graduationTrack(codewars, certifications) {
+  function trackGraduation(codewars, certifications) {
     const requirement = Object.values(certifications).every(value => value === true);
 
     if (requirement && codewars.current.total > 600) {
@@ -25,15 +25,23 @@ function StudentsInfo({ student }) {
 
   return(
     <>
-      <div className="card" key={id}>
-        {/* <img src={profilePhoto} width="200px" alt="student profile photo" /> */}
-        <p>{names}</p>
-        {graduationTrack(codewars, certifications)}
-        <p>{username}</p>
-        <p><span className="toGreen">Birthday:</span> {dob}</p>
-        <button className="toGreen" onClick={() => handleShowMore()}>
-          {!showMore ? "Show More..." : "Show Less..."}
-        </button>
+      <div className="card">
+        <div className="info">
+          {/* <img src={profilePhoto} width="200px" alt="student profile photo" /> */}
+          <img src={require("../assests/blank-profile-photo.jpg")} alt="blank profile photo" />
+          <div className="basicInfo">
+            <p>{names}</p>
+            <p>{username}</p>
+            <p><span className="toGreen">Birthday:</span> {dob}</p>
+          </div>
+          <span className="trackGraduation">
+            {trackGraduation(codewars, certifications)}
+          </span>
+          <button className="toGreen" onClick={() => handleShowMore()}>
+            {!showMore ? "Show More..." : "Show Less..."}
+          </button>
+        </div>
+
         {showMore ? (
           <>
             <StudentDetails
@@ -42,7 +50,6 @@ function StudentsInfo({ student }) {
               certifications={certifications}
             />
             <OneOnOne
-              selectedId={id}
               notes={notes}
             />
           </>
