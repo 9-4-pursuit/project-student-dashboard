@@ -12,12 +12,14 @@ function App() {
   const [cohortId, setCohortId] = useState('All Students');
   const [cohorts, setCohorts] = useState([])
   const [cohortMembers, setCohortMembers] = useState([]);
+  
+  // console.log(cohorts)
 
   // Collects, slices and sorts Cohort Codes into an ARRAY STATE
   let cohortArr = [];
   function handleCohorts() {
     data.map((student) => {
-      let stuID = student.cohort.cohortCode.slice(0, -4) + " " + student.cohort.cohortCode.slice(-4);
+      let stuID = student.cohort.cohortCode;
       if (!cohortArr.includes(stuID)) {
         cohortArr.push(stuID);
       }
@@ -35,7 +37,6 @@ function App() {
   }
   useEffect(() => handleCohorts(), [])
 
-
   return (
     <div className='app'>
       <header>
@@ -45,13 +46,28 @@ function App() {
         <CohortList
         data={data}
         students={students}
+        setStudents={setStudents}
+        studentTotal={studentTotal}
+        setStudentTotal={setStudentTotal}
         cohorts={cohorts}
+        setCohorts={setCohorts}
+        cohortId={cohortId}
+        setCohortId={setCohortId}
+        cohortMembers={cohortMembers}
+        setCohortMembers={setCohortMembers}
         />
         <StudentList
         data={data}
         students={students}
+        setStudents={setStudents}
+        studentTotal={studentTotal}
+        setStudentTotal={setStudentTotal}
+        cohorts={cohorts}
+        setCohorts={setCohorts}
         cohortId={cohortId}
-        studentTotal={studentTotal} 
+        setCohortId={setCohortId}
+        cohortMembers={cohortMembers}
+        setCohortMembers={setCohortMembers}
         />
       </div>
     </div>

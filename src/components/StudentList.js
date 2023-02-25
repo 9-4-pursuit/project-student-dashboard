@@ -1,9 +1,13 @@
 import { useState } from "react";
 import StudentDetails from "./StudentDetails"
 
-export default function StudentList({ data, students, cohortId, studentTotal }) {
+export default function StudentList({ data, students, setStudents, studentTotal, setStudentTotal, cohorts, setCohorts, cohortId, setCohortId, cohortMembers, setCohortMembers }) {
 
     const [showDetails, setShowDetails] = useState(false);
+
+    // if (cohortId !== "All Students"){
+    //    setCohortId(cohortId.slice(0, -4) + " " + cohortId.slice(-4))
+    // }    
     function handleShowDetails() {
         setShowDetails(!showDetails);
     }
@@ -24,7 +28,7 @@ export default function StudentList({ data, students, cohortId, studentTotal }) 
     return (
         <div className="studentList">
             <h3>{cohortId}</h3>
-            <p>Total Students: {studentTotal} </p>
+            <p>Total Students: {students.length} </p>
             <div className="studentCards">
                 {
                     students.map((student) => {
