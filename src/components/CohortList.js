@@ -20,12 +20,13 @@ export default function CohortList({ data, students, setStudents, studentTotal, 
     return (
         <div className="cohortList">
             <h3>Choose a Class by Start Date</h3>
-            <p>All Students</p>
+            <p className="cohorts">All Students</p>
             {
                 cohorts.map((cohort) => {
                     return (
                         <p
                             key={cohort}
+                            className="cohorts"
                             onClick={() => handleCohortClick(cohort)}
                         >{cohort.slice(0, -4) + " " + cohort.slice(-4)}</p>
                     )

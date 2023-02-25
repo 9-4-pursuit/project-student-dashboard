@@ -1,0 +1,40 @@
+.app {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header {
+    text-align: center;
+    background-color: #5B946E;
+    color: white;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lists {
+    height: 90%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.cohortList {
+    border: 8px ridge blue;
+    margin: 10px;
+    padding-left: 10px;
+    height: 50vw;
+}
+
+.studentList {
+    overflow-y: scroll;
+    margin-left: 20px;
+    height: 100vw;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: 2px solid black;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+}

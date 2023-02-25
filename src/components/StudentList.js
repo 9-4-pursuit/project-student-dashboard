@@ -33,18 +33,24 @@ export default function StudentList({ data, students, setStudents, studentTotal,
                 {
                     students.map((student) => {
                         return (
-                            <section key={student.id}>
+                            <section key={student.id} className="card">
                                 <img src="https://i.pravatar.cc/100" alt={student.names} />
-                                <p><strong>
-                                    {student.names.preferredName} {student.names.middleName[0]} {student.names.surname}
-                                </strong></p>
-                                <p>{student.username}</p>
-                                <p>Birthday: {bdayConvert(student.dob)}</p>
-                                <span>
+                                <div className="basicInfo">
+                                    <p><strong>
+                                        {student.names.preferredName} {student.names.middleName[0]} {student.names.surname}
+                                    </strong></p>
+                                    <p>{student.username}</p>
+                                    <p>Birthday: {bdayConvert(student.dob)}</p>
+                                </div>
+                                <div className="gradTrack">
                                     {graduationTracking(student)}
-                                </span>
-                                <p onClick={handleShowDetails}>
-                                    <u>{showDetails ? "Show Less..." : "Show More..."}</u></p>
+                                </div>
+                                <div className="showDeets" onClick={handleShowDetails}>
+                                    <u>
+                                        {showDetails ? "Show Less..." : "Show More..."}
+                                    </u></div>
+                                {showDetails ? 
+                                (<StudentDetails student={student} />) : null}
                             </section>
                         )
                     })
