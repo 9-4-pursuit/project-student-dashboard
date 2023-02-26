@@ -1,0 +1,24 @@
+.cohort-list-container {
+  padding: 0px 10px;
+}
+.cohort-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.list {
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+
+.cohort-list-container li {
+  border-bottom: 2px solid #5c936e;
+  padding: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+}
+
+.cohort-list-container li:hover {
+  transform: scale(1.1);
+}

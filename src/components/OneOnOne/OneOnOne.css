@@ -1,0 +1,25 @@
+.one-on-one input,
+.one-on-one label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.one-on-one ul {
+  padding-left: 0;
+}
+
+.one-on-one li {
+  border: none;
+  margin-bottom: 10px;
+}
+
+.one-on-one form {
+  margin-bottom: 30px;
+}
+.one-on-one button {
+  margin-top: 10px;
+}
+
+.one-on-one {
+  padding: 10px;
+}
