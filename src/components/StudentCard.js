@@ -16,19 +16,28 @@ let Photo = `${baseURL}${randomNumber}`
 
 let studentDate = new Date(student.dob).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 
+const [comments, setComments]  = useState({commenter:"", comment:""})
 
-const [comments, setComments]  = useState([])
+function handleSubmit(e) {
+  e.preventDefault()
+}
 
-const handleComments = (event) => {
-    event.preventDefault();
-    const commenterName = event.target.elements["Commenter Name"].value
-    const commentText = event.target.elements["Comment"].value;
-    const newComment = `${commenterName}: ${commentText}`;
-    // console.log(newComment)
-    setComments([...comments, newComment]);
-    // console.log(comments)
-    event.target.reset();
-};
+function handleComments(e) {
+  setComments({...comments, [e.target.name]:e.target.value})
+}
+
+// const [comments, setComments]  = useState([])
+
+// const handleComments = (event) => {
+//     event.preventDefault();
+//     const commenterName = event.target.elements["Commenter Name"].value
+//     const commentText = event.target.elements["Comment"].value;
+//     const newComment = `${commenterName}: ${commentText}`;
+//     // console.log(newComment)
+//     setComments([...comments, newComment]);
+//     // console.log(comments)
+//     event.target.reset();
+// };
 
 const isOnTrack  = () => {
   if (
@@ -102,19 +111,18 @@ if (percentage >= 100) {
               <hr></hr>
         <div className="comment-section">
         <h2>1-on-1 Notes</h2>
-        <form className="comment" onSubmit={handleComments}>
+        <form className="comment" onSubmit={handleSubmit}>
             <label htmlFor="Commenter Name">Commenter Name</label>
-            <input type="text" name="Commenter Name" />
+            <input type="text" name="commenter" onChange={handleComments}/>
             <br></br>
             <label htmlFor="Comment">Comment</label>
-            <input type="text" name="Comment" />
+            <input type="text" name="comment" onChange={handleComments}/>
             <br></br>
             <button type="submit">Add Note</button>
             </form>    
-        {comments.map((comment, index) => (
-          // console.log(comments)
-            <div key={index}>{comment}</div>
-        ))}    
+
+        <p>{comments.commenter} says: {comments.comment}</p>
+        <p>{student.notes[0].commenter} says: {student.notes[0].comment}</p>
         </div>
 
             </div>
@@ -124,4 +132,3 @@ if (percentage >= 100) {
   )
 }
 
-// " ✔️" : " ✘❌" ✔️  ☑️✅  ✓ ✔️ ✓  ☑️  ✓  ✔  ✔️  ✔️  "✔️"
