@@ -15,15 +15,22 @@ const CohortList = () => {
         >
           All Students
         </li>
-        {cohort.map((cohort, i) => (
-          <li
-            className="list"
-            key={i}
-            onClick={() => filterStudentsByCohort(cohort)}
-          >
-            {cohort.slice(0, -4) + " " + cohort.slice(-4)}
-          </li>
-        ))}
+
+        {cohort.map((cohort, i) => {
+          const formattedCohortName = `${cohort.substring(
+            0,
+            cohort.length - 4
+          )} ${cohort.substring(cohort.length - 4)}`;
+          return (
+            <li
+              className="list"
+              key={i}
+              onClick={() => filterStudentsByCohort(cohort)}
+            >
+              {formattedCohortName}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

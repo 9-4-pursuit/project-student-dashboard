@@ -47,17 +47,16 @@ export const ContextProvider = ({ children }) => {
   }
 
   function filterStudentsByCohort(cohort) {
+    let newStudents;
     if (cohort === "All Students") {
-      setStudents(students);
+      newStudents = students;
     } else {
-      const newFilteredStudents = students.filter(
+      newStudents = students.filter(
         (student) => student.cohort.cohortCode === cohort
       );
-      setFilteredStudents(newFilteredStudents);
-
-      //   console.log(students);
     }
     setSelectedCohort(cohort);
+    setFilteredStudents(newStudents);
   }
 
   return (
