@@ -22,9 +22,14 @@ function App() {
   // */
   const [notes, setNotes] = useState([]);
 
-  function pressNiceButton(event) {
+  function pressNiceButton(event, ident) {
       event.preventDefault();
-      setNotes(previous => [...previous, {commenterName: event.target.commenterName.value, comment: event.target.comment.value}]);
+      const commenterName = event.target.commenterName.value;
+      const comment = event.target.comment.value;
+      setNotes(previous => [...previous, {ident: ident, commenterName: commenterName, comment: comment}]);
+      event.target.commenterName.value="";
+      event.target.comment.value="";
+      // console.log(event.target.id)
   }
 
   function returnStudentListData() {

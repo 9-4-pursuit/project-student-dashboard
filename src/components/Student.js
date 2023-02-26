@@ -56,6 +56,8 @@ export default function Student({ student, pressNiceButton, notes, catGlasses}) 
             <div className="showElementPicture">
                 {/* <img src={student.profilePhoto} height={100} width={100} alt={`${student.names.preferredName} ${student.names.surname}`} /> */}
                 <img src={catGlasses} height={100} width={100} alt="Cat with glasses"/>
+                {/* <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" height={100} width={100} alt={`${student.names.preferredName} ${student.names.surname}`} /> */}
+                {/* // https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.britannica.com%2F06%2F186606-004-F3BC9B46%2FDzhungarian-hamster.jpg&imgrefurl=https%3A%2F%2Fwww.britannica.com%2Fanimal%2Fhamster&tbnid=wzK3EdFSlHcwBM&vet=12ahUKEwjRzteqwLP9AhVuNlkFHSyHAEQQMygLegUIARC5Ag..i&docid=lypIcj334aYCCM&w=854&h=805&q=hamster&ved=2ahUKEwjRzteqwLP9AhVuNlkFHSyHAEQQMygLegUIARC5Ag */}
             </div>
             <div className="studentElementText">
                 <div>{`${student.names.preferredName} ${middleNameProcessor(student.names.middleName)}. ${student.names.surname}`}</div>
