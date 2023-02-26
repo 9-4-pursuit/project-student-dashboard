@@ -25,7 +25,7 @@ function Student({ students, setCohort, handleSelectCohort, handleReadable }) {
                 <li key="cohorts" className="allCohorts"
                 onClick={() => setCohort(students)}>
                 All Students
-                </li>
+                
                     {studentCohort.map((cohortCode) => {
                         return (
                         <li key={students.id} //math.random() --may give errors
@@ -33,7 +33,7 @@ function Student({ students, setCohort, handleSelectCohort, handleReadable }) {
                         </li>
                         )
                     })}
-                    </ul>
+                    </li></ul>
                 </div>
             </div>
         )
