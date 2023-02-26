@@ -18,7 +18,7 @@ function StudentCard({ student }) {
     event.preventDefault();
     const commenterName = event.target.elements["Commenter Name"].value;
     const commentText = event.target.elements.Comment.value;
-    const newComment = `${commenterName} says "${commentText}"`;
+    // const newComment = `${commenterName} says "${commentText}"`;
     const newCommentNote = {"commenter": commenterName, "comment": commentText} 
     student.notes.push(newCommentNote)
     setNotes([...student.notes])
