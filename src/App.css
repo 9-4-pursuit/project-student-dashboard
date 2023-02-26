@@ -12,6 +12,10 @@ header {
     align-items: center;
 }
 
+h3 {
+    padding-left: 15px;
+}
+
 .lists {
     height: 90%;
     display: grid;
@@ -19,12 +23,43 @@ header {
 }
 
 .cohortList {
-    border: 8px ridge blue;
+    border: 8px ridge #5B946E;
     margin: 20px 30px;
-    padding-left: 10px;
     height: 95%;
     min-width: fit-content;
     min-height: fit-content;
+}
+
+.cohorts {
+    text-align: center;
+    border-bottom: 2px solid #5B946E;
+    padding-left: 10px;
+    background: wheat;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+}
+
+.cohorts:hover {
+    padding-left: 20px;
+    transform: scale(1);
+    animation: pulse-black 2s infinite;
+}
+
+@keyframes pulse-black {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
 }
 
 .studentList {
@@ -58,14 +93,26 @@ header {
 
 button {
     grid-area: butt;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+    width: 200px;
+}
+
+button :hover {
+    transform: scale(1);
+    animation: pulse-black 2s infinite;
 }
 
 .studentDetails {
     grid-area: deets;
     display: none;
     grid-template-columns: 1fr 1fr 1fr;
+    column-span: all;
 }
 
+.oneOnOne {
+    column-span: all;
+
+}
 .green {
     color: #5B946E;
 }
@@ -73,4 +120,3 @@ button {
 .yellow {
     color: #dfb20e;
 }
-

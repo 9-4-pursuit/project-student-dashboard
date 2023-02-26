@@ -69,11 +69,10 @@ export default function StudentList({ data, students, setStudents, studentTotal,
                                 <button className={student.id} onClick={() => handleShowDetails(student.id)}>
                                     <u><span className="green" id="show">
                                         Show More...
-                                        {/* {showDetails ? "Show Less..." : "Show More..."} */}
                                     </span></u>
                                 </button>
+                                
                                 <StudentDetails student={student} />
-                                {/* {showDetails ? (<StudentDetails student={student} />) : null} */}
                             </section>
                         )
                     })

@@ -4,12 +4,12 @@ export default function StudentDetails({ student }) {
 
     function goalColor() {
         let goalTotal = ((student.codewars.current.total) / (student.codewars.goal.total) * 100).toFixed(0);
-        if (goalTotal >= 100 ) {
-            return (<span style={{color: '#14b149'}}>{goalTotal}</span>)
-        } else if (goalTotal <= 50 ) {
-            return (<span style={{color: '#b20d0d'}}>{goalTotal}</span>)
+        if (goalTotal >= 100) {
+            return (<span style={{ color: '#14b149' }}>{goalTotal}</span>)
+        } else if (goalTotal <= 50) {
+            return (<span style={{ color: '#b20d0d' }}>{goalTotal}</span>)
         } else {
-            return (<span style={{color: '#dfb20e'}}>{goalTotal}</span>)
+            return (<span style={{ color: '#dfb20e' }}>{goalTotal}</span>)
         }
     }
 
@@ -33,7 +33,9 @@ export default function StudentDetails({ student }) {
                     <p><span className="green">Mock Interview: </span>{student.certifications.mockInterview ? "✅" : "❌"}</p>
                     <p><span className="green">GitHub: </span>{student.certifications.github ? "✅" : "❌"}</p>
                 </div>
-                <OneOnOne student={student} />
+                <div>
+                    <OneOnOne student={student} />
+                </div>
             </div>
         </>
     )
