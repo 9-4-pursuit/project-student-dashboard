@@ -21,6 +21,10 @@ header {
     display: grid;
     grid-area: main;
     background-color: rgb(169, 154, 71);
+    overflow-y: scroll;
+    width: auto;
+    height: 700px;
+
     
 }
 
