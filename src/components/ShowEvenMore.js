@@ -27,6 +27,7 @@ export default function ShowEvenMore({ student, showMore }) {
     }
 
     if (showMore) {
+        // console.log("Show Even More showMore true");
         return (
             <div className="showMoreContainer">
                 <div className="showMoreCol1">
@@ -52,6 +53,7 @@ export default function ShowEvenMore({ student, showMore }) {
             </div>
         );
     } else {
+        // console.log("Show Even More showMore false"); 
         return (
             <div className="showMoreContainer"></div>
         );

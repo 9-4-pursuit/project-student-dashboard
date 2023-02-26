@@ -50,6 +50,8 @@ export default function Student({ student, pressNiceButton, notes, catGlasses}) 
             return "Not On Track to Graduate"
         }
     }
+    
+    // console.log(`student render ${student.names.preferredName}`);
 
     return (
         <div className="studentElement">

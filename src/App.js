@@ -23,13 +23,13 @@ function App() {
   const [notes, setNotes] = useState([]);
 
   function pressNiceButton(event, ident) {
-      event.preventDefault();
-      const commenterName = event.target.commenterName.value;
-      const comment = event.target.comment.value;
-      setNotes(previous => [...previous, {ident: ident, commenterName: commenterName, comment: comment}]);
-      event.target.commenterName.value="";
-      event.target.comment.value="";
-      // console.log(event.target.id)
+    event.preventDefault();
+    const commenterName = event.target.commenterName.value;
+    const comment = event.target.comment.value;
+    setNotes(previous => [...previous, { ident: ident, commenterName: commenterName, comment: comment }]);
+    event.target.commenterName.value = "";
+    event.target.comment.value = "";
+    // console.log(event.target.id)
   }
 
   function returnStudentListData() {
@@ -72,27 +72,27 @@ function App() {
       setStudentList(returnStudentListData);
     } else {
       setSeasonCohort(`${cohortCode.slice(0, -4)} ${cohortCode.slice(-4)}`);
-      setStudentList(StudentListData.filter(student => student.cohort.cohortCode === cohortCode )); // setStudentList filter
+      setStudentList(StudentListData.filter(student => student.cohort.cohortCode === cohortCode)); // setStudentList filter
     }
     //test OK 2023 Feb 21
     //console.log(cohortCode);
   }
-// changeCohort={changeCohort}
-
+  // changeCohort={changeCohort}
+// console.log("App render");
   return (
     <div className="app">
       <TitleBar />
-      <NavigationBar 
-      sortedCohortSeasonObjectArray={sortedCohortSeasonObjectArray}
-      changeCohort={changeCohort}
-       />
+      <NavigationBar
+        sortedCohortSeasonObjectArray={sortedCohortSeasonObjectArray}
+        changeCohort={changeCohort}
+      />
 
-      <StudentList 
-      studentList={studentList} 
-      seasonCohort={seasonCohort}
-      pressNiceButton={pressNiceButton}
-      notes={notes}
-      catGlasses={catGlasses}
+      <StudentList
+        studentList={studentList}
+        seasonCohort={seasonCohort}
+        pressNiceButton={pressNiceButton}
+        notes={notes}
+        catGlasses={catGlasses}
       />
     </div>
   );

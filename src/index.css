@@ -49,7 +49,7 @@
 .studentElement {
     display: grid;
     grid-template-columns: 120px 1fr 150px;
-    grid-template-rows: 120px 1fr 1fr;
+    grid-template-rows: 120px auto;
     grid-template-areas:
     "studentElementPicture studentElementText studentElementOnTrack"
     "showMoreContainer showMoreContainer showMoreContainer"
