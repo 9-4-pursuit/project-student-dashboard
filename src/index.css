@@ -44,13 +44,13 @@ header h1 {
     display: grid;
     padding-left: 20px;
     padding-right: 20px;
-    background-color: bisque;
+    /* background-color: bisque; */
     grid-area: aside;
     cursor: pointer;
 }
 
 .cohort-list h4 {
-    font-size: 16px;
+    font-size: 21px;
     font-weight: 600;
 }
 
@@ -62,8 +62,16 @@ header h1 {
     box-sizing: border-box;
     display: grid;
     grid-template-columns: 1fr, 2fr;
-    max-height: 600px;
+    max-height: 856px;
     overflow-y: scroll;
+}
+
+.student-list h2 {
+    margin-left: 20px;
+}
+
+.student-list p {
+    margin-left: 20px;
 }
 
 .info {
