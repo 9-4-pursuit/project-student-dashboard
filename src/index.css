@@ -1,0 +1,29 @@
+.App {
+    display: grid;
+    grid-template-areas: "header header" "aside main";
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    background-color: #659367;
+    height: 150px;
+    width: auto;
+    grid-area: header;
+    text-align: center;
+    color: white;
+}
+
+.StudentList {
+    display: grid;
+    grid-area: main;
+}
+
+.CohortList {
+    display: grid;
+    background-color: cadetblue;
+    grid-area: aside;
+}
+
+.list {
+    list-style-type: none;
+}
