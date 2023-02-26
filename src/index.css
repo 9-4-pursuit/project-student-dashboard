@@ -10,6 +10,7 @@ main{
     display: grid;
     grid-template-columns: 2fr 4fr;
     border: 30px;
+    margin-bottom: 50px;
 }
 
 header{
@@ -63,8 +64,9 @@ header{
 .cards{
     display: grid;
     grid-gap: 10px;
-    overflow: scroll;
-    height: 700px;
+    overflow-y: scroll;
+    height: 800px;
+    max-width: 900px;
     border: 2px solid #5C936E;
 }
 
@@ -72,27 +74,34 @@ header{
     display: grid;
     margin: 10px;
     border: 2px solid #5C936E;
-    /* grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: inherit; */
+}
+
+.card button{
+    width: 160px;
 }
 
 .info{
+    display: grid;
     text-align: left;
     padding: 15px 20px 10px;
+    grid-template-areas: "img info graduation";
+    grid-template-columns: 1fr 2fr 2fr;
 }
 
 .info img{
-    width: 100px;
+    grid-area: img;
+    width: 140px;
     border-radius: 20%;
-    grid-column: 1 / 2;
+    padding: 10px;
 }
 
 .info .basicInfo{
-    grid-column: 2 / 3;
+    grid-area: info;
+    padding: 20px 10px;
 }
 
 .info .trackGraduation{
-    grid-column: 3 / 4;
+    grid-area: graduation;
 }
 
 .details{

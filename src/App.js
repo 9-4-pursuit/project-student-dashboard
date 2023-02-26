@@ -7,7 +7,7 @@ function App() {
   const [updateCard, setUpdateCard] = useState([]);
   const [cohortId, setCohortId] = useState("all");
   const [cohortTotal, setCohortTotal] = useState(250);
-  
+
   function updateStudentsCard(student) {
     const { id, username, dob, profilePhoto,
       names, codewars, certifications, notes, cohort } = student;
@@ -64,10 +64,11 @@ function App() {
 
         <div className="students">
           <div className="searchResult">
-            <h3>{
-              cohortId === "all"
-                ? "All Students"
-                : cohortId.slice(0, -4) + " " + cohortId.slice(-4)
+            <h3>
+              {
+                cohortId === "all"
+                  ? "All Students"
+                  : cohortId.slice(0, -4) + " " + cohortId.slice(-4)
               }
             </h3>
             <p>Total Students: <span className="toGreen">{cohortTotal}</span></p>
@@ -77,7 +78,10 @@ function App() {
             {
               updateCard.map((student, index) => {
                 return (
-                  <StudentsInfo student={student} key={index} />
+                  <StudentsInfo
+                    key={index}
+                    student={student}
+                  />
                 )
               })
             }

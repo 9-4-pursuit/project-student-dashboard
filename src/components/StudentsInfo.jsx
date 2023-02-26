@@ -23,6 +23,21 @@ function StudentsInfo({ student }) {
     }
   }
 
+  function updateMore() {
+    return(
+      <>
+        <StudentDetails
+          codewars={codewars}
+          cohort={cohort}
+          certifications={certifications}
+        />
+        <OneOnOne
+          notes={notes}
+        />
+      </>
+    )
+  }
+
   return(
     <>
       <div className="card">
@@ -42,18 +57,7 @@ function StudentsInfo({ student }) {
           </button>
         </div>
 
-        {showMore ? (
-          <>
-            <StudentDetails
-              codewars={codewars}
-              cohort={cohort}
-              certifications={certifications}
-            />
-            <OneOnOne
-              notes={notes}
-            />
-          </>
-        ) : null}
+        {showMore ? updateMore() : null}
       </div>
     </>
   );

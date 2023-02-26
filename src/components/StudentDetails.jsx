@@ -5,6 +5,16 @@ function StudentDetails({ codewars, cohort, certifications }) {
   const { resume, linkedin, github, mockInterview } = certifications;
   const percentGoalAchieved = Math.round((current.total * 100) / goal.total);
 
+  function changeColorByPercentage() {
+    if (percentGoalAchieved >= 100) {
+      return "#50C878"; //emerald green
+    } else if (percentGoalAchieved >= 50) {
+      return "#F9E076"; //macaroon yellow
+    } else {
+      return "#B80F0A"; //crimson red
+    }
+  }
+
   return (
     <div className="details">
       <div className="codewars">
@@ -12,7 +22,12 @@ function StudentDetails({ codewars, cohort, certifications }) {
           <p><span className="toGreen">Current Total: </span>{current.total}</p>
           <p><span className="toGreen">Last Week: </span>{current.lastWeek}</p>
           <p><span className="toGreen">Goal: </span>{goal.total}</p>
-          <p><span className="toGreen">Percent of Goal Achieved: </span>{percentGoalAchieved}%</p>
+          <p><span className="toGreen">Percent of Goal Achieved: </span>
+            <span style={{ color: changeColorByPercentage() }}>
+              {percentGoalAchieved}
+            </span>
+            %
+          </p>
       </div>
       <div className="scores">
           <h4>Scores</h4>

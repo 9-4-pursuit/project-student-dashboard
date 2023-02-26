@@ -1,7 +1,7 @@
 
 function ShowCohort({ data, setCohortId, setCohortTotal, updateStudentsInfo }) {
   //cohortReadable: cohortCode
-  const cohortObject = {};
+  const cohortObject = { "All Students": "all"};
   data.map(student => {
     const { cohortCode } = student.cohort;
     const cohortReadable = cohortCode.slice(0, -4) + " " + cohortCode.slice(-4);
@@ -38,19 +38,11 @@ function ShowCohort({ data, setCohortId, setCohortTotal, updateStudentsInfo }) {
     <>
       <h3>Choose a Class by Start Date</h3>
 
-      <button key="all" onClick={() => {
-        updateCohort("all")
-        updateStudentsInfo("all")
-      }}>
-        All Students
-      </button>
-
       {sortedCohort.map(cohort => {
         return (
           <button key={cohortObject[cohort]} onClick={() => {
             updateCohort(cohortObject[cohort])
             updateStudentsInfo(cohortObject[cohort])
-            // return "style={{color: 'red'}}"
           }}>
             {cohort}
           </button>
