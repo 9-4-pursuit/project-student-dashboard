@@ -81,8 +81,6 @@ function App() {
 
     toggleStatus(studentsData[student].showStatus)
 
-    console.log(student, "space", studentsData)
-
   }
 
   function addStudentProperties() {
