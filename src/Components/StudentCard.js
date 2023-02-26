@@ -16,7 +16,7 @@ function StudentCard({ student }) {
     const commentText = event.target.elements.Comment.value;
     const newComment = `${commenterName} says "${commentText}"`;
     setComments([...comments, newComment]);
-    //event.target.reset();
+    event.target.reset();
   };
 
   const [toggleMore, setToggleMore] = useState(false);
