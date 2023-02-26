@@ -82,6 +82,10 @@ header h1 {
     margin-left: 20px;
 }
 
+.info p {
+    font-size: 20px;
+}
+
 .info h4 {
     text-decoration: underline;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -132,4 +136,26 @@ ul {
 
 .comment-section button:hover {
         background-color: #3e8e41; /* Dark green */
+}
+
+.onTrack {
+    color: red;
+    font-size: 1.2em;
+   font-family: serif;
+   color:#008000;
+   text-align: center;
+   animation: animate 1.5s linear infinite;
+ } 
+  
+ @keyframes animate{
+   0%{
+     opacity: 0;
+   }
+   50%{
+     opacity: 0.7;
+   }
+   100%{
+     opacity: 0;
+   }
+ 
 }
