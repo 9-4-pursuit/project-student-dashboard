@@ -37,7 +37,7 @@ header h1 {
     border: 3px solid red;
     margin-top: 20px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
 }
 .cohort-list {
@@ -106,8 +106,8 @@ ul {
     display: grid;
     float: left;
     grid-template-areas: "auto";
-    height: 200px;
-    width: 200px;
+    height: 180px;
+    width: 180px;
 }
 
 .comment-section {
@@ -174,5 +174,4 @@ ul {
    100%{
      opacity: 0;
    }
-
 }

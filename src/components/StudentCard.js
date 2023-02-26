@@ -24,7 +24,9 @@ const handleComments = (event) => {
     const commenterName = event.target.elements["Commenter Name"].value
     const commentText = event.target.elements["Comment"].value;
     const newComment = `${commenterName}: ${commentText}`;
+    // console.log(newComment)
     setComments([...comments, newComment]);
+    // console.log(comments)
     event.target.reset();
 };
 
@@ -111,7 +113,7 @@ if (percentage >= 100) {
             </form>    
         {comments.map((comment, index) => (
           // console.log(comments)
-            <div key={index}>{comment.comments}</div>
+            <div key={index}>{comment}</div>
         ))}    
         </div>
 
