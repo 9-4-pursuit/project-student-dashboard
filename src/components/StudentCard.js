@@ -40,11 +40,11 @@ export default function StudentCard( { student }) {
     let styledPercent = Math.round((codewars.current.total / codewars.goal.total) * 100)
     console.log(styledPercent)
     if(styledPercent < 50) {
-      return <span style={{color: "red"}}>{styledPercent}</span>
+      return <span style={{color: "red"}}>{styledPercent}%</span>
     } else if(styledPercent >= 50 && styledPercent < 100) {
-      return <span style={{color: "yellow"}}>{styledPercent}</span>
+      return <span style={{color: "yellow"}}>{styledPercent}%</span>
     } else {
-      return <span style={{color: "green"}}>{styledPercent}</span>
+      return <span style={{color: "green"}}>{styledPercent}%</span>
     }
   }
 
@@ -56,7 +56,7 @@ export default function StudentCard( { student }) {
             <p>Current Total: {codewars.current.total}</p>
             <p>Last Week: {codewars.current.lastWeek}</p>
             <p>Goal: {codewars.goal.total}</p> 
-            <p>Percent of Goal Achieved: {stylePercent(codewars)}%</p>
+            <p>Percent of Goal Achieved: {stylePercent(codewars)}</p>
           <h4>Scores:</h4>
             <p>Assignments: {scores.assignments * 100}%</p>
             <p>Projects: {scores.projects * 100}%</p>
