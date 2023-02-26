@@ -33,10 +33,20 @@ li {
     display: grid;
     background-color: rgb(190, 232, 232);
     grid-area: aside;
+    
+}
+
+aside h4:hover {
+    margin-left: 20px;
+
 }
 
 .pic {
-
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+    float:left
+    
 }
 
 .card {
@@ -52,4 +62,8 @@ li {
 .track {
     float: right;
     
+}
+
+.green {
+    color: green;
 }
