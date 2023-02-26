@@ -1,0 +1,212 @@
+.App{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.title{
+    background-color: rgb(100, 142, 100);
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 0px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.card{
+    border: 2px solid rgb(100, 142, 100);
+    padding: 5px;
+    margin: 5px;
+}
+
+.card img{
+    height: 115px;
+    width: 115px;
+    float: left;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+img:hover{
+    transform: scale(1.15);
+}
+
+.card button{
+    background: none;
+    border: none;
+    padding: 10px;
+    text-decoration: underline;
+    color: rgb(100, 142, 100);
+    cursor: pointer;
+}
+
+.graduate{
+    color: rgb(100, 142, 100);
+    float: right;
+    cursor: pointer;
+}
+
+.birthday span{
+    color: rgb(100, 142, 100);
+}
+
+.total span{
+    color: rgb(100, 142, 100);
+}
+
+.all-students{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    margin-right: 40px;
+}
+
+.wrap{
+    overflow: scroll;
+    height: 700px;
+}
+
+.cohorts{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row: 2;
+}
+
+.cohorts li{
+    list-style: none;
+}
+
+.cohorts h3{
+    text-align: center;
+}
+
+.cohorts button{
+    background: none;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cohorts button:hover{
+    color: rgb(100, 142, 100);
+}
+
+.cohort{
+    list-style: none;
+}
+
+.cohort button{
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.cohort button:hover{
+    color: rgb(100, 142, 100);
+}
+
+.line{
+    border-bottom: 1px solid rgb(100, 142, 100);
+    margin-right: 60px;
+}
+
+.details{
+    display: grid;
+    grid-template-areas: 
+    "a b c"
+    "l l l"
+    "f f f";
+    padding-left: 10px;
+}
+
+.comments{
+    grid-area: f;
+}
+
+.section1{
+    grid-area: a;
+}
+
+.section2{
+    grid-area: b;
+}
+
+.section3{
+    grid-area: c;
+}
+
+.note{
+    background-color: rgb(100, 142, 100);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.span{
+    color: rgb(100, 142, 100);
+}
+
+.green{
+    color: rgb(100, 142, 100)
+}
+
+.yellow{
+    color: rgb(226, 194, 17);
+}
+
+.red{
+    color: darkred;
+}
+
+.form{
+    border: 1px solid black;
+    padding: 10px;
+    margin-right: 15px;
+}
+
+@media (max-width:500px){
+    .App{
+        display: grid;
+        grid-template-areas:
+        "h h h"
+        "c s s";
+    }
+
+    .App h1{
+        grid-area: h;
+    }
+
+    .all-students{
+        grid-area: s;
+        text-align: center;
+    }
+
+    .cohorts{
+        grid-area: c;
+        font-size: x-small;
+    }
+
+    
+
+    .card img{
+        float: none;
+    }
+
+    .cohorts button{
+        
+        text-align: left;
+        font-size: x-small;
+        padding-left: 0%;
+    }
+
+    .card{
+        text-align: center;
+    }
+
+    .details{
+        display: inline;
+    }
+
+}
