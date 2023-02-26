@@ -45,32 +45,35 @@ function ShowMore({ student }) {
 
     return (
         <div className="student-list">
-            <img src= {student.profilePhoto} alt={student.names.preferedName} />
+            <span>
+            <img src= {student.profilePhoto} alt={student.names.preferredName} style={{width: "100px"}}/>
+            </span>
             <ul>
-                <li key={student.id}>{student.names.preferedName} {student.names.middleName[0]}. {student.names.surname}</li>
+                <li key={student.id}>{student.names.preferredName} {student.names.middleName[0]}. {student.names.surname}</li>
                 <li>{student.username}</li>
-                <li>Birthday: {student.dob}</li>
-                <li>{student.cohort.cohortCode}</li>
+                <li><font color="#009E60">Birthday:</font> {student.dob}</li>
+                {/* <li>{student.cohort.cohortCode}</li> */}
                 {onTrackGrad(student) ? <li>On Track to Graduate</li> : null}
                 <button onClick={toggleMore}>{click ? "Show Less..." : "Show More..."}</button>
+        
                 {click ? (
                     <>
                     <h3><strong>Codewars</strong></h3>
-                    <li>Current Total: {student.codewars.current.total}</li>
-                    <li>Last Week: {student.codewars.current.lastWeek}</li>
-                    <li>Goal: {student.codewars.goal.total} </li>
-                    <li>Percent of Goal Achieved: <span>{handleScores(score.toFixed(0))}%</span></li>
+                    <li><font color="#009E60">Current Total:</font> {student.codewars.current.total}</li>
+                    <li><font color="#009E60">Last Week:</font> {student.codewars.current.lastWeek}</li>
+                    <li><font color="#009E60">Goal:</font> {student.codewars.goal.total} </li>
+                    <li><font color="#009E60">Percent of Goal Achieved:</font> <span>{handleScores(score.toFixed(0))}%</span></li>
                     
                     <h3><strong>Scores</strong></h3>
-                    <li>Assignments: {student.cohort.scores.assignments * 100}%</li>
-                    <li>Projects: {student.cohort.scores.projects * 100}%</li>
-                    <li>Assessments: {student.cohort.scores.assessments * 100}%</li>
+                    <li><font color="#009E60">Assignments:</font> {student.cohort.scores.assignments * 100}%</li>
+                    <li><font color="#009E60">Projects:</font> {student.cohort.scores.projects * 100}%</li>
+                    <li><font color="#009E60">Assessments:</font> {student.cohort.scores.assessments * 100}%</li>
 
                     <h3><strong>Certifications</strong></h3>
-                    <li>Resume: {student.certifications.resume ? "✅" : "❌"}</li>
-                    <li>LinkedIn: {student.certifications.linkedin ? "✅" : "❌"}</li>
-                    <li>Mock Interview: {student.certifications.mockInterview ? "✅" : "❌"}</li>
-                    <li>Github: {student.certifications.github ? "✅" : "❌"}</li>
+                    <li><font color="#009E60">Resume:</font> {student.certifications.resume ? "✅" : "❌"}</li>
+                    <li><font color="#009E60">LinkedIn:</font> {student.certifications.linkedin ? "✅" : "❌"}</li>
+                    <li><font color="#009E60">Mock Interview:</font> {student.certifications.mockInterview ? "✅" : "❌"}</li>
+                    <li><font color="#009E60">Github:</font> {student.certifications.github ? "✅" : "❌"}</li>
                     
                     <div className="notes">
                     <h3>1-on-1 Notes</h3>
@@ -80,7 +83,7 @@ function ShowMore({ student }) {
 
                         <label htmlFor="comment">Comment</label>
                         <input type="text" name="name" id="comment" value={comment.comment} onChange={handleChangeComment} />
-                        <input type="submit" />
+                        <input type="submit" value={"Add Note"} />
                     </form>
 
                     {commenter.length > 0 ? (
@@ -89,9 +92,8 @@ function ShowMore({ student }) {
                         return (
                             <li key={`${comment.comment}-${i}`}> {`${comment.commenter} says, "${comment.comment}"`}</li>
                             )
-                    })}
+                    })} 
                     </ul> ) : null }
-
                     </div>
                     </>
                          

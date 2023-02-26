@@ -21,6 +21,7 @@ function Student({ students, setCohort, handleSelectCohort, handleReadable }) {
             <div className="StudentList">
                 <h3>Choose a Class by Start Date</h3>
                 <div>
+                <ul>
                 <li key="cohorts" className="allCohorts"
                 onClick={() => setCohort(students)}>
                 All Students
@@ -32,41 +33,11 @@ function Student({ students, setCohort, handleSelectCohort, handleReadable }) {
                         </li>
                         )
                     })}
+                    </ul>
                 </div>
             </div>
         )
     }
         
-        //functions:
-        //setCohort
-        //handleSelectCohort
-        //handleReadable
-
-
-
-
-
-
-    // return (
-    //     <div className='student-list'>
-    //         { data.map((info) => {
-    //         console.log(info)
-
-    //         return <div className='students'>
-    //             <h1>All Students</h1>
-    //             <p>Total Students: 250</p>
-
-    //             <div className='info'>
-    //             <h2>{info.names.preferredName.toUpperCase()}{ info.names.middleName.charAt(0)}{info.names.surname.toUpperCase()}</h2>
-    //             <img src = {info.profilePhoto} alt="" className='img'></img>
-    //             <h3>Username: {info.username}</h3>
-    //             <h3> Birthday: {info.dob}</h3>
-    //             <h4> Show More:{}</h4>
-    //             </div>
-    //         </div>
-    //         }) }
-    //     </div>
-    // )
-
 
 export default Student;

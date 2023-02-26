@@ -24,11 +24,9 @@ function App() {
   
 
   return (
-    <div>
-      <header>
-      <h2>Student Dashboard</h2>
-      </header>
-
+  <div className="App">
+      <header>Student Dashboard</header>
+    
       <Student 
       students={ students } 
       handleSelectCohort={handleSelectCohort}
@@ -41,8 +39,8 @@ function App() {
       cohort={cohort}
       handleReadable={handleReadable}
       />
+</div>
 
-    </div>
   );
 }
 

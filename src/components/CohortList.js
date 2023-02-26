@@ -8,7 +8,7 @@ function CohortList ({ students, cohort, handleReadable }) {
     return (
         <div className="cohort-list">
             <h2>{ cohort.length === students.length ? "All Students" : handleReadable(cohort[0].cohort.cohortCode)}</h2>
-            <h3>Total Students: { cohort.length }</h3>
+            <h3>Total Students: <em><font color="#009E60">{ cohort.length }</font></em></h3>
             {cohort.map(student => {
                 return (
                 <ShowMore key={`${student.id}`} student={ student } />
@@ -19,3 +19,4 @@ function CohortList ({ students, cohort, handleReadable }) {
 }
 
 export default CohortList;
+
