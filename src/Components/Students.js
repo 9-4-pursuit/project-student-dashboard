@@ -1,9 +1,6 @@
 
 
-function Students({ data, studentsData, settingDob, stuHead, defaultStatus, showMore, form, handleTextChange, handleSubmit, comments }) {
-    let more;
-
-    defaultStatus ? more = "Show More" : more = "Show Less"
+function Students({ studentsData, settingDob, stuHead, showMore, form, handleTextChange, handleSubmit }) {
 
     return (
         <div className="students">
@@ -16,7 +13,7 @@ function Students({ data, studentsData, settingDob, stuHead, defaultStatus, show
                         return (
                             <li id="mainLi" key={stu.id}>
 
-                                <img src={stu.profilePhoto} alt={stu.names.preferredName} />
+                                <img src="https://xsgames.co/randomusers/avatar.php?g=pixel" alt={stu.names.preferredName} />
 
                                 <p>
                                     <strong>{stu.names.preferredName} {stu.names.middleName.charAt(0)}. {stu.names.surname}</strong>
@@ -28,17 +25,17 @@ function Students({ data, studentsData, settingDob, stuHead, defaultStatus, show
                                 <div className="green">
                                     {Object.values(stu.certifications).every(item => item === true) && stu.codewars.current.total > 600 ? "On Track to Graduate" : ""}
                                 </div>
-                                <a onClick={(e) => showMore(e)} className="green" href="true" value={more}>{more}...</a>
+                                <a onClick={(e) => showMore(e, stu.id)} className="green" href="true">{stu.showStatus ? "Show Less" : "Show More"}...</a>
 
 
-                                <div className="moreBlock" style={defaultStatus ? { display: "none" } : { display: "block" }}>
+                                <div className="moreBlock" style={stu.showStatus ? { display: "block" } : { display: "none" }}>
                                     <p>
                                         <div>
                                             <strong>Codewars:</strong>
                                             <p><span className="green">Current Total:</span> {stu.codewars.current.total}</p>
                                             <p><span className="green">Last Week:</span> {stu.codewars.current.lastWeek}</p>
                                             <p><span className="green">Goal:</span> {stu.codewars.goal.total}</p>
-                                            <p><span className="green">Percent of Goal Achieved:</span><span style={codewarsGoal >= 50 ? codewarsGoal >=100 ? {color: "green"} : {color: "#8B8000"} : {color: "red"}}> {codewarsGoal}%</span></p>
+                                            <p><span className="green">Percent of Goal Achieved:</span><span style={codewarsGoal >= 50 ? codewarsGoal >= 100 ? { color: "green" } : { color: "#8B8000" } : { color: "red" }}> {codewarsGoal}%</span></p>
                                         </div>
                                         <div>
                                             <strong>Scores</strong>
@@ -60,22 +57,22 @@ function Students({ data, studentsData, settingDob, stuHead, defaultStatus, show
                                     <div className="oneBox">
                                         <form>
                                             <label>Commenter Name
-                                                <input onChange={(e)=>handleTextChange(e)} type="text" value={form.commenter} id="name"/>
+                                                <input onChange={(e) => handleTextChange(e)} type="text" value={form.commenter} id="name" />
                                             </label>
-                                            <br/>
-                                            <br/>
+                                            <br />
+                                            <br />
                                             <label>Comment
-                                                <input onChange={(e)=>handleTextChange(e)} type="text" value={form.comment} id="comment"/>
+                                                <input onChange={(e) => handleTextChange(e)} type="text" value={form.comment} id="comment" />
                                             </label>
-                                            <br/>
-                                            <br/>
-                                            <button onClick={(e)=>handleSubmit(e)}>Add Note</button>
+                                            <br />
+                                            <br />
+                                            <button onClick={(e) => handleSubmit(e, stu.id)}>Add Note</button>
                                         </form>
                                     </div>
                                     <ul className="oneList">
                                         {
-                                            comments.map((com)=>{
-                                                return(
+                                            stu.notes.map((com) => {
+                                                return (
                                                     <li>{com.commenter} says, "{com.comment}"</li>
 
                                                 )
@@ -84,9 +81,6 @@ function Students({ data, studentsData, settingDob, stuHead, defaultStatus, show
 
                                     </ul>
                                 </div>
-                                {/* <div className="green" style={defaultStatus ? { display: "none" } : { display: "block" }}>
-                                    On Track to Graduate
-                                </div> */}
                             </li>
                         )
                     })

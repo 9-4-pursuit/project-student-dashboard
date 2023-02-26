@@ -8,7 +8,7 @@
     },
     "username": "israel.rodriguez@pursuit.org",
     "dob": "2/3/1979",
-    "profilePhoto": "https://fakeface.rest/thumb/view?gender=male&minimum_age=38&maximum_age=48",
+    "profilePhoto": "https://fakeface.rest/face/view?gender=male&minimum_age=38&maximum_age=48",
     "codewars": {
       "current": { "total": 1804, "lastWeek": 144 },
       "goal": { "total": 850, "lastWeek": 75 }
@@ -67,7 +67,7 @@
     },
     "username": "gina.hammes@pursuit.org",
     "dob": "3/12/1982",
-    "profilePhoto": "https://fakeface.rest/thumb/view?gender=female&minimum_age=35&maximum_age=45",
+    "profilePhoto": "https://fakeface.rest/face/view?gender=female&minimum_age=35&maximum_age=45",
     "codewars": {
       "current": { "total": 1754, "lastWeek": 148 },
       "goal": { "total": 850, "lastWeek": 75 }

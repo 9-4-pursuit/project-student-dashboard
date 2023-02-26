@@ -6,7 +6,7 @@ function Cohorts({ cohortArr, filterStudents }) {
         <div className="cohorts">
             <h3>Choose a Class by Start Date</h3>
             <ul key={cohortArr.id}>
-                <li value={"all"} onClick={()=>filterStudents("all")}>All Students</li>
+                <li value={"all"} onClick={() => filterStudents("all")}>All Students</li>
                 {
                     cohortArr.map((item) => {
                         return (

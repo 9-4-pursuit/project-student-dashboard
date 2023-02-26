@@ -12,53 +12,40 @@ function App() {
     commenter: "",
     comment: ""
   })
-  const [comments, setComments] = useState([])
-
-  // const [more, setMore] = useState("")
-  // const [moreArr, setMoreArr] = useState([])
-
-  const [defaultStatus, toggleStatus] = useState(true)
+  const [defaultStatus, toggleStatus] = useState(false)
 
   function handleTextChange(event) {
     event.preventDefault()
-if (event.target.id === "name"){
-  setForm({...form, commenter: event.target.value})
-} else{
-  setForm({...form, comment: event.target.value })
-}
+    if (event.target.id === "name") {
+      setForm({ ...form, commenter: event.target.value })
+    } else {
+      setForm({ ...form, comment: event.target.value })
+    }
+  }
 
+  function addComment(id) {
+
+    const index = studentsData.findIndex((stu) => id === stu.id)
+
+    studentsData[index].notes = [form, ...studentsData[index].notes]
 
   }
 
-  function addComment() {
-
-    studentsData.map((stu) => {
-
-      return (
-
-        setComments([form, ...stu.notes, ...comments])
-
-      )
-
-    })
-
-  }
-
-  function resetForm(){
+  function resetForm() {
     setForm({
       commenter: "",
       comment: ""
     })
   }
 
-  function handleSubmit(e) {
+  function handleSubmit(e, id) {
     e.preventDefault()
-    addComment()
+    addComment(id)
     resetForm()
-    console.log(comments)
   }
 
   function cohortsMenu() {
+    addStudentProperties()
     const copyArr = data.map((item) => {
       item = item.cohort
       item.cohortStartDate = new Date(item.cohortStartDate)
@@ -77,7 +64,6 @@ if (event.target.id === "name"){
     value === "all" ? setStudentsData(studentsArr) : setStudentsData(filteredArr)
     value === "all" ? setStuHead("All Students") : setStuHead(value.substring(0, (value.length - 4)) + " " + value.substring(value.length - 4))
 
-    // console.log(studentsData)
   }
 
   function settingDob(number) {
@@ -86,26 +72,37 @@ if (event.target.id === "name"){
     return finalString.substring(0, (finalString.length - 5)) + "," + finalString.substring(finalString.length - 5)
   }
 
-  function showMore(e) {
+  function showMore(e, id) {
     e.preventDefault()
-    toggleStatus(!defaultStatus)
+
+    const student = studentsData.findIndex((stu) => id === stu.id)
+
+    studentsData[student].showStatus = !studentsData[student].showStatus
+
+    toggleStatus(studentsData[student].showStatus)
+
+    console.log(student, "space", studentsData)
+
   }
 
-  useEffect(() => {
-    console.log('useefffect')
-    cohortsMenu()
-    // onTracktoGraduate()
-  }, [])
+  function addStudentProperties() {
+    studentsData.map((stu) => {
+      stu.showStatus = false
+      return (
+        stu
+      )
+    })
+  }
+
+  useEffect(() => cohortsMenu(), [])
 
 
   return (
     <div>
       <Header />
-      <button value="1/2/00" onClick={true}>console</button>
       <div className="main">
         <Cohorts cohortArr={cohortArr} filterStudents={filterStudents} />
         <Students
-          data={data}
           studentsData={studentsData}
           settingDob={settingDob}
           stuHead={stuHead}
@@ -114,9 +111,7 @@ if (event.target.id === "name"){
           form={form}
           handleTextChange={handleTextChange}
           handleSubmit={handleSubmit}
-          comments={comments}
-        // more={more}
-        // setMore={setMore}
+          addStudentProperties={addStudentProperties}
         />
       </div>
     </div>
