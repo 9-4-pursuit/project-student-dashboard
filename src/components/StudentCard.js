@@ -1,5 +1,4 @@
 
-
 import { useState } from "react";
 
 
@@ -9,6 +8,7 @@ export default function StudentCard({ student }) {
 function showMore() {
   setToggleMore(!toggleMore);
 }
+
 const baseURL = "https://robohash.org/"
 let randomNumber = Math.floor(Math.random() * 10000)
 let Photo = `${baseURL}${randomNumber}`
@@ -25,15 +25,40 @@ const handleComments = (event) => {
     const commentText = event.target.elements["Comment"].value;
     const newComment = `${commenterName}: ${commentText}`;
     setComments([...comments, newComment]);
-    event.target.reseet();
+    event.target.reset();
 };
+
+const isOnTrack  = () => {
+  if (
+    student.certifications.resume === true &&
+    student.certifications.linkedin === true &&
+    student.certifications.github === true &&
+    student.certifications.mockInterview === true
+  ) {
+    return <p>On track to Graduate</p>;
+  }
+};
+
+let percentageColor;
+const percentage = Math.round(
+  (student.codewars.current.total / student.codewars.goal.total) * 100
+);
+if (percentage >= 100) {
+  percentageColor = "green";
+} else if (percentage >= 50) {
+  percentageColor = "yellow";
+} else {
+  percentageColor = "red";
+}
+
+
 
 
   return (
       <div className="student-card">
-
+          
           <img className="img" src={Photo} alt="" />
-          <div className="onTrack"><strong>On Track to Graduate</strong></div>
+          <div className="onTrack"><strong>{isOnTrack()}</strong></div>
           {/* <img className="img" src={student.profilePhoto} alt={student.username}/> */}
           <h3><strong>{student.names.preferredName} {student.names.middleName[0].toUpperCase()}. {student.names.surname}</strong></h3>
           <p>{student.username}</p>
@@ -41,33 +66,35 @@ const handleComments = (event) => {
           {/* <p>On Track to Graduate</p> */}
           <br></br>
 
-          <p onClick={() => showMore()}>{toggleMore ? "Show Less..." : "Show More..."}</p>
+          <p style={{ color: 'red' }} onClick={() => showMore()}>{toggleMore ? "Show Less..." : "Show More..."}</p>
           {toggleMore ? (
             <div className="info">
               <div className="codewars">
-                <p>Current Total:{student.codewars.current.total}</p>
-                <p>Last Week:{student.codewars.current.lastWeek}</p>
-                <p>Goal:{student.codewars.goal.total}</p>
+                <h2>Codewars:</h2>
+                <p>Current Total: {student.codewars.current.total}</p>
+                <p>Last Week: {student.codewars.current.lastWeek}</p>
+                <p>Goal: {student.codewars.goal.total}</p>
                 <p>
-                  Percent of Goal Achieved:
-                  {Math.round( 
-                    (student.codewars.current.total / student.codewars.goal.total) * 100
-                    )}
-                    %
+                  Percent of Goal Achieved: 
+                  <span style={{ color: percentageColor }}> {percentage}%</span>
+                  {/* {Math.round( 
+                    (student.codewars.current.total / student.codewars.goal.total) * 100)}% */}
                 </p>
               </div>
 
               <div className="scores">
-                <p>Assignments:{student.cohort.scores.assignments * 100} %</p>
-                <p>Projects:{student.cohort.scores.projects * 100} %</p>
-                <p>Assessments:{student.cohort.scores.assessments * 100} %</p>
+              <h2>Scores:</h2>
+                <p>Assignments: {student.cohort.scores.assignments * 100} %</p>
+                <p>Projects: {student.cohort.scores.projects * 100} %</p>
+                <p>Assessments: {student.cohort.scores.assessments * 100} %</p>
               </div>
 
               <div className="certifications">
-                <p>Resume:{student.certifications.resume ? " ✔" : " ✘" }</p>
-                <p>LinkedIn:{student.certifications.linkedin ? " ✔" : " ✘" }</p>
-                <p>Mock Interview:{student.certifications.mockInterview ? " ✔" : " ✘" }</p>
-                <p>Github:{student.certifications.github ? " ✔" : " ✘" }</p>
+              <h2>Certifications:</h2>
+                <p>Resume: {student.certifications.resume ? "  ✅ " : " ❌" }</p>
+                <p>LinkedIn: {student.certifications.linkedin ? " ✅" : " ❌" }</p>
+                <p>Mock Interview: {student.certifications.mockInterview ? " ✅" : " ❌" }</p>
+                <p>Github: {student.certifications.github ? " ✅" : " ❌" }</p>
               </div>
 
               <hr></hr>
@@ -83,7 +110,8 @@ const handleComments = (event) => {
             <button type="submit">Add Note</button>
             </form>    
         {comments.map((comment, index) => (
-            <div key={index}>{comment}</div>
+          // console.log(comments)
+            <div key={index}>{comment.comments}</div>
         ))}    
         </div>
 
@@ -93,3 +121,5 @@ const handleComments = (event) => {
       </div>
   )
 }
+
+// " ✔️" : " ✘❌" ✔️  ☑️✅  ✓ ✔️ ✓  ☑️  ✓  ✔  ✔️  ✔️  "✔️"

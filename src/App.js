@@ -18,6 +18,7 @@ function App() {
     setStudentList(data.filter((student) => student.cohort.cohortCode === cohortCode.split(' ').join('')));
     setTypeCohort(cohortCode);
   }
+  
 
   return (
     <div className="App">
