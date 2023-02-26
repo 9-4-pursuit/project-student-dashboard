@@ -1,0 +1,141 @@
+:root {
+  height: 100%;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  height: 100%;
+  width: 100%;
+}
+
+.App {
+  display: grid;
+  background-color: rgb(151, 190, 60);
+  grid-template-areas: "header header header header" "aside main main main";
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.choose {
+  text-align: center;
+}
+
+.img {
+  background-color: #b0c248;
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border: 1px solid black;
+  display: grid;
+  float: left;
+  grid-template-areas: "auto";
+  height: 100px;
+  width: 100px;
+}
+.img:hover {
+  background-color: rgb(230, 213, 60);
+}
+ul {
+  list-style: none;
+  margin-right: 5px;
+  padding: 10px;
+}
+
+header {
+  margin: 20px;
+  float: center;
+  /* background-color: #659367; */
+  text-align: center;
+  height: 75px;
+  width: auto;
+  grid-area: header;
+}
+
+.email {
+  text-decoration: underline;
+}
+
+.date span {
+  color: rgb(132, 187, 102);
+}
+.student-card {
+  border: 1px solid black;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.student-card-hovered {
+  box-shadow: 0px 0px 10px #ccc;
+}
+
+.cohort-list {
+  display: grid;
+  background-color: rgb(198, 238, 142);
+  grid-area: aside;
+  height: 100%;
+}
+.cohort-list h4 {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+}
+
+.aside {
+  width: 350px;
+  height: 100%;
+}
+
+.main {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.student-list {
+  display: grid;
+  background-color: rgb(155, 140, 120);
+  height: 100%;
+  grid-area: main;
+  overflow-y: scroll;
+  max-height: 650px;
+}
+
+.student-list span {
+  color: rgb(132, 187, 102);
+}
+
+.toggle {
+  padding: 10px;
+  text-decoration: double underline #659367;
+}
+
+.track {
+  border: 1px solid black;
+  background-color: #77871b;
+  display: grid;
+  float: right;
+  grid-template-areas: "auto";
+  margin-right: 4px;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+}
+
+.info h4 {
+  text-decoration: underline;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.comment-section {
+  text-align: center;
+  padding-bottom: 20px;
+  background-color: #cfdd81;
+  display: grid;
+}
+
+.comment {
+  border: 1px solid black;
+  text-align: center;
+  color: rgb(125, 147, 94);
+}
