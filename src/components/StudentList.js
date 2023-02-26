@@ -59,9 +59,9 @@ export default function StudentList({ data, students, setStudents, studentTotal,
                                     <p><span className="green">Birthday: </span>{bdayConvert(student.dob)}</p>
                                 </div>
 
-                                <div className="gradTrack">
+                                <div className="gradTrack"><span className="green">
                                     {graduationTracking(student)}
-                                </div>
+                                </span></div>
 
                                 <button className={student.id} onClick={() => handleShowDetails(student.id)}>
                                     <u><span className="green" id="show">
