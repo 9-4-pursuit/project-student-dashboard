@@ -5,11 +5,21 @@ export default function StudentList({ data, students, setStudents, studentTotal,
 
     const [showDetails, setShowDetails] = useState(false);
 
-    // if (cohortId !== "All Students"){
-    //    setCohortId(cohortId.slice(0, -4) + " " + cohortId.slice(-4))
-    // }    
-    function handleShowDetails() {
-        setShowDetails(!showDetails);
+    function handleShowDetails(stuID) {
+        // setShowDetails(!showDetails);
+        // console.log(stuID);
+        let studentDetails = document.getElementById(stuID);
+        // let showButton = document.getElementsByClassName(stuID);
+
+        if (!studentDetails.style.display) {
+            studentDetails.style.display = "grid"
+        } else if (studentDetails.style.display === "none") {
+            studentDetails.style.display = "grid"
+        } else {
+            studentDetails.style.display = "none"
+
+        }
+
     }
 
     function bdayConvert(dob) {
@@ -28,29 +38,39 @@ export default function StudentList({ data, students, setStudents, studentTotal,
     return (
         <div className="studentList">
             <h3>{cohortId}</h3>
-            <p>Total Students: {students.length} </p>
+            <p>Total Students: <span className="green">{students.length}</span></p>
+
             <div className="studentCards">
                 {
                     students.map((student) => {
                         return (
                             <section key={student.id} className="card">
-                                <img src="https://i.pravatar.cc/100" alt={student.names} />
+
+                                <img
+                                    src="https://i.pravatar.cc/100"
+                                    alt={student.names}
+                                    className="profilePic" />
+
                                 <div className="basicInfo">
                                     <p><strong>
                                         {student.names.preferredName} {student.names.middleName[0]} {student.names.surname}
                                     </strong></p>
                                     <p>{student.username}</p>
-                                    <p>Birthday: {bdayConvert(student.dob)}</p>
+                                    <p><span className="green">Birthday: </span>{bdayConvert(student.dob)}</p>
                                 </div>
+
                                 <div className="gradTrack">
                                     {graduationTracking(student)}
                                 </div>
-                                <div className="showDeets" onClick={handleShowDetails}>
-                                    <u>
-                                        {showDetails ? "Show Less..." : "Show More..."}
-                                    </u></div>
-                                {showDetails ? 
-                                (<StudentDetails student={student} />) : null}
+
+                                <button className={student.id} onClick={() => handleShowDetails(student.id)}>
+                                    <u><span className="green" id="show">
+                                        Show More...
+                                        {/* {showDetails ? "Show Less..." : "Show More..."} */}
+                                    </span></u>
+                                </button>
+                                <StudentDetails student={student} />
+                                {/* {showDetails ? (<StudentDetails student={student} />) : null} */}
                             </section>
                         )
                     })

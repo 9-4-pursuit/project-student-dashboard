@@ -33,8 +33,37 @@ header {
 
 .card {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "pic basic grad"
+        "butt butt butt"
+        "deets deets deets";
     border-bottom: 2px solid black;
     margin-bottom: 15px;
     padding-bottom: 15px;
+}
+
+.profilePic {
+    grid-area: pic;
+}
+
+.basicInfo {
+    grid-area: basic;
+}
+
+.gradTrack {
+    grid-area: grad;
+}
+
+button {
+    grid-area: butt;
+}
+
+.studentDetails {
+    grid-area: deets;
+    display: none;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.green {
+    color: #5B946E;
 }

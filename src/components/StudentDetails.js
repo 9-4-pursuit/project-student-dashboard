@@ -4,23 +4,23 @@ export default function StudentDetails({ student }) {
 
     return (
         <>
-            <div className="studentDetails">
+            <div className="studentDetails" id={student.id}>
                 <div><strong>Codewars</strong>
-                    <p>Current Total {student.codewars.current.total}</p>
-                    <p>Last Week: {student.codewars.current.lastWeek}</p>
-                    <p>Goal: {student.codewars.goal.total}</p>
-                    <p>Percent of Goal Achieved: {((student.codewars.current.total)/(student.codewars.goal.total)*100).toFixed(0)} %</p>
+                    <p><span className="green">Current Total: </span>{student.codewars.current.total}</p>
+                    <p><span className="green">Last Week: </span>{student.codewars.current.lastWeek}</p>
+                    <p><span className="green">Goal: </span>{student.codewars.goal.total}</p>
+                    <p><span className="green">Percent of Goal Achieved: </span>{((student.codewars.current.total) / (student.codewars.goal.total) * 100).toFixed(0)} %</p>
                 </div>
                 <div><strong>Scores</strong>
-                <p>Assignments: {(student.cohort.scores.assignments)*100} %</p>
-                <p>Projects: {(student.cohort.scores.projects)*100} %</p>
-                <p>Assessments: {(student.cohort.scores.assessments)*100} %</p>
+                    <p><span className="green">Assignments: </span>{(student.cohort.scores.assignments) * 100} %</p>
+                    <p><span className="green">Projects: </span>{(student.cohort.scores.projects) * 100} %</p>
+                    <p><span className="green">Assessments: </span>{(student.cohort.scores.assessments) * 100} %</p>
                 </div>
                 <div><strong>Certifications</strong>
-                <p>Resume: {student.certifications.resume ? "✅" : "❌"}</p>
-                <p>LinkedIn: {student.certifications.linkedin ? "✅" : "❌"}</p>
-                <p>Mock Interview: {student.certifications.mockInterview ? "✅" : "❌"}</p>
-                <p>GitHub: {student.certifications.github ? "✅" : "❌"}</p>
+                    <p><span className="green">Resume: </span>{student.certifications.resume ? "✅" : "❌"}</p>
+                    <p><span className="green">LinkedIn: </span>{student.certifications.linkedin ? "✅" : "❌"}</p>
+                    <p><span className="green">Mock Interview: </span>{student.certifications.mockInterview ? "✅" : "❌"}</p>
+                    <p><span className="green">GitHub: </span>{student.certifications.github ? "✅" : "❌"}</p>
                 </div>
             </div>
             <OneOnOne

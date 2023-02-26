@@ -8,11 +8,11 @@ import StudentList from './components/StudentList';
 function App() {
 
   const [students, setStudents] = useState(data);
-  const [studentTotal, setStudentTotal] = useState(students.length);
+  const [studentTotal, setStudentTotal] = useState(data.length);
   const [cohortId, setCohortId] = useState('All Students');
   const [cohorts, setCohorts] = useState([])
   const [cohortMembers, setCohortMembers] = useState([]);
-  
+
   // console.log(cohorts)
 
   // Collects, slices and sorts Cohort Codes into an ARRAY STATE
@@ -44,30 +44,30 @@ function App() {
       </header>
       <div className='lists'>
         <CohortList
-        data={data}
-        students={students}
-        setStudents={setStudents}
-        studentTotal={studentTotal}
-        setStudentTotal={setStudentTotal}
-        cohorts={cohorts}
-        setCohorts={setCohorts}
-        cohortId={cohortId}
-        setCohortId={setCohortId}
-        cohortMembers={cohortMembers}
-        setCohortMembers={setCohortMembers}
+          data={data}
+          students={students}
+          setStudents={setStudents}
+          studentTotal={studentTotal}
+          setStudentTotal={setStudentTotal}
+          cohorts={cohorts}
+          setCohorts={setCohorts}
+          cohortId={cohortId}
+          setCohortId={setCohortId}
+          cohortMembers={cohortMembers}
+          setCohortMembers={setCohortMembers}
         />
         <StudentList
-        data={data}
-        students={students}
-        setStudents={setStudents}
-        studentTotal={studentTotal}
-        setStudentTotal={setStudentTotal}
-        cohorts={cohorts}
-        setCohorts={setCohorts}
-        cohortId={cohortId}
-        setCohortId={setCohortId}
-        cohortMembers={cohortMembers}
-        setCohortMembers={setCohortMembers}
+          data={data}
+          students={students}
+          setStudents={setStudents}
+          studentTotal={studentTotal}
+          setStudentTotal={setStudentTotal}
+          cohorts={cohorts}
+          setCohorts={setCohorts}
+          cohortId={cohortId}
+          setCohortId={setCohortId}
+          cohortMembers={cohortMembers}
+          setCohortMembers={setCohortMembers}
         />
       </div>
     </div>
