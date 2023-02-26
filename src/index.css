@@ -111,32 +111,23 @@ ul {
     width: 160px;
 }
 
+.comment-section {
+    font-size: 21px;
+}
 
-
-/* max-content */
-
-/* .ClassList {
-    
-    padding-left: 20px;
-    border: 20px;
-    box-sizing: border-box;
-    height: 100%;
-    display: grid;
-    background-color: cadetblue;
-    grid-area: aside;
+.comment-section button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
     cursor: pointer;
-} */
+}
 
-/* .ClassList {
-    box-sizing: border-box;
-    height: 100%;
-    display: grid;
-    background-color: cadetblue;
-    grid-area: aside;
-    cursor: pointer;
-} */
-
-    /* height: 500px; */
-    /* display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: "image" "info" "ontrack"; */
+.comment-section button:hover {
+        background-color: #3e8e41; /* Dark green */
+}

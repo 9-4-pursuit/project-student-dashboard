@@ -13,9 +13,20 @@ const baseURL = "https://robohash.org/"
 let randomNumber = Math.floor(Math.random() * 10000)
 let Photo = `${baseURL}${randomNumber}`
 
+
 let studentDate = new Date(student.dob).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 
 
+const [comments, setComments]  = useState([])
+
+const handleComments = (event) => {
+    event.preventDefault();
+    const commenterName = event.target.elements["Commenter Name"].value
+    const commentText = event.target.elements["Comment"].value;
+    const newComment = `${commenterName}: ${commentText}`;
+    setComments([...comments, newComment]);
+    event.target.reseet();
+};
 
 
   return (
@@ -58,8 +69,27 @@ let studentDate = new Date(student.dob).toLocaleDateString('en-US', { month: 'lo
                 <p>Mock Interview:{student.certifications.mockInterview ? " ✔" : " ✘" }</p>
                 <p>Github:{student.certifications.github ? " ✔" : " ✘" }</p>
               </div>
+
+              <hr></hr>
+        <div className="comment-section">
+        <h2>1-on-1 Notes</h2>
+        <form className="comment" onSubmit={handleComments}>
+            <label htmlFor="Commenter Name">Commenter Name</label>
+            <input type="text" name="Commenter Name" />
+            <br></br>
+            <label htmlFor="Comment">Comment</label>
+            <input type="text" name="Comment" />
+            <br></br>
+            <button type="submit">Add Note</button>
+            </form>    
+        {comments.map((comment, index) => (
+            <div key={index}>{comment}</div>
+        ))}    
+        </div>
+
             </div>
           ) : null }
+
       </div>
   )
 }
