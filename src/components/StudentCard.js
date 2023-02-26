@@ -60,13 +60,13 @@ if (percentage >= 100) {
           <img className="img" src={Photo} alt="" />
           <div className="onTrack"><strong>{isOnTrack()}</strong></div>
           {/* <img className="img" src={student.profilePhoto} alt={student.username}/> */}
-          <h3><strong>{student.names.preferredName} {student.names.middleName[0].toUpperCase()}. {student.names.surname}</strong></h3>
+          <h2><strong>{student.names.preferredName} {student.names.middleName[0].toUpperCase()}. {student.names.surname}</strong></h2>
           <p>{student.username}</p>
           <p>Birthday: {studentDate} </p>
           {/* <p>On Track to Graduate</p> */}
           <br></br>
 
-          <p style={{ color: 'red' }} onClick={() => showMore()}>{toggleMore ? "Show Less..." : "Show More..."}</p>
+          <p className="showMore" style={{ color: 'red' }} onClick={() => showMore()}>{toggleMore ? "Show Less..." : "Show More..."}</p>
           {toggleMore ? (
             <div className="info">
               <div className="codewars">

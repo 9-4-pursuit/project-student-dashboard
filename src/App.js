@@ -22,6 +22,7 @@ function App() {
 
   return (
     <div className="App">
+      
       <header><h1>Student Dashboard</h1></header>
       <CohortClassList displayAllStudents={displayAllStudents} sortCohort={sortCohort}/>
       <StudentList studentList={studentList} typeCohort={typeCohort} />

@@ -98,13 +98,6 @@ ul {
     padding: 10px;
 }
 
-.onTrack {
-    margin-top: 20px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    float: right;
-}
-
 .img {
     margin-top: 20px;
     margin-right: 10px;
@@ -113,8 +106,8 @@ ul {
     display: grid;
     float: left;
     grid-template-areas: "auto";
-    height: 180px;
-    width: 180px;
+    height: 200px;
+    width: 200px;
 }
 
 .comment-section {
@@ -139,6 +132,10 @@ ul {
 }
 
 .onTrack {
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    float: right;
     color: red;
     font-size: 1.2em;
    font-family: serif;
@@ -157,5 +154,25 @@ ul {
    100%{
      opacity: 0;
    }
- 
+}
+
+.showMore {
+    color: red;
+    font-size: 1.2em;
+    font-family: serif;
+    color:#008000;
+    animation: animate 1.5s linear infinite;
+ } 
+  
+ @keyframes animate{
+   0%{
+     opacity: 0;
+   }
+   50%{
+     opacity: 0.7;
+   }
+   100%{
+     opacity: 0;
+   }
+
 }
