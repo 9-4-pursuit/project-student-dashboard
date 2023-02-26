@@ -1,5 +1,4 @@
 import React from "react";
-import Cohort from "./Notes";
 const CohortDate = ({ data, setCohort, setHeading }) => {
 
   let newList = [...new Set(data.map((student) => student.cohort.cohortCode))];

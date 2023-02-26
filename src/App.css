@@ -105,8 +105,8 @@ img{
     padding-right: 20px;
     color: blueviolet;
 }
-.form{
-    grid-area: f;
+.Form{
+    grid-area: t;
     background-color: beige;
     /* padding: 10px; */
     margin-bottom: 20px;

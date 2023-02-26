@@ -1,5 +1,6 @@
 import React from "react";
 import Studentcard from "./Studentcard";
+import Form from "./Form";
 
 const CardContainer = ({ data, heading }) => {
 

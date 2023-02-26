@@ -35,6 +35,30 @@ const Studentcard = ({ names, profilePhoto, username, dob, certifications, codew
             <p>Mock Interview: {certifications.mockInterview ? "✓" : "x"}</p>
             <p>GitHub: {certifications.github ? "✓" : "x"}</p>
           </section>
+          <section>
+          <fieldset>
+            <div>
+                <h2>1-on-1 Notes</h2>
+                <form>
+                    <label>
+                        Comenter Name
+                         <input type ="text" name="commenter"></input>
+                    </label>
+                    <br/>
+                    <label>
+                        Comments
+                        <input type="text" name="commenttext"></input>
+                    </label>
+                    <br/>
+                    <button type="submit">Add Note</button>
+                </form>
+
+
+
+
+            </div>
+        </fieldset>
+          </section>
         </div>
       )
     }

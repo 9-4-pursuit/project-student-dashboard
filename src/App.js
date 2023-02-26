@@ -29,8 +29,9 @@ function App() {
         cohort={cohort}
         setHeading={setHeading}
       />
-      <CardContainer data={cohort} setCohort={setCohort} heading={heading} />
-      <Form comments={comments} setComments={setComments}/>
+      <CardContainer data={cohort} setCohort={setCohort} heading={heading} 
+      comments={comments} setComments={setComments}/>
+     
     </div>
   );
 }

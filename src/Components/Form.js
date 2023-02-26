@@ -1,5 +1,5 @@
 import React from "react"
-import Notes from "./Notes"
+import Studentcard from "./Studentcard";
 const Form = () => {
     return(
         <fieldset>
@@ -8,7 +8,7 @@ const Form = () => {
                 <form>
                     <label>
                         Comenter Name
-                        <input type ="text" name="commenter"></input>
+                         <input type ="text" name="commenter"></input>
                     </label>
                     <br/>
                     <label>
@@ -28,4 +28,4 @@ const Form = () => {
 
 }
 
-export default Notes;
+export default Form;
