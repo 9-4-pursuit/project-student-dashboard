@@ -9,7 +9,7 @@ export default function StudentDetails({ student }) {
         } else if (goalTotal <= 50 ) {
             return (<span style={{color: '#b20d0d'}}>{goalTotal}</span>)
         } else {
-            return (<span style={{color: '##dfb20e'}}>{goalTotal}</span>)
+            return (<span style={{color: '#dfb20e'}}>{goalTotal}</span>)
         }
     }
 

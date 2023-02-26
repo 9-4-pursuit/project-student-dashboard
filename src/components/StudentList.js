@@ -9,17 +9,20 @@ export default function StudentList({ data, students, setStudents, studentTotal,
         // setShowDetails(!showDetails);
         // console.log(stuID);
         let studentDetails = document.getElementById(stuID);
-        // let showButton = document.getElementsByClassName(stuID);
+        let showButton = document.querySelector("button #show");
 
         if (!studentDetails.style.display) {
-            studentDetails.style.display = "grid"
+            studentDetails.style.display = "grid";
+            showButton.innerText = "Show Less...";
         } else if (studentDetails.style.display === "none") {
-            studentDetails.style.display = "grid"
+            studentDetails.style.display = "grid";
+            showButton.innerText = "Show Less...";
+
         } else {
-            studentDetails.style.display = "none"
+            studentDetails.style.display = "none";
+            showButton.innerText = "Show More...";
 
         }
-
     }
 
     function bdayConvert(dob) {

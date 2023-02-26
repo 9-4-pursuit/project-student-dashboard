@@ -18,7 +18,12 @@ export default function OneOnOne({ student }) {
 
         student.notes.push(commentObj)
         console.log(commentObj, student.notes)
+    }
 
+    function notesMap(){
+        student.notes.map((note, index) => {
+            return <li key={index}>{note.commenter} says "{note.comment}"</li>
+        })
     }
 
     return (
@@ -38,9 +43,7 @@ export default function OneOnOne({ student }) {
                 </form>
             </div>
             <div className="prevNotes">
-                {student.notes.map((note, index) => {
-                    return <li key={index}>{note.commenter} says "{note.comment}"</li>
-                })}
+                {notesMap()}
             </div>
 
         </div>
