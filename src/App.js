@@ -11,6 +11,7 @@ function App() {
   const [studentList, setStudentList] = useState(data)
   const [createCohort, setCreateCohort] = useState("All Students")
 
+
   // call a function to update the student list
   function displayAllStudents() {
     // if(id.value === student.cohort.cohortCode){
@@ -27,11 +28,16 @@ function App() {
     // console.log(studentList.filter(student => student.cohort.cohortCode === cohortCode))
    
     // setStudentList(studentList.filter(student => student.cohort.cohortCode === cohortCode))
-
     setStudentList(data.filter(student => student.cohort.cohortCode === cohortCode.split(' ').join('')))
     setCreateCohort(cohortCode)
-
   }
+
+//  function onTrack(student) {
+//   if(student.certifications.resume === true && student.certifications.linkedin === true && student.certifications.github === true && student.codewars.current.total > 600 ){
+//     setOnTrack('On Track')
+//   }
+
+//  }
 
   
 
@@ -59,7 +65,7 @@ function App() {
       <header><h1>Student Dashboard</h1></header>
       <CohortList displayAllStudents={displayAllStudents}
       sortCohort={sortCohort}/>
-      <StudentList  studentList={studentList} createCohort={createCohort} />
+      <StudentList studentList={studentList} createCohort={createCohort} />
     </div>
   );
 }

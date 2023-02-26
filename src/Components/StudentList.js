@@ -7,7 +7,7 @@ export default function StudentList({studentList, createCohort }) {
 
         <main>
             <h2>{createCohort}</h2>
-            <p>Total Students:{studentList.length}</p>
+            <p>Total Students: {studentList.length}</p>
             <ul>
                 {
                     studentList.map((student) => {

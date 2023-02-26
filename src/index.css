@@ -20,10 +20,14 @@ header {
 .studentlist {
     display: grid;
     grid-area: main;
-    background-color: rgb(59, 58, 52);
+    background-color: rgb(169, 154, 71);
     
-
 }
+
+li {
+    list-style: none;
+}
+
 
 .cohort-list {
     display: grid;
@@ -43,4 +47,9 @@ header {
 .info {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+}
+
+.track {
+    float: right;
+    
 }

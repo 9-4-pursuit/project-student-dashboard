@@ -4,18 +4,30 @@ import { useState } from "react"
 export default function StudentCard({ student }) {
 
   const [toggleMore, setToggleMore] = useState(false)
+  // const [onTrack, setOnTrack] = useState("")
+  
 
   function showMore() {
     setToggleMore(!toggleMore)
   }
 
+  function gradTrack(student) {
+    if(student.certifications.resume === true && student.certifications.linkedin === true && student.certifications.github === true && student.codewars.current.total > 600 ){
+     
+      return "On Track to graduate"
+    } else {  
+      return "Not on Track to graduate"
+    }
+   }
+  
   return (
 
     <div className="card">
       <img className="pic" src={student.profilePhoto} alt="" />
-      <h6>{student.names.preferredName} {student.names.surname}</h6>
+      <p className="track">{gradTrack(student)}</p>
+      <h3>{student.names.preferredName} {student.names.surname}</h3>
       <p>{student.username}</p>
-      <p>Birthday: DOB</p>
+      <p>Birthday: {student.dob}</p>
       <br></br>
       <p onClick={() => showMore()}>{toggleMore ? "Show Less..." : "Show More..."}</p>
       {toggleMore ? (
@@ -27,7 +39,7 @@ export default function StudentCard({ student }) {
             <p>
               Percent of Goal Achieved:
               {Math.round(
-                (student.codewars.total / student.codewars.goal.total) * 100
+                (student.codewars.current.total / student.codewars.goal.total) * 100
               )}
               %
             </p>
