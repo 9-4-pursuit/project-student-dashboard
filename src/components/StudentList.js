@@ -60,25 +60,24 @@ export default function StudentList({ data, students, setStudents, studentTotal,
                                     </strong></p>
                                     <p>{student.username}</p>
                                     <p><span className="green">Birthday: </span>{bdayConvert(student.dob)}</p>
+                                    <button className={student.id} onClick={() => handleShowDetails(student.id)}>
+                                        <u><span className="green" id="show">
+                                            Show More...
+                                        </span></u>
+                                    </button>
                                 </div>
 
                                 <div className="gradTrack"><span className="green">
                                     {graduationTracking(student)}
                                 </span></div>
 
-                                <button className={student.id} onClick={() => handleShowDetails(student.id)}>
-                                    <u><span className="green" id="show">
-                                        Show More...
-                                    </span></u>
-                                </button>
-                                
+
                                 <StudentDetails student={student} />
                             </section>
                         )
                     })
                 }
             </div>
-
         </div>
     )
 }
