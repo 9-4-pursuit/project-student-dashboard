@@ -53,7 +53,7 @@ export default function ShowEvenMore({ student, showMore }) {
         );
     } else {
         return (
-            <div></div>
+            <div className="showMoreContainer"></div>
         );
     }
 

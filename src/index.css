@@ -49,12 +49,23 @@
 .studentElement {
     display: grid;
     grid-template-columns: 120px 1fr 150px;
-    grid-template-rows: 120px 1fr;
+    grid-template-rows: 120px 1fr 1fr;
+    grid-template-areas:
+    "studentElementPicture studentElementText studentElementOnTrack"
+    "showMoreContainer showMoreContainer showMoreContainer"
+    "notesForm notesForm notesForm";
     border: solid 2px green;
     margin: 10px;
 }
 
 .notesForm {
+    grid-area: notesForm;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+.notesBorder {
     border: solid 2px black;
     padding: 20px;
     margin: 10px;
@@ -67,22 +78,34 @@
 }
 
 .studentElementPicture {
-    grid-column-start: 1;
+    grid-area: studentElementPicture;
+    /* grid-column-start: 1;
     grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2; */
 }
 .studentElementText {
-    grid-column-start: 2;
+    grid-area: studentElementText;
+    /* grid-column-start: 2;
     grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2; */
 }
 .studentElementOnTrack {
-    grid-column-start: 3;
+    grid-area: studentElementOnTrack;
+    /* grid-column-start: 3;
     grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2; */
 }
 
 .showMoreContainer {
+    grid-area: showMoreContainer;
     margin: 10px;
     grid-column-start: 1;
     grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }

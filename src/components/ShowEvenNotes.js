@@ -10,9 +10,9 @@ export default function ShowEvenNotes({ student, showNotes, pressNiceButton, not
 
     if (showNotes) {
         return (
-            <div>
+            <div className="notesForm">
                 <h3>1-on-1 Notes</h3>
-                <div className="notesForm">
+                <div className="notesBorder">
                     <form onSubmit={(event) => pressNiceButton(event, student.id)}>
                         <label>Commenter Name {" "}
                             <input type="text" name="commenterName" id="commenterName" />
@@ -38,7 +38,7 @@ export default function ShowEvenNotes({ student, showNotes, pressNiceButton, not
         );
     } else {
         return (
-            <div></div>
+            <div className="notesForm"></div>
         );
     }
 
