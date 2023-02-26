@@ -8,16 +8,25 @@ function StudentCard({ student }) {
     year: "numeric",
   });
 
-  const [comments, setComments] = useState([]);
+  const [notes, setNotes] = useState([...student.notes])
+  
+
+
+  // const [comments, setComments] = useState([]);
 
   const handleComments = (event) => {
     event.preventDefault();
     const commenterName = event.target.elements["Commenter Name"].value;
     const commentText = event.target.elements.Comment.value;
     const newComment = `${commenterName} says "${commentText}"`;
-    setComments([...comments, newComment]);
+    const newCommentNote = {"commenter": commenterName, "comment": commentText} 
+    student.notes.push(newCommentNote)
+    setNotes([...student.notes])
+   
+    // setComments([...comments, newComment]);
     event.target.reset();
   };
+  console.log(notes)
 
   const [toggleMore, setToggleMore] = useState(false);
   function showMore() {
@@ -28,7 +37,7 @@ function StudentCard({ student }) {
     let color = '';
     if (score > 75) {
       color = 'green';
-    } else if (score >= 60 && score <= 75) {
+    } else if (score >= 61 && score <= 75) {
       color = 'yellow';
     } else {
       color = 'red';
@@ -136,9 +145,9 @@ function StudentCard({ student }) {
               <br />
               <button type="submit">Add Note</button>
             </form>
-            {comments.map((comment, index) => (
+            {notes.map((note, index) => (
               <div className="comment" key={index}>
-                {comment}
+                {note.commenter} says "{note.comment}"
               </div>
             ))}
           </div>

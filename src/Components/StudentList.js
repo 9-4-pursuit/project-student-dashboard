@@ -11,7 +11,7 @@ function StudentList({ studentList, typeCohort }) {
         </p>
         <ul>
           {studentList.map((student, index) => {
-            console.log(student);
+            // console.log(student);
             return (
               <li key={student.id}>
                 <StudentCard student={student} key={index} />
