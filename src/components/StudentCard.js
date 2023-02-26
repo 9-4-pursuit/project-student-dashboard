@@ -79,6 +79,7 @@ export default function StudentCard({ student }) {
               <p>Current Total: {student.codewars.current.total}</p>
               <p>Last Week: {student.codewars.current.lastWeek}</p>
               <p>Goal: {student.codewars.goal.total}</p>
+              {/* shortcut way to get color with variable codeWarTrack */}
               <p>
                 Percent of Goal Achieved:{" "}
                 <span style={{ color: getColor(codeWarTrack) }}>
@@ -91,6 +92,7 @@ export default function StudentCard({ student }) {
               <h4>
                 <strong>Scores</strong>
               </h4>
+              {/* gave color the long way */}
               <p>Assignments: <span style={{ color: getColor(student.cohort.scores.assignments * 100) }}>
               {student.cohort.scores.assignments * 100} %
                 </span></p>
