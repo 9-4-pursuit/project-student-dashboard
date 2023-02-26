@@ -1,0 +1,130 @@
+.app {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    grid-template-rows: 100px 1fr;
+    grid-template-areas:
+    "titleBar titleBar"
+    "navigationBar studentList";
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.titleBar {
+    grid-area: titleBar;
+    width: 100%;
+    text-align: center;
+    background-color: seagreen;
+    color: white;
+}
+
+.titleBar:hover {
+    background-color: white;
+    color: seagreen;
+}
+
+.navigationBar {
+    grid-area: navigationBar;
+    margin: 30px;
+    position: fixed;
+    top: 100px;
+    height: 500px;
+    overflow: auto;
+}
+
+.navigationBarTitle {
+    text-align: center;
+}
+
+.navigationBarElement {
+    border-bottom: solid green 2px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.studentList {
+    grid-area: studentList;
+    margin: 30px;
+}
+
+/* First row is height of "top" text matter.  Second row is height of "Show More" and "Show Notes" elements. */
+.studentElement {
+    display: grid;
+    grid-template-columns: 120px 1fr 150px;
+    grid-template-rows: 120px auto;
+    grid-template-areas:
+    "studentElementPicture studentElementText studentElementOnTrack"
+    "showMoreContainer showMoreContainer showMoreContainer"
+    "notesForm notesForm notesForm";
+    border: solid 2px green;
+    margin: 10px;
+}
+
+.notesForm {
+    grid-area: notesForm;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+.notesBorder {
+    border: solid 2px black;
+    padding: 20px;
+    margin: 10px;
+}
+
+.niceButton {
+    color: white;
+    background-color: green;
+    border-radius: 4px;
+}
+
+.studentElementPicture {
+    grid-area: studentElementPicture;
+    /* grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2; */
+}
+.studentElementText {
+    grid-area: studentElementText;
+    /* grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2; */
+}
+.studentElementOnTrack {
+    grid-area: studentElementOnTrack;
+    /* grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2; */
+}
+
+.showMoreContainer {
+    grid-area: showMoreContainer;
+    margin: 10px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.clickable {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.green {
+    color: green;
+}
+
+.yellow {
+    color: yellow;
+    background: black;
+}
+
+.red {
+    color: red;
+}
