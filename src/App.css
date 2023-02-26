@@ -20,15 +20,17 @@ header {
 
 .cohortList {
     border: 8px ridge blue;
-    margin: 10px;
+    margin: 20px 30px;
     padding-left: 10px;
-    height: 50vw;
+    height: 95%;
+    min-width: fit-content;
+    min-height: fit-content;
 }
 
 .studentList {
     overflow-y: scroll;
     margin-left: 20px;
-    height: 100vw;
+    height: 100vh;
 }
 
 .card {

@@ -2,6 +2,10 @@ import OneOnOne from "./OneOnOne"
 
 export default function StudentDetails({ student }) {
 
+    function goalColor(student) {
+        ((student.codewars.current.total) / (student.codewars.goal.total) * 100).toFixed(0)
+    }
+
     return (
         <>
             <div className="studentDetails" id={student.id}>
@@ -9,7 +13,7 @@ export default function StudentDetails({ student }) {
                     <p><span className="green">Current Total: </span>{student.codewars.current.total}</p>
                     <p><span className="green">Last Week: </span>{student.codewars.current.lastWeek}</p>
                     <p><span className="green">Goal: </span>{student.codewars.goal.total}</p>
-                    <p><span className="green">Percent of Goal Achieved: </span>{((student.codewars.current.total) / (student.codewars.goal.total) * 100).toFixed(0)} %</p>
+                    <p><span className="green">Percent of Goal Achieved: </span>{ } %</p>
                 </div>
                 <div><strong>Scores</strong>
                     <p><span className="green">Assignments: </span>{(student.cohort.scores.assignments) * 100} %</p>
@@ -22,12 +26,8 @@ export default function StudentDetails({ student }) {
                     <p><span className="green">Mock Interview: </span>{student.certifications.mockInterview ? "✅" : "❌"}</p>
                     <p><span className="green">GitHub: </span>{student.certifications.github ? "✅" : "❌"}</p>
                 </div>
+            <OneOnOne student={student} />
             </div>
-            <OneOnOne
-                key={student.names.preferred + student.names.surname + "Notes"}
-                className="studentNotes"
-                student={student}
-            />
         </>
     )
 }
