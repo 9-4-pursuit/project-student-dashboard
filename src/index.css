@@ -20,6 +20,12 @@ grid-template-areas: "auto";
 height: 100px;
 width: 100px;
 }
+
+.img:hover {
+    background-color: red;
+}
+
+
 header {
     background-color: #659367;
     height: 150 px;
@@ -66,16 +72,17 @@ grid-template-columns: repeat(3, 1fr);
     text-decoration: underline;
 }
 
-.onTrack {
+h4.onTrack {
    float: right;
-   margin-right: 20px;
-   margin-top: -175px;
-   
 }
 
-h4 {
+aside h4:hover {
+    margin-left: 20px;
+}
+aside h4 {
     margin-left: 10px;
 }
+
 
 h2 {
     margin-left: 10px;
@@ -83,4 +90,11 @@ h2 {
 
 h2.cohort {
     text-align: center;
+}
+
+p {
+    margin-left: 10px;
+}
+button {
+    background-color: green;
 }
