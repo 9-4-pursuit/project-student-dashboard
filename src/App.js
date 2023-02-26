@@ -3,6 +3,7 @@ import StudentListData from "./data/data";
 import TitleBar from "./components/TitleBar";
 import NavigationBar from "./components/NavigationBar";
 import StudentList from "./components/StudentList";
+import catGlasses from "./data/catGlasses.jpeg";
 /*
 2023 Feb 19 notes:
 useState initial as function to reduce (re-load?) time.
@@ -19,10 +20,19 @@ function App() {
   // setting initial state of studentList to function should prevent state from having to be set
   // each time (?)
   // */
-  // function returnStudentListData() {
-  //   return StudentListData;
-  // }
-  const [studentList, setStudentList] = useState(StudentListData);
+  const [notes, setNotes] = useState([]);
+
+  function pressNiceButton(event) {
+      event.preventDefault();
+      setNotes(previous => [...previous, {commenterName: event.target.commenterName.value, comment: event.target.comment.value}]);
+  }
+
+  function returnStudentListData() {
+    return StudentListData;
+  }
+  const [studentList, setStudentList] = useState(returnStudentListData);
+  //test OK 2023 Feb 21
+  //console.log(studentList);
   // const [hamster, setHamster] = useState(0);
 
   // //Filters for unique cohortCode
@@ -52,28 +62,33 @@ function App() {
 
   // // go through custom array check "All Students" then each of . . .
   function changeCohort(cohortCode) {
-    if (cohortCode === "All Students") {
+    if (cohortCode === "AllStudents") {
       setSeasonCohort("All Students");
-      setStudentList(StudentListData);
+      setStudentList(returnStudentListData);
     } else {
-      setSeasonCohort(cohortCode);
+      setSeasonCohort(`${cohortCode.slice(0, -4)} ${cohortCode.slice(-4)}`);
       setStudentList(StudentListData.filter(student => student.cohort.cohortCode === cohortCode )); // setStudentList filter
     }
-    console.log(cohortCode);
+    //test OK 2023 Feb 21
+    //console.log(cohortCode);
   }
-  let hamster = 1;
-  console.log(hamster);
-  hamster++;
 // changeCohort={changeCohort}
+
   return (
-    <div>
+    <div className="app">
       <TitleBar />
       <NavigationBar 
       sortedCohortSeasonObjectArray={sortedCohortSeasonObjectArray}
       changeCohort={changeCohort}
        />
 
-      <StudentList />
+      <StudentList 
+      studentList={studentList} 
+      seasonCohort={seasonCohort}
+      pressNiceButton={pressNiceButton}
+      notes={notes}
+      catGlasses={catGlasses}
+      />
     </div>
   );
 }

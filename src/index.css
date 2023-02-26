@@ -1,22 +1,107 @@
-.titlebar {
-
+.app {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    grid-template-rows: 100px 1fr;
+    grid-template-areas:
+    "titleBar titleBar"
+    "navigationBar studentList";
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.student .clickable {
-
+.titleBar {
+    grid-area: titleBar;
+    width: 100%;
+    text-align: center;
+    background-color: seagreen;
+    color: white;
 }
 
-.navigationbar .clickable {
-
+.titleBar:hover {
+    background-color: white;
+    color: seagreen;
 }
 
-/* HTML reference, remove U+ prefix, add /0 prefix
-U+1F603 grinning face with big eyes
-U+1F631 face screaming in fear
- */
-.student .textToggleOff {
-    display: none;
+.navigationBar {
+    grid-area: navigationBar;
+    margin: 30px;
+    position: fixed;
+    top: 100px;
+    height: 500px;
+    overflow: auto;
 }
-.student .textToggleOn {
-    content: "/01F631"
+
+.navigationBarTitle {
+    text-align: center;
+}
+
+.navigationBarElement {
+    border-bottom: solid green 2px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.studentList {
+    grid-area: studentList;
+    margin: 30px;
+}
+
+/* First row is height of "top" text matter.  Second row is height of "Show More" and "Show Notes" elements. */
+.studentElement {
+    display: grid;
+    grid-template-columns: 120px 1fr 150px;
+    grid-template-rows: 120px 1fr;
+    border: solid 2px green;
+    margin: 10px;
+}
+
+.notesForm {
+    border: solid 2px black;
+    padding: 20px;
+    margin: 10px;
+}
+
+.niceButton {
+    color: white;
+    background-color: green;
+    border-radius: 4px;
+}
+
+.studentElementPicture {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.studentElementText {
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+.studentElementOnTrack {
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+.showMoreContainer {
+    margin: 10px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.clickable {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.green {
+    color: green;
+}
+
+.yellow {
+    color: yellow;
+    background: black;
+}
+
+.red {
+    color: red;
 }

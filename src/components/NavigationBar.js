@@ -1,7 +1,9 @@
 import NavigationBarElement from "./NavigationBarElement";
 export default function NavigationBar ({sortedCohortSeasonObjectArray, changeCohort}) {
     return (
-        <div>
+        <div className="navigationBar">
+            <h3 className="navigationBarTitle">Choose a Class by Start Date</h3>
+            <div className="navigationBarElement clickable" onClick={() => changeCohort("AllStudents")}>All Students</div>
             {sortedCohortSeasonObjectArray.map((cohortSeason) => {
                 return (
                 <NavigationBarElement 
@@ -9,7 +11,6 @@ export default function NavigationBar ({sortedCohortSeasonObjectArray, changeCoh
                 dateText={cohortSeason.dateText} 
                 cohortCode={cohortSeason.cohortCode}
                 changeCohort={changeCohort}
-                // changeCohort={changeCohort}
                 />
                 ); // return cohortSeason map
             })}
