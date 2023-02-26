@@ -26,19 +26,6 @@ function handleComments(e) {
   setComments({...comments, [e.target.name]:e.target.value})
 }
 
-// const [comments, setComments]  = useState([])
-
-// const handleComments = (event) => {
-//     event.preventDefault();
-//     const commenterName = event.target.elements["Commenter Name"].value
-//     const commentText = event.target.elements["Comment"].value;
-//     const newComment = `${commenterName}: ${commentText}`;
-//     // console.log(newComment)
-//     setComments([...comments, newComment]);
-//     // console.log(comments)
-//     event.target.reset();
-// };
-
 const isOnTrack  = () => {
   if (
     student.certifications.resume === true &&
@@ -61,9 +48,6 @@ if (percentage >= 100) {
 } else {
   percentageColor = "red";
 }
-
-
-
 
   return (
       <div className="student-card">
@@ -110,7 +94,7 @@ if (percentage >= 100) {
 
               <hr></hr>
         <div className="comment-section">
-        <h2>1-on-1 Notes</h2>
+        <h4>1-on-1 Notes</h4>
         <form className="comment" onSubmit={handleSubmit}>
             <label htmlFor="Commenter Name">Commenter Name</label>
             <input type="text" name="commenter" onChange={handleComments}/>
