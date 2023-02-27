@@ -1,0 +1,74 @@
+.app {
+    display: grid;
+    grid-template-areas: "header header " "article  main ";
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+h1 {
+    margin-top: 0%;
+    padding: 5px;
+    grid-area: header;
+    text-align: center;
+    background-color: green;
+    color: aliceblue;
+}
+
+.main {
+    grid-area: main;
+    display: grid;
+}
+
+.article {
+    grid-area: article;
+    padding: 8px;
+}
+
+.article h4 {
+    border-bottom: 2px solid green;
+    padding: 8px;
+}
+
+
+.student-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: 2px dotted black;
+    padding: 10px;
+}
+
+.card {
+    border: 2px solid black;
+    margin-bottom: 5px;
+    padding: 10px
+}
+
+.studentCard {
+    width: -100px;
+    height: 550px;
+    overflow-y: scroll;
+}
+
+.show {
+    text-decoration: underline;
+    color: green;
+}
+
+.show:hover {
+    color: blue;
+}
+
+.track {
+    color: green;
+}
+
+.total-students {
+    color: green;
+}
+
+.dob {
+    color: green;
+}
+
+
+
