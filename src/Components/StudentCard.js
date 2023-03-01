@@ -4,11 +4,12 @@ import Comments from "./Comments";
 const StudentCard = ({names, profilePhoto, username, dob, certifications, codewars, scores, cohort}) => {
   const [showMore, setShowMore] = useState(false);
   const handleClick = () => {
-    if (showMore === false) {
-      setShowMore(true);
-    } else {
-      setShowMore(false);
-    }
+    // if (showMore === false) {
+    //   setShowMore(true);
+    // } else {
+    //   setShowMore(false);
+    // }
+    setShowMore(!showMore);
   };
 
   const baseURL = "https://robohash.org/"
@@ -17,29 +18,34 @@ const StudentCard = ({names, profilePhoto, username, dob, certifications, codewa
 
   let percentageColor;
   const percentage = Math.round(
-  (codewars.current.total / codewars.goal.total) * 100
-);
+    (codewars.current.total / codewars.goal.total) * 100
+  );
   if (percentage >= 100) {
-  percentageColor = "green";
-} else if (percentage >= 50) {
-  percentageColor = "yellow";
-} else {
-  percentageColor = "red";
-}
+    percentageColor = "green";
+  } else if (percentage >= 50) {
+    percentageColor = "yellow";
+  } else {
+    percentageColor = "red";
+  }
 
-  const isOnTrack = () => {
-    if (
-      certifications.resume === true &&
-      certifications.linkedin === true &&
-      certifications.github === true &&
-      certifications.mockInterview === true
-    ) {
-      return <p>On track to Graduate</p>;
-    }
+  const isOnTrack = 
+    certifications.resume &&
+    certifications.linkedin &&
+    certifications.github &&
+    certifications.mockInterview;
+
+  let showIsOnTrackMessage;
+  if (isOnTrack) {
+    showIsOnTrackMessage =
+      <div className="graduateTrack">
+        <strong>
+          <p>On track to Graduate</p>
+        </strong>
+      </div>
   };
 
   const show = () => {
-    if (showMore === true) {
+    if (showMore) {
       return (
         <div className="showMore">
           <section>
@@ -70,21 +76,26 @@ const StudentCard = ({names, profilePhoto, username, dob, certifications, codewa
   
   return (
     <>
-    <div className="studentCard">
-      <img className="profile-pic" src={profilePhotos} alt={names.preferredName} width="50px"></img>
-      <h3>
-        Name: {`${names.preferredName} ${names.middleName[0]}. ${names.surname}`}
-      </h3>
-      <div className="graduateTrack"><strong>{isOnTrack()}</strong></div>
-      <p>Email: {username}</p>
-      <p>Birthday: {dob}</p>
-      <br />
-      <button onClick={handleClick}>Show more...</button>
-      <section>{show()}</section>
-    </div>
-     <div className="comments">
-     <Comments />
-     </div>
+      <div className="studentCard">
+        <img
+          className="profile-pic"
+          src={profilePhotos}
+          alt={names.preferredName}
+          width="50px"
+        />
+        <h3>
+          Name: {`${names.preferredName} ${names.middleName[0]}. ${names.surname}`}
+        </h3>
+        {showIsOnTrackMessage}
+        <p>Email: {username}</p>
+        <p>Birthday: {dob}</p>
+        <br />
+        <button onClick={handleClick}>Show more...</button>
+        <section>{show()}</section>
+      </div>
+      <div className="comments">
+      <Comments />
+      </div>
      </>
   );
 };

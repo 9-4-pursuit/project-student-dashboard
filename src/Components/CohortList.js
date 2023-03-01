@@ -1,4 +1,4 @@
-function CohortList({sortedCohort, displayAllStudents}) {
+const CohortList = ({sortedCohort, displayAllStudents}) => {
   return (
     <div className="cohortList">
       <aside>

@@ -11,27 +11,27 @@ function App() {
 
   function displayAllStudents() {
     setHeading("All Students")
-    setCohort((studentList) => [...data]);
-}
+    setCohort(() => [...data]);
+  }
 
   function sortedCohort(cohortCode) {
     setCohort(data.filter((student) => student.cohort.cohortCode === cohortCode.split(' ').join('')));
     setHeading(cohortCode);
-}
+  }
 
   return (
     <div id="header">
       <h1>Student Dashboard</h1>
       <div className="App">
-      <CohortList 
-      displayAllStudents={displayAllStudents}
-      sortedCohort={sortedCohort}
+      <CohortList
+        displayAllStudents={displayAllStudents}
+        sortedCohort={sortedCohort}
       />
       <StudentList 
-      data={cohort} 
-      setCohort={setCohort} 
-      heading={heading}
-      setHeading={setHeading}
+        data={cohort} 
+        setCohort={setCohort} 
+        heading={heading}
+        setHeading={setHeading}
       />
       </div>
     </div>
