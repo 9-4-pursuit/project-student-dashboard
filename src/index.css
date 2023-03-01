@@ -43,6 +43,10 @@ background-color: aquamarine;
   cursor: pointer;
 }
 
+ul {
+  list-style: none;
+}
+
 .profile-pic {
   margin-top: 20px;
   margin-right: 10px;
