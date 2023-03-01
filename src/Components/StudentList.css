@@ -1,0 +1,35 @@
+.student-list{
+  /* display: inline-grid; */
+  /* grid-template-columns: auto auto auto auto auto auto; */
+  background-color: #45818e;
+  padding: 5px;
+}
+
+.graduateTrack {
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  float: right;
+  font-size: 1.2em;
+  font-family: serif;
+  color:#008000;
+}
+
+.student-list li{
+background-color: rgba(255, 255, 255, 0.8);
+border: 1px solid rgba(0, 0, 0, 0.8);
+padding: 5px;
+font-size: 10px;
+}
+h1{
+  background-color: rgba(48, 105, 163, 0.8);
+  text-align: center;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+h2{
+  text-align: center;
+}
+p{
+  text-align: center;
+}

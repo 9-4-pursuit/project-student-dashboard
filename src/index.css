@@ -1,0 +1,65 @@
+#header {
+  place-items: center;
+  background-color: #fff2cc;
+  height: 150px;
+}
+
+.App {
+  box-sizing: border-box;
+    height: 100%;
+    display: grid;
+    grid-template-areas: "header header" "aside main";
+}
+
+hr {
+  border: 1px solid #45818e;
+}
+
+#student-card {
+  text-align: center;
+  background-color: #45818e;
+  border: 3px solid #000000;
+  padding: 10px;
+}
+
+#showMore{
+background-color: aquamarine;
+
+}
+
+
+.cohortList {
+  background-color: #9ed8d2;
+  text-align: center;
+  height: 100%;
+  display: grid;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: 3px solid #000000;
+}
+
+.cohortList:hover {
+  background-color: #FFFFFF;
+}
+
+ul {
+  list-style: none;
+}
+
+.profile-pic {
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-left: 20px;
+  border: 1px solid black;
+  display: grid;
+  float: left;
+  grid-template-areas: "auto";
+  height: 100px;
+  width: 100px;
+}
+
+.showMore {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-left: 20px;
+}
