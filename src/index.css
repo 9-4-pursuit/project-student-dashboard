@@ -40,6 +40,7 @@ background-color: aquamarine;
 
 .cohortList:hover {
   background-color: #FFFFFF;
+  cursor: pointer;
 }
 
 .profile-pic {
@@ -52,4 +53,10 @@ background-color: aquamarine;
   grid-template-areas: "auto";
   height: 100px;
   width: 100px;
+}
+
+.showMore {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-left: 20px;
 }
