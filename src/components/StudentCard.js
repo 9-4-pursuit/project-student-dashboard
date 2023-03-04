@@ -16,15 +16,19 @@ let Photo = `${baseURL}${randomNumber}`
 
 let studentDate = new Date(student.dob).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 
-const [comments, setComments]  = useState({commenter:"", comment:""})
 
-function handleSubmit(e) {
-  e.preventDefault()
-}
+const [notes, setNotes] = useState([...student.notes]);
 
-function handleComments(e) {
-  setComments({...comments, [e.target.name]:e.target.value})
-}
+const handleComments = (event) => {
+  event.preventDefault();
+  const commenterName = event.target.elements["commenter"].value;
+  const commentText = event.target.elements["comment"].value;
+  const newCommentNote = { commenter: commenterName, comment: commentText };
+  student.notes.push(newCommentNote);
+  setNotes([...student.notes]);
+  event.target.reset();
+};
+
 
 const isOnTrack  = () => {
   if (
@@ -49,6 +53,9 @@ if (percentage >= 100) {
   percentageColor = "red";
 }
 
+// const newComments = student.notes.push(comments)
+// console.log(newComments)
+
   return (
       <div className="student-card">
           
@@ -59,7 +66,7 @@ if (percentage >= 100) {
           <p>{student.username}</p>
           <p>Birthday: {studentDate} </p>
           {/* <p>On Track to Graduate</p> */}
-          <br></br>
+          {/* <br></br> */}
 
           <p className="showMore" style={{ color: 'red' }} onClick={() => showMore()}>{toggleMore ? "Show Less..." : "Show More..."}</p>
           {toggleMore ? (
@@ -95,7 +102,7 @@ if (percentage >= 100) {
               <hr></hr>
         <div className="comment-section">
         <h4>1-on-1 Notes</h4>
-        <form className="comment" onSubmit={handleSubmit}>
+        <form className="comment" onSubmit={handleComments}>
             <label htmlFor="Commenter Name">Commenter Name</label>
             <input type="text" name="commenter" onChange={handleComments}/>
             <br></br>
@@ -105,8 +112,22 @@ if (percentage >= 100) {
             <button type="submit">Add Note</button>
             </form>    
 
-        <p>{comments.commenter} says: {comments.comment}</p>
-        <p>{student.notes[0].commenter} says: {student.notes[0].comment}</p>
+
+            {/* {comments.commenter === "" && comments.comment === ""()} */}
+
+            <ul>
+              {notes.map((note, index) => (
+                <li key={index}>
+                  <b>{note.commenter}:</b> {note.comment}
+                </li>
+              ))}
+            </ul>
+
+
+        {/* <p>{comments.commenter} says: {comments.comment}</p>
+        
+        <p>{student.notes[0].commenter} says: {student.notes[0].comment}</p> */}
+           
         </div>
 
             </div>

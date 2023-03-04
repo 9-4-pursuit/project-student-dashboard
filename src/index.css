@@ -18,19 +18,33 @@ body {
 .main {
     height: 100%;
 }
+
 header {
     display: grid;
     place-items: center;
     color: white;
     background-color: #659367;
-    height: 150px;
+    height: 100px;
     grid-area: header;
+}
+
+header h1 {
+    font-size: 58px;
+    font-weight: 600;
 }
 
 header h1 {
     font-size: 38px;
     font-weight: 600;
-}
+    text-shadow: 2px 2px #73b6a2;
+    color: #fff;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  h1:hover {
+    color: rgb(36, 6, 31);
+  }
+
 
 .student-card {
     border: 3px solid red;
@@ -50,7 +64,12 @@ header h1 {
 }
 
 .cohort-list h4 {
-    font-size: 21px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.cohort-list h3 {
+    font-size: 13px;
     font-weight: 600;
 }
 
@@ -63,7 +82,7 @@ header h1 {
     margin-top: 15px;
     display: grid;
     grid-template-columns: 1fr, 2fr;
-    max-height: 710px;
+    max-height: 500px;
     overflow-y: scroll;
 }
 
@@ -109,8 +128,8 @@ ul {
     display: grid;
     float: left;
     grid-template-areas: "auto";
-    height: 180px;
-    width: 180px;
+    height: 140px;
+    width: 140px;
 }
 
 .comment-section {
@@ -167,9 +186,46 @@ ul {
     animation: animate 1.5s linear infinite;
  } 
   
- @keyframes animate{
+
+ @keyframes fallDown {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  h1 {
+    animation: fallDown 1s ease-in-out;
+  }
+  
+  /* header h1 {
+    position: relative;
+    animation: slide-in-out 6s ease-in-out infinite;
+  }
+  
+  @keyframes slide-in-out {
+    0% {
+      transform: translateX(-100%);
+    }
+    25% {
+      transform: translateX(0%);
+    }
+    75% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  } */
+  
+
+
+
+ /* @keyframes animate{
    0%{
-     opacity: 0;
+     opacity: 0.7;
    }
    50%{
      opacity: 0.7;
@@ -178,3 +234,15 @@ ul {
      opacity: 0;
    }
 }
+
+@keyframes glow {
+    0% {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #73b6a2,
+        0 0 70px #73b6a2, 0 0 80px #73b6a2, 0 0 100px #73b6a2, 0 0 150px #73b6a2;
+    }
+    100% {
+      text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #73b6a2,
+        0 0 70px #73b6a2, 0 0 80px #73b6a2, 0 0 100px #73b6a2, 0 0 150px #73b6a2,
+        0 0 200px #73b6a2;
+    }
+  } */
