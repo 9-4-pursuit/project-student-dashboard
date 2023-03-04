@@ -1,6 +1,5 @@
 
 body {
-    display: grid;
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -19,13 +18,7 @@ h1 {
     justify-content: center;
 }
 
-.showcase {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-}
-
 .students {
-    display: grid; 
     text-align: center;
     justify-content: center;
 }
@@ -35,10 +28,61 @@ h1 {
 }
 
 .chooseClassH2 {
-    display: grid;
     text-align: center;
 } 
 
 h2 {
     color: darkslategray;
 }
+
+.nav-class {
+    text-decoration: none;
+    color: darkslategray;
+    border-bottom: solid 1.7px lightslategray;
+}
+
+.class-by-semester-section {
+    display: grid;
+    text-align: center;
+    float: left;
+    margin-left: 41px;
+}
+
+.classList-nav {
+    display: grid;
+    gap: 1.7px;
+}
+
+.spring25 {
+    border-bottom: none;
+}
+
+.moreInfo {
+    display: none;
+}
+
+.info {
+    /* display: flex; */
+    text-align: center;
+    /* align-items: center; */
+    flex-direction: column;
+}
+
+img {
+    /* float: left; */
+    float: inline-start;
+    margin-left: 360px;
+}
+
+.text-info {
+    margin-right: 330px;
+}
+
+/* .space {
+    padding: 70px;
+} */
+
+
+
+
+
