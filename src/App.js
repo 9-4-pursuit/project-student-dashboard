@@ -4,44 +4,17 @@ import ShowCohort from "./components/ShowCohort";
 import StudentsInfo from "./components/StudentsInfo";
 
 function App() {
-  const [updateCard, setUpdateCard] = useState([]);
+  const [updateCard, setUpdateCard] = useState(data);
   const [cohortId, setCohortId] = useState("all");
-  const [cohortTotal, setCohortTotal] = useState(250);
-
-  function updateStudentsCard(student) {
-    const { id, username, dob, profilePhoto,
-      names, codewars, certifications, notes, cohort } = student;
-    const fullName = names.preferredName + " " + names.middleName.charAt(0) + ". " + names.surname;
-    const birthDay = new Date(dob).toLocaleString("en-US", {
-      year: "numeric", month: "long", day: "numeric"
-    });
-
-    const studentInfo = {
-      id: id,
-      names: fullName,
-      username: username,
-      dob: birthDay,
-      profilePhoto: profilePhoto,
-      codewars: codewars,
-      certifications: certifications,
-      notes: notes,
-      cohort: cohort
-    };
-
-    return studentInfo;
-  }
-
-  if (updateCard.length === 0) {
-    updateStudentsInfo("all")
-  }
+  const [cohortTotal, setCohortTotal] = useState(data.length);
 
   function updateStudentsInfo(classCode) {
     const arrOfStudentInfo = [];
     data.forEach(student => {
       if (classCode === "all") {
-        arrOfStudentInfo.push(updateStudentsCard(student))
+        arrOfStudentInfo.push(student);
       } else if (classCode === student.cohort.cohortCode) {
-        arrOfStudentInfo.push(updateStudentsCard(student))
+        arrOfStudentInfo.push(student);
       }
     })
     setUpdateCard(arrOfStudentInfo);
@@ -76,10 +49,10 @@ function App() {
 
           <div className="cards">
             {
-              updateCard.map((student, index) => {
+              updateCard.map((student) => {
                 return (
                   <StudentsInfo
-                    key={index}
+                    key={`${cohortId}-${student.id}`}
                     student={student}
                   />
                 )

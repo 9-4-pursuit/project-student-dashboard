@@ -50,6 +50,7 @@ header{
 .students{
     display: grid;
     margin: 0 40px 20px;
+    min-width: 400px;
 }
 
 .searchResult{

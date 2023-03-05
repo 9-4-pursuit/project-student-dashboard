@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function OneOnOne({ notes }) {
+function OneOnOne({ id, notes }) {
   const [theNotes, setTheNotes] = useState(notes);
 
   function handleSubmit(event) {
@@ -24,9 +24,9 @@ function OneOnOne({ notes }) {
       <>
         <ul>
           { (theNotes.length > 0)
-          ? theNotes.map((note, index) => {
+          ? theNotes.map((note) => {
             return (
-              <div key={index}>
+              <div key={id}>
                 <li>{note.commenter} says, "{note.comment}"</li>
               </div>
               )
