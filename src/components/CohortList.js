@@ -1,5 +1,5 @@
 
-export default function CohortList({ data, students, setStudents, studentTotal, setStudentTotal, cohorts, setCohorts, cohortId, setCohortId, cohortMembers, setCohortMembers }) {
+export default function CohortList({ data, students, setStudents, setStudentTotal, cohorts, setCohortId }) {
 
     // Resets all states when "All Students" is clicked in the cohort list
     function handleAllStuClick() {

@@ -33,9 +33,8 @@ export default function StudentDetails({ student }) {
                     <p><span className="green">Mock Interview: </span>{student.certifications.mockInterview ? "✅" : "❌"}</p>
                     <p><span className="green">GitHub: </span>{student.certifications.github ? "✅" : "❌"}</p>
                 </div>
-                <div>
-                    <OneOnOne student={student} />
-                </div>
+
+                <OneOnOne student={student} />
             </div>
         </>
     )

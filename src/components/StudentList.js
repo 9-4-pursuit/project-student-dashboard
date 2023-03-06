@@ -1,9 +1,9 @@
 import { useState } from "react";
 import StudentDetails from "./StudentDetails"
 
-export default function StudentList({ data, students, setStudents, studentTotal, setStudentTotal, cohorts, setCohorts, cohortId, setCohortId, cohortMembers, setCohortMembers }) {
+export default function StudentList({ students, cohortId }) {
 
-    const [showDetails, setShowDetails] = useState(false);
+    // const [showDetails, setShowDetails] = useState(false);
 
     function handleShowDetails(stuID) {
         // setShowDetails(!showDetails);
@@ -60,11 +60,11 @@ export default function StudentList({ data, students, setStudents, studentTotal,
                                     </strong></p>
                                     <p>{student.username}</p>
                                     <p><span className="green">Birthday: </span>{bdayConvert(student.dob)}</p>
-                                    <button className={student.id} onClick={() => handleShowDetails(student.id)}>
-                                        <u><span className="green" id="show">
-                                            Show More...
-                                        </span></u>
-                                    </button>
+                                <button className={student.id} onClick={() => handleShowDetails(student.id)}>
+                                    <u><span id="show">
+                                        Show More...
+                                    </span></u>
+                                </button>
                                 </div>
 
                                 <div className="gradTrack"><span className="green">

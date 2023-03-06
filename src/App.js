@@ -18,7 +18,7 @@ function App() {
   // Collects, slices and sorts Cohort Codes into an ARRAY STATE
   let cohortArr = [];
   function handleCohorts() {
-    data.map((student) => {
+    students.map((student) => {
       let stuID = student.cohort.cohortCode;
       if (!cohortArr.includes(stuID)) {
         cohortArr.push(stuID);
@@ -47,27 +47,13 @@ function App() {
           data={data}
           students={students}
           setStudents={setStudents}
-          studentTotal={studentTotal}
           setStudentTotal={setStudentTotal}
           cohorts={cohorts}
-          setCohorts={setCohorts}
-          cohortId={cohortId}
           setCohortId={setCohortId}
-          cohortMembers={cohortMembers}
-          setCohortMembers={setCohortMembers}
         />
         <StudentList
-          data={data}
           students={students}
-          setStudents={setStudents}
-          studentTotal={studentTotal}
-          setStudentTotal={setStudentTotal}
-          cohorts={cohorts}
-          setCohorts={setCohorts}
           cohortId={cohortId}
-          setCohortId={setCohortId}
-          cohortMembers={cohortMembers}
-          setCohortMembers={setCohortMembers}
         />
       </div>
     </div>

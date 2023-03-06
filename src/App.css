@@ -4,7 +4,11 @@
 
 header {
     text-align: center;
-    background-color: #5B946E;
+    background-image: url('https://images.squarespace-cdn.com/content/v1/5ea906bfb2891a7f00d30604/1594610410995-9ZYIAVRNFIPXPDOXIYLO/Pursuit%2BWordmark%2BWhite.png?format=1500w');
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: 20%;
+    background-color: black;
     color: white;
     height: 120px;
     display: flex;
@@ -13,6 +17,11 @@ header {
 }
 
 h3 {
+    background-color: #434eea;
+    color: aliceblue;
+    height: 8%;
+    text-align: left;
+    padding-top: 2%;
     padding-left: 15px;
 }
 
@@ -23,7 +32,7 @@ h3 {
 }
 
 .cohortList {
-    border: 8px ridge #5B946E;
+    border: 8px ridge #1e1e1e;
     border-radius: 5px;
     margin: 20px 30px;
     height: 95%;
@@ -32,12 +41,14 @@ h3 {
 }
 
 .cohorts {
+    height: 25px;
     margin-left: 5px;
     margin-right: 5px;
     text-align: center;
-    border-bottom: 2px solid #5B946E;
+    border-bottom: 4px solid #434eea;
     padding-left: 10px;
-    background: wheat;
+    background: #1e1e1e;
+    color: aliceblue;
     border-radius: 50%;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
 }
@@ -53,15 +64,13 @@ h3 {
         transform: scale(0.95);
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
     }
-
     70% {
         transform: scale(1);
         box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
     }
-
     100% {
         transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+        box-shadow: 0 0 10px 0 #434eea;
     }
 }
 
@@ -69,11 +78,12 @@ h3 {
     overflow-y: scroll;
     margin-left: 20px;
     height: 100vh;
+    padding-right: 2vw;
 }
 
 .card {
     padding: 10px;
-    border: 2px solid #5B946E;
+    border: 2px solid black;
     border-radius: 5px;
     display: grid;
     grid-template-areas:
@@ -98,6 +108,8 @@ h3 {
 
 button {
     grid-area: butt;
+    background-color: #434eea;
+    color: aliceblue;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
     width: 200px;
 }
@@ -112,15 +124,13 @@ button :hover {
     grid-area: deets;
     display: none;
     grid-template-columns: 1fr 1fr 1fr;
-    column-span: all;
 }
 
 .oneOnOne {
     column-span: all;
-
 }
 .green {
-    color: #5B946E;
+    color: #5c946f;
 }
 
 .yellow {
