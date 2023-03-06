@@ -1,0 +1,130 @@
+* {
+    font-family:'Lucida Sans', Verdana, sans-serif;
+}
+
+.toGreen{
+    color: #5C936E;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    border: 30px;
+    margin-bottom: 50px;
+}
+
+header{
+    display: grid;
+    text-align: center;
+    padding: 20px;
+    margin: 0 0 30px;
+    color: white;
+    background-color: #5C936E;
+    font-size: x-large;
+}
+
+.cohort{
+    margin: 0 0 0 30px;
+}
+
+.cohort h3{
+    font-size: x-large;
+}
+
+.cohort button{
+    display: flex;
+    padding: 10px;
+    border: 0;
+    min-width: 290px;
+    border-bottom: 3px solid #5C936E;
+    font-weight: bold;
+    background-color: inherit;
+}
+
+.cohort button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    background-color: whitesmoke;
+}
+
+.students{
+    display: grid;
+    margin: 0 40px 20px;
+    min-width: 400px;
+}
+
+.searchResult{
+    margin: 0 10px 5px;
+}
+
+.searchResult h3,
+.searchResult p{
+    font-size: x-large;
+}
+
+.cards{
+    display: grid;
+    grid-gap: 10px;
+    overflow-y: scroll;
+    height: 800px;
+    max-width: 900px;
+    border: 2px solid #5C936E;
+}
+
+.card{
+    display: grid;
+    margin: 10px;
+    border: 2px solid #5C936E;
+}
+
+.card button{
+    width: 160px;
+}
+
+.info{
+    display: grid;
+    text-align: left;
+    padding: 15px 20px 10px;
+    grid-template-areas: "img info graduation";
+    grid-template-columns: 1fr 2fr 2fr;
+}
+
+.info img{
+    grid-area: img;
+    width: 140px;
+    border-radius: 20%;
+    padding: 10px;
+}
+
+.info .basicInfo{
+    grid-area: info;
+    padding: 20px 10px;
+}
+
+.info .trackGraduation{
+    grid-area: graduation;
+}
+
+.details{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 10px;
+}
+
+.trackGraduation{
+    text-align: end;
+}
+
+.codewars,
+.scores,
+.certifications{
+    display: grid;
+    text-align: left;
+    padding: 10px;
+}
+
+.notes{
+    padding: 0 20px;
+    border: 2px solid #5C936E;
+    margin: 10px 20px 20px;
+}
