@@ -12,13 +12,12 @@ function App() {
   const [cohortId, setCohortId] = useState('All Students');
   const [cohorts, setCohorts] = useState([])
 
-  let cohortArr = [];
-  
   // On initial component render, useEffect() will run below code
   // Collects, slices and sorts Cohort Codes into an ARRAY STATE
   // Initally had useEffect call function, but was receiving errors on deployment 
   // So instead placed function directly into the useEffect()
   useEffect(() => {
+    let cohortArr = [];
 
     data.map((student) => {
       let stuID = student.cohort.cohortCode;
