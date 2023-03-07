@@ -32,7 +32,7 @@ h3 {
 }
 
 .cohortList {
-    border: 8px ridge #1e1e1e;
+    border: 8px ridge grey;
     border-radius: 5px;
     margin: 20px 30px;
     height: 95%;
@@ -54,7 +54,7 @@ h3 {
 }
 
 .cohorts:hover {
-    padding-left: 20px;
+    padding-left: 25px;
     transform: scale(1);
     animation: pulse-black 2s infinite;
 }
@@ -64,10 +64,12 @@ h3 {
         transform: scale(0.95);
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
     }
+
     70% {
         transform: scale(1);
         box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
     }
+
     100% {
         transform: scale(0.95);
         box-shadow: 0 0 10px 0 #434eea;
@@ -110,11 +112,13 @@ button {
     grid-area: butt;
     background-color: #434eea;
     color: aliceblue;
+    border-radius: 5px;
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
     width: 200px;
 }
 
 button :hover {
+    color: black;
     transform: scale(1);
     animation: pulse-black 2s infinite;
 }
@@ -129,6 +133,7 @@ button :hover {
 .oneOnOne {
     column-span: all;
 }
+
 .green {
     color: #5c946f;
 }

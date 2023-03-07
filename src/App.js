@@ -12,16 +12,15 @@ function App() {
   const [cohortId, setCohortId] = useState('All Students');
   const [cohorts, setCohorts] = useState([])
 
-  // console.log(cohorts)
-
   // Collects, slices and sorts Cohort Codes into an ARRAY STATE
   let cohortArr = [];
   function handleCohorts() {
     data.map((student) => {
       let stuID = student.cohort.cohortCode;
       if (!cohortArr.includes(stuID)) {
-        return cohortArr.push(stuID);
+        cohortArr.push(stuID);
       }
+      return cohortArr
     })
     const season = ["Spring", "Summer", "Fall", "Winter"];
 
@@ -33,6 +32,8 @@ function App() {
       }
     })
     setCohorts(cohortArr)
+    // console.log(studentTotal)
+
   }
   useEffect(() => handleCohorts(), [])
 
