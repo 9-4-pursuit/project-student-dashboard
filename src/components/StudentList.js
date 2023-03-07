@@ -45,12 +45,27 @@ export default function StudentList({ students, cohortId }) {
             <div className="studentCards">
                 {
                     students.map((student) => {
+
+                        // Attempted to have a random dog pic for each pic, but all the fetching was taking too long
+                        // let dogURL = {};
+                        // fetch('https://dog.ceo/api/breed/hound/images/random')
+                        //     .then((response) => response.json())
+                        //     .then((data) => {
+                        //         dogURL = data.message;
+                        //         console.log(data, dogURL);
+                        //     })
+
+                        let BASE_URL = "https://i.pravatar.cc/100?img=";
+                        var x = Math.floor((Math.random() * 70) + 1);
+                        let picURL = BASE_URL + x;
+                        // console.log(picURL);
+
                         return (
                             <section key={student.id} className="card">
 
                                 <img
-                                    src="https://i.pravatar.cc/100"
-                                    alt={student.names}
+                                    src={picURL}
+                                    alt={student.names.preferredName}
                                     className="profilePic" />
 
                                 <div className="basicInfo">
@@ -59,11 +74,11 @@ export default function StudentList({ students, cohortId }) {
                                     </strong></p>
                                     <p>{student.username}</p>
                                     <p><span className="green">Birthday: </span>{bdayConvert(student.dob)}</p>
-                                <button className={student.id} onClick={() => handleShowDetails(student.id)}>
-                                    <u><span id="show">
-                                        Show More...
-                                    </span></u>
-                                </button>
+                                    <button className={student.id} onClick={() => handleShowDetails(student.id)}>
+                                        <u><span id="show">
+                                            Show More...
+                                        </span></u>
+                                    </button>
                                 </div>
 
                                 <div className="gradTrack"><span className="green">
