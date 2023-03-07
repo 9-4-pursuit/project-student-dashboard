@@ -1,4 +1,3 @@
-import { useState } from "react";
 import StudentDetails from "./StudentDetails"
 
 export default function StudentList({ students, cohortId }) {

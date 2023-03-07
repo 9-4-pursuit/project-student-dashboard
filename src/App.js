@@ -20,7 +20,7 @@ function App() {
     data.map((student) => {
       let stuID = student.cohort.cohortCode;
       if (!cohortArr.includes(stuID)) {
-        cohortArr.push(stuID);
+        return cohortArr.push(stuID);
       }
     })
     const season = ["Spring", "Summer", "Fall", "Winter"];
@@ -34,7 +34,7 @@ function App() {
     })
     setCohorts(cohortArr)
   }
-  useEffect(() => handleCohorts(), [studentTotal])
+  useEffect(() => handleCohorts(), [])
 
   return (
     <div className='app'>
