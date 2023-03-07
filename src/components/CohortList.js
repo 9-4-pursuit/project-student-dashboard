@@ -1,11 +1,11 @@
 
-export default function CohortList({ data, students, setStudents, setStudentTotal, cohorts, setCohortId }) {
+export default function CohortList({ data, students, setStudents, cohorts, setCohortId }) {
 
     // Resets all states when "All Students" is clicked in the cohort list
     function handleAllStuClick() {
         setCohortId("All Students");
         setStudents(data);
-        setStudentTotal(data.length);
+        // setStudentTotal(data.length);
         // console.log(students, studentTotal, cohortId)
     }
     // Upon CLICK of Cohort,Updates cohortId state, which effects the cohort showing in stu list
@@ -17,7 +17,7 @@ export default function CohortList({ data, students, setStudents, setStudentTota
             return student.cohort.cohortCode === cohort
         })
         setStudents(filteredStudents);
-        setStudentTotal(students.length);
+        // setStudentTotal(students.length);
         // console.log(cohortMembers, studentTotal)
     }
 

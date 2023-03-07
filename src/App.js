@@ -8,13 +8,18 @@ import StudentList from './components/StudentList';
 function App() {
 
   const [students, setStudents] = useState(data);
-  const [studentTotal, setStudentTotal] = useState(data.length);
+  // const [studentTotal, setStudentTotal] = useState(data.length);
   const [cohortId, setCohortId] = useState('All Students');
   const [cohorts, setCohorts] = useState([])
 
-  // Collects, slices and sorts Cohort Codes into an ARRAY STATE
   let cohortArr = [];
-  function handleCohorts() {
+  
+  // On initial component render, useEffect() will run below code
+  // Collects, slices and sorts Cohort Codes into an ARRAY STATE
+  // Initally had useEffect call function, but was receiving errors on deployment 
+  // So instead placed function directly into the useEffect()
+  useEffect(() => {
+
     data.map((student) => {
       let stuID = student.cohort.cohortCode;
       if (!cohortArr.includes(stuID)) {
@@ -32,10 +37,7 @@ function App() {
       }
     })
     setCohorts(cohortArr)
-    // console.log(studentTotal)
-
-  }
-  useEffect(() => handleCohorts(), [])
+  }, [])
 
   return (
     <div className='app'>
@@ -47,7 +49,7 @@ function App() {
           data={data}
           students={students}
           setStudents={setStudents}
-          setStudentTotal={setStudentTotal}
+          // setStudentTotal={setStudentTotal}
           cohorts={cohorts}
           setCohortId={setCohortId}
         />
