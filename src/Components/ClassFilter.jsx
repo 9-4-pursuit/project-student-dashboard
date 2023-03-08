@@ -1,4 +1,4 @@
-function ClassFilter({ data, setList }) {
+function ClassFilter({ data, setList, setListTitle }) {
   let buttonList = [];
 
   data.forEach((item) => {
@@ -7,13 +7,7 @@ function ClassFilter({ data, setList }) {
     }
   });
 
- buttonList.sort()
- 
-
-console.log(buttonList)
-
-
-
+  buttonList.sort();
 
   function updateList(event) {
     if (event.target.id === "AllStudents") {
@@ -23,26 +17,31 @@ console.log(buttonList)
         data.filter((item) => item.cohort.cohortCode === event.target.id)
       );
     }
+    setListTitle(event.target.innerText);
   }
 
   return (
     <div className="filterOptions">
-      <h2 style={{textAlign : "center"}}>Choose a Class by Start Date</h2>
+      <h2 style={{ textAlign: "center" }}>Choose a Class by Start Date</h2>
       <div className="filterListWrapper">
-        <h4
+        <h3
           id="AllStudents"
           className="filterListItem"
           onClick={(event) => updateList(event)}
         >
           All Students
-        </h4>
+        </h3>
         {buttonList.sort().map((item) => {
           return (
-            <h4 id={item} className="filterListItem" onClick={(event) => updateList(event)}>
+            <h3
+              id={item}
+              className="filterListItem"
+              onClick={(event) => updateList(event)}
+            >
               {`${item.slice(0, item.length - 4)} ${item.slice(
                 item.length - 4
               )}`}
-            </h4>
+            </h3>
           );
         })}
       </div>

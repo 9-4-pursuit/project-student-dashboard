@@ -1,23 +1,20 @@
 import StudentDetails from "./StudentDetails";
 
-function StudentList({ list }) {
-  // function dateFunc (item) {
-  //     console.log(item)
-
-  // }
-
+function StudentList({ list, listTitle }) {
   return (
     <div className="studentList">
       <div className="studentListText">
-        <h2>All Students</h2>
-        <p>Total Students: {list.length}</p>
+        <h2>{listTitle}</h2>
+        <p>
+          Total Students: <span>{list.length}</span>
+        </p>
       </div>
 
       <div>
         {list.map((item, index) => {
           return (
             <>
-              <StudentDetails item={item} />
+              <StudentDetails item={item} key={item.id + index} />
             </>
           );
         })}
