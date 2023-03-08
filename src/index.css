@@ -1,0 +1,145 @@
+.AppWrapper {
+  display: grid;
+  grid-template:
+    "header header" auto
+    "filterOptions studentList" auto
+    ". comments";
+
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+img {
+  width: 5em;
+  height: 5em;
+  margin: 10px 5px 25px 5px;
+  padding: 5px;
+  border: transparent;
+  border-radius: 10%;
+}
+
+img:hover {
+transform: scale(1.25);
+}
+
+.header {
+  background-color: #5d936e;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  grid-area: header;
+}
+
+.studentList {
+  margin-right: 35px;
+  grid-area: studentList;
+}
+
+.studentListText h2 {
+  margin-top: 35px;
+  margin-bottom: 3px;
+}
+
+.studentListText p {
+  margin-top: 3px;
+}
+
+.studentDetailsCard {
+  border: 2px solid #5d936e;
+  padding: 10px;
+  gap: 3px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template: 
+  "infoa infop graduate"
+  "showMore showMore showMore"/ 0.25fr 0.50fr 0.75fr;
+}
+
+.infoWrapper {
+  padding-top: 25px;
+}
+
+.infoWrapper p {
+  grid-area: infop;
+  margin: 2px;
+}
+
+.showMore {
+  grid-area: infoa;
+  color: #5d936e;
+  display: inline-block;
+  padding-top: 10px;
+}
+
+.filterOptions {
+  padding: 25px;
+  grid-area: filterOptions;
+}
+
+.filterListItem {
+  border-bottom: solid #5d936e;
+  padding: 5px;
+}
+
+.graduate {
+  grid-area: graduate;
+  color: #5d936e;
+  text-align: right;
+  padding-right: 20px;
+  padding-top: 5px;
+}
+
+span {
+  color: #5d936e;
+}
+
+.notesWrapper {
+    grid-area: showMore;
+}
+
+.notesWrapper {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+
+.commentsWrapper {
+  grid-area: comments;
+}
+
+.commentForm {
+  border: solid 1px;
+  padding: 10px;
+
+  display: grid;
+  grid-template: 
+  "labela" auto
+  "labelb" auto 
+  "button" auto
+}
+
+.commentForm .labela{
+  grid-area: labela;
+}
+
+.commentForm .labelb{
+  grid-area: labelb;
+
+}
+
+.commentForm button {
+  grid-area: button;
+  color: white;
+  font-size: small;
+  background-color: #5d936e;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px ;
+  justify-self: left;
+}
+
+input {
+margin: 5px;
+}

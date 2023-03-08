@@ -39,7 +39,7 @@ Each of the features below will count as 1 point towards your overall score. Whi
 
 _Take careful note of the requirements._ Sometimes an image will show slightly more or slightly less than what you need to score the point.
 
-### ✩ Student list (1 point)
+### ✩ Student list (1 point)*
 
 ![Student list.](./instruction-assets/student-list.png)
 
@@ -54,7 +54,7 @@ Each student shown on the list should include the following:
 - The student's username, which is their email.
 - The student's profile photo.
 
-### ✩ Cohort list (1 point)
+### ✩ Cohort list (1 point)*
 
 ![Cohort list.](./instruction-assets/cohort-list.png)
 
@@ -66,14 +66,14 @@ Create a list of cohorts based on the data you have available. To complete this 
 
 > **Tip:** Each student has a `cohort` key which contains an object with a `cohortCode` key. That `cohortCode` key is shared by all cohorts with the same start date.
 
-### ✩ Sorted and formatted cohort list (1 point)
+### ✩ Sorted and formatted cohort list (1 point)*
 
 Update your cohort list so that the following is true:
 
 - Each cohort has a "human readable" name instead of the cohort code. (e.g. "Winter 2026" instead of "Winter2026".)
 - The cohorts are organized by date, either in ascending or descending order. "All Students" should remain at the top.
 
-### ✩ Interactive cohort list (1 point)
+### ✩ Interactive cohort list (1 point)*
 
 ![Interactive cohort list.](./instruction-assets/interactive-cohort-list.png)
 
@@ -84,7 +84,7 @@ Update your cohort list so that when any of the cohorts are clicked the student 
 - The student count changes. (e.g. From "250" to "37".)
 - When you click on "All Students", all of the students are shown once again.
 
-### ✩ Improved student list (1 point)
+### ✩ Improved student list (1 point)*
 
 ![Improved student list.](./instruction-assets/improved-student-list.png)
 
@@ -101,7 +101,7 @@ Update your interactive student list so that the following is true:
 
 > **Tip:** Working with dates can be difficult! Consider viewing the documentation on [Dates](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) as well as the documentation on the [`Intl.DateTimeFormat()` constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat/DateTimeFormat).
 
-### ✩ Additional student details (1 point)
+### ✩ Additional student details (1 point)*
 
 ![Closed student details.](./instruction-assets/student-details-closed.png)
 
@@ -117,7 +117,7 @@ To complete this feature, the following should be true:
 - The details section includes the percentages for all scores, properly formatted as percentages.
 - The details section includes whether or not the student has received certain certifications.
 
-### ✩ Improved student details (1 point)
+### ✩ Improved student details (1 point)*
 
 Update the student details section so that the following is true:
 
@@ -127,7 +127,7 @@ Update the student details section so that the following is true:
   - If it is less than 50%, the percentage is shown as red.
 - Instead of showing "true" or "false" for certifications, show an emoji or icon depending on the certification status.
 
-### ✩ 1-on-1 section (1 point)
+### ✩ 1-on-1 section (1 point)*
 
 ![One-on-one section.](./instruction-assets/one-on-one-section.png)
 
@@ -137,7 +137,7 @@ Create a section in the student details section that contains information about 
 - The section should include a form with commenter name, comment, and a submit button.
 - The section should show a list of all previous notes that have been added.
 
-### ✩ Interactive 1-on-1 section (1 point)
+### ✩ Interactive 1-on-1 section (1 point)*
 
 Improve the 1-on-1 section with a working form. To complete this feature, the following should be true:
 
@@ -145,7 +145,7 @@ Improve the 1-on-1 section with a working form. To complete this feature, the fo
 - The submitted information is immediately shown in the list of notes.
 - While the notes will not persist if the page is loaded, the new notes _should_ be found if you interact with a new cohort in the cohort list and then find the student.
 
-### ✩ Style your application (1 point)
+### ✩ Style your application (1 point)*
 
 Improve the look and feel of your application by styling all components. To complete this feature, the following should be true:
 
