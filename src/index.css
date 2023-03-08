@@ -1,27 +1,27 @@
 h1 {
-    background-color: #659367;
-    height: 100px;
+    background-color: rgb(100, 199, 241);
+    height: 70px;
     width: auto;
-    text-align: center;
+    /* text-align: center;
     grid-area: header;
-    place-items: center;
-    overflow-y: scroll;
+    place-items: center; */
 
 }
 
+
 h2 {
     background-color: rgb(97, 219, 211);
-    margin: initial;
+    /* margin: initial; */
 }
 
 .grid {
     display: grid;
+    background-color: rgb(189, 212, 232);
     grid-template-areas:
         "t t t t "
         "t t t t "
         "a a b b "
         "a a b b ";
-    background-color: rgb(230, 215, 172);
 }
 
 ul {
@@ -31,12 +31,12 @@ ul {
     margin: initial;
     border: 3px ridge grey;
     margin: 20px 30px;
-
 }
 
 
 li {
     margin: initial;
+
 }
 
 .title {
@@ -51,9 +51,8 @@ li {
 }
 
 .cohortsButtons {
-    margin: 6px 6px;
+    margin: 6px 50px;
     cursor: pointer;
-    transition: 0.5s ease-in-out;
     border: 3px ridge grey;
     border-radius: 24px;
     height: 40px;
@@ -62,27 +61,31 @@ li {
     color: white;
     min-width: fit-content;
     min-height: fit-content;
-
 }
 
 button:hover {
-    transform: scale(1.05);
+    /* transform: scale(1.05); */
     box-shadow: 4px 4px 4px rgb(57, 56, 56);
+
 }
 
 .students {
     font-family: 'Times New Roman', Times, serif;
     text-transform: capitalize;
     text-align: center;
+    display: inline;
 }
+
 
 .studentCard {
     font-family: sans-serif;
     border: 3px solid black;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     text-align: center;
     padding: 5px;
-
+    /* grid-row: auto; remove */
+    /* display:inline-flex ; remove */
+    
 }
 
 .studentCard button {
@@ -90,36 +93,45 @@ button:hover {
     cursor: pointer;
     height: 30px;
     font-size: 90%;
-    border: none;
     border: 3px solid black;
     padding: 5px;
 
 }
 
 .showMore {
-    display: inline-block;
-    overflow-y: scroll;
-
+    /* display: inline-flex; */
+    /* overflow-y: scroll; */
+    text-align:start;
+    display: grid;
 }
 
 .CodeWars,
 .Scores,
 .Certs {
-    display: inline-table;
-    text-align: left;
-    margin-left: 40px;
-    margin-right: 40px;
+    display: margin;
+    text-align: center;
+    /* text-align: left;
+    margin-left: 90px;
+    margin-right: 90px; */
 }
 
 .CodeWars {
     margin-left: 0px;
+    display:initial;
 }
 
 .Certs {
-    margin-left: 50px;
+    margin-left: 0px;
+    display:initial;
+
 }
 
-.panelTitle {
+.Scores {
+    margin-left: 0px;
+    display:initial;
+    
+}
+/* .panelTitle {
     font-family: Verdana;
     margin-left: 10px;
-}
+} */
