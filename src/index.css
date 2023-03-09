@@ -8,6 +8,10 @@ h1 {
 
 }
 
+img {
+    height: fit-content;
+    width: normal;
+}
 
 h2 {
     background-color: rgb(97, 219, 211);
@@ -26,17 +30,11 @@ h2 {
 
 ul {
     list-style: none;
-    min-width: fit-content;
-    min-height: fit-content;
+    /* min-width: fit-content;
+    min-height: fit-content; */
     margin: initial;
     border: 3px ridge grey;
     margin: 20px 30px;
-}
-
-
-li {
-    margin: initial;
-
 }
 
 .title {
@@ -51,7 +49,7 @@ li {
 }
 
 .cohortsButtons {
-    margin: 6px 50px;
+    margin: 6px 50px;/*6px 5px*/
     cursor: pointer;
     border: 3px ridge grey;
     border-radius: 24px;
@@ -79,12 +77,11 @@ button:hover {
 
 .studentCard {
     font-family: sans-serif;
-    border: 3px solid black;
-    margin-bottom: 5px;
+    /* border: 3px solid black; */
+    /* margin-bottom: 5px; */
     text-align: center;
-    padding: 5px;
-    /* grid-row: auto; remove */
-    /* display:inline-flex ; remove */
+    /* padding: 5px; */
+    /* display:inline-flex ;  */
     
 }
 
@@ -92,15 +89,13 @@ button:hover {
     border-radius: 20px;
     cursor: pointer;
     height: 30px;
-    font-size: 90%;
+    font-size: 90%;/*put 30*/
     border: 3px solid black;
     padding: 5px;
 
 }
 
-.showMore {
-    /* display: inline-flex; */
-    /* overflow-y: scroll; */
+div.showMore {
     text-align:start;
     display: grid;
 }
@@ -110,27 +105,35 @@ button:hover {
 .Certs {
     display: margin;
     text-align: center;
-    /* text-align: left;
+    text-align: left;
     margin-left: 90px;
-    margin-right: 90px; */
+    margin-right: 90px;
+    
 }
 
-.CodeWars {
+div.studentCard {
+position: relative;
+left: 30px;;
+}
+
+section.CodeWars {
     margin-left: 0px;
     display:initial;
 }
 
-.Certs {
+section.Certs {
     margin-left: 0px;
     display:initial;
 
 }
 
-.Scores {
+section.Scores {
     margin-left: 0px;
     display:initial;
     
 }
+
+
 /* .panelTitle {
     font-family: Verdana;
     margin-left: 10px;
