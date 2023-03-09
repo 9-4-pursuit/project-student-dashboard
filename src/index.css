@@ -1,0 +1,140 @@
+h1 {
+    background-color: rgb(100, 199, 241);
+    height: 70px;
+    width: auto;
+    /* text-align: center;
+    grid-area: header;
+    place-items: center; */
+
+}
+
+img {
+    height: fit-content;
+    width: normal;
+}
+
+h2 {
+    background-color: rgb(97, 219, 211);
+    /* margin: initial; */
+}
+
+.grid {
+    display: grid;
+    background-color: rgb(189, 212, 232);
+    grid-template-areas:
+        "t t t t "
+        "t t t t "
+        "a a b b "
+        "a a b b ";
+}
+
+ul {
+    list-style: none;
+    /* min-width: fit-content;
+    min-height: fit-content; */
+    margin: initial;
+    border: 3px ridge grey;
+    margin: 20px 30px;
+}
+
+.title {
+    grid-area: t;
+    text-align: center;
+    font-size: 50px;
+    text-transform: uppercase;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-shadow: 1px 1px 1px #919191, 1px 18px 6px rgba(16, 16, 16, 0.4),
+        1px 22px 10px rgba(16, 16, 16, 0.2), 1px 25px 35px rgba(16, 16, 16, 0.2),
+        1px 30px 60px rgba(16, 16, 16, 0.4);
+}
+
+.cohortsButtons {
+    margin: 6px 50px;/*6px 5px*/
+    cursor: pointer;
+    border: 3px ridge grey;
+    border-radius: 24px;
+    height: 40px;
+    width: 100px;
+    background: black;
+    color: white;
+    min-width: fit-content;
+    min-height: fit-content;
+}
+
+button:hover {
+    /* transform: scale(1.05); */
+    box-shadow: 4px 4px 4px rgb(57, 56, 56);
+
+}
+
+.students {
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: capitalize;
+    text-align: center;
+    display: inline;
+}
+
+
+.studentCard {
+    font-family: sans-serif;
+    /* border: 3px solid black; */
+    /* margin-bottom: 5px; */
+    text-align: center;
+    /* padding: 5px; */
+    /* display:inline-flex ;  */
+    
+}
+
+.studentCard button {
+    border-radius: 20px;
+    cursor: pointer;
+    height: 30px;
+    font-size: 90%;/*put 30*/
+    border: 3px solid black;
+    padding: 5px;
+
+}
+
+div.showMore {
+    text-align:start;
+    display: grid;
+}
+
+.CodeWars,
+.Scores,
+.Certs {
+    display: margin;
+    text-align: center;
+    text-align: left;
+    margin-left: 90px;
+    margin-right: 90px;
+    
+}
+
+div.studentCard {
+position: relative;
+left: 30px;;
+}
+
+section.CodeWars {
+    margin-left: 0px;
+    display:initial;
+}
+
+section.Certs {
+    margin-left: 0px;
+    display:initial;
+
+}
+
+section.Scores {
+    margin-left: 0px;
+    display:initial;
+    
+}
+
+
+/* .panelTitle {
+    font-family: Verdana;
+    margin-left: 10px;
+} */
