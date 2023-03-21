@@ -14,7 +14,7 @@ const StudentList = ({ students, setStudents }) => {
     return formattedDate;
   }
   return (
-    <div>
+    <div className="cohort">
       <h1>All Students</h1>
       <p>Total Students: {students.length}</p>
       {students.map((student) => {
