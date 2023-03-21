@@ -1,0 +1,112 @@
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.header {
+    display: grid;
+    height: 111px;
+    align-items: center;
+    justify-content: center;
+    padding: 44px;
+    background-color: rgb(245, 245, 245);
+    border-bottom: solid 3px lightslategray;
+}
+
+h1 {
+    color: rgb(140, 139, 140);
+    justify-content: center;
+}
+
+.students {
+    text-align: center;
+    justify-content: center;
+}
+
+.studentAmount {
+    margin-top: 0;
+}
+
+.chooseClassH2 {
+    text-align: center;
+} 
+
+h2 {
+    color: darkslategray;
+}
+
+.nav-class {
+    text-decoration: none;
+    color: darkslategray;
+    border-bottom: solid 1.7px lightslategray;
+}
+
+.nav-class:hover {
+    color: darkslategrey;
+}
+
+.nav-class:focus {
+    color: darkslategray;
+}
+
+.class-by-semester-section {
+    display: grid;
+    text-align: center;
+    float: left;
+    margin-left: 41px;
+}
+
+.classList-nav {
+    display: grid;
+    gap: 1.7px;
+}
+
+.spring25 {
+    border-bottom: none;
+}
+
+.moreInfo {
+    display: none;
+}
+
+.info {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-auto-flow: column;
+    border-bottom: solid 1px darkslategrey;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+img {
+    float: inline-end;
+    /* margin-left: 360px; */
+}
+
+.text-info {
+    margin-right: 330px;
+}
+
+.moreInfo {
+    display: flex;
+    gap: 70px;
+}
+
+/* official 
+    .moreInfo {
+    display: flex;
+    gap: 70px; 
+
+    img {
+    float: inline-start;
+    margin-left: 360px;
+}
+} */
+
+
+
+
+
+
