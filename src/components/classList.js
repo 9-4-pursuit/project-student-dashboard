@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 
 export default function ClassList(props) {
 
+  //try passing data with state for the correct student amount 
+
     return (
     <section className="class-by-semester-section">
       <h2 className="chooseClassH2"> Choose Class by Semester </h2>

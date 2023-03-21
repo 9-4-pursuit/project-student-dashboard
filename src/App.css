@@ -41,6 +41,14 @@ h2 {
     border-bottom: solid 1.7px lightslategray;
 }
 
+.nav-class:hover {
+    color: darkslategrey;
+}
+
+.nav-class:focus {
+    color: darkslategray;
+}
+
 .class-by-semester-section {
     display: grid;
     text-align: center;
@@ -62,25 +70,41 @@ h2 {
 }
 
 .info {
-    /* display: flex; */
+    display: grid;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    /* align-items: center; */
-    flex-direction: column;
+    grid-auto-flow: column;
+    border-bottom: solid 1px darkslategrey;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 img {
-    /* float: left; */
-    float: inline-start;
-    margin-left: 360px;
+    float: inline-end;
+    /* margin-left: 360px; */
 }
 
 .text-info {
     margin-right: 330px;
 }
 
-/* .space {
-    padding: 70px;
+.moreInfo {
+    display: flex;
+    gap: 70px;
+}
+
+/* official 
+    .moreInfo {
+    display: flex;
+    gap: 70px; 
+
+    img {
+    float: inline-start;
+    margin-left: 360px;
+}
 } */
+
 
 
 
