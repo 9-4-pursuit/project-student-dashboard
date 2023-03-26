@@ -1,0 +1,42 @@
+.cohort {
+  display: flex;
+  flex-direction: row;
+}
+.navbar {
+  text-align: center;
+  background-color: rgb(33, 125, 33);
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin: 0;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+}
+.cohort {
+  float: left;
+  width: 23%;
+  display: flex;
+  flex-direction: column;
+}
+h4 {
+  border-bottom: 2px solid rgb(33, 125, 33);
+  text-align: left;
+  padding-left: 10px;
+
+  padding-bottom: 5px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgb(33, 125, 33);
+  margin-top: 10px;
+  padding-left: 20px;
+}
+.studentlist {
+  float: right;
+  width: 70%;
+  padding-right: 50px;
+}
+img {
+  width: 200px;
+  height: 200px;
+}
