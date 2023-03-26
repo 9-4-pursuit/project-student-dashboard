@@ -13,8 +13,19 @@ const StudentList = ({ students, setStudents }) => {
     });
     return formattedDate;
   }
+  const OnTrack = (student) => {
+    if (
+      student.certifications.resume === true &&
+      student.certifications.linkedin === true &&
+      student.certifications.mockInterview === true &&
+      student.certifications.github === true &&
+      student.codewars.current.total > 600
+    ) {
+      return <p>On Track to Graduate</p>;
+    }
+  };
   return (
-    <div className="cohort">
+    <div className="studentlist">
       <h1>All Students</h1>
       <p>Total Students: {students.length}</p>
       {students.map((student) => {
@@ -28,6 +39,8 @@ const StudentList = ({ students, setStudents }) => {
             studentPhoto={student.profilePhoto}
             key={student.id}
             formatDate={formatDate}
+            OnTrack={OnTrack}
+            student={student}
           />
         );
       })}

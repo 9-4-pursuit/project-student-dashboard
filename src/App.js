@@ -1,3 +1,5 @@
+import NavBar from "./Components/NavBar";
+
 import { useState } from "react";
 import StudentList from "./Components/StudentList";
 import CohortList from "./Components/CohortList";
@@ -26,11 +28,12 @@ function App() {
 
   return (
     <div>
-      <StudentList students={students} setStudents={setStudents} />
+      <NavBar />
       <CohortList
         findCohortSeason={findCohortSeason}
         showAllStudents={showAllStudents}
       />
+      <StudentList students={students} setStudents={setStudents} />
     </div>
   );
 }

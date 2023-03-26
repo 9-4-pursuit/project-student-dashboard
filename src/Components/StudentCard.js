@@ -6,10 +6,12 @@ export default function StudentCard({
   studentPhoto,
   birthDay,
   formatDate,
+  student,
+  OnTrack,
 }) {
-  console.log(firstName);
   return (
-    <div>
+    <div className="card">
+      <p onLoad={OnTrack(student)}></p>
       <img src={studentPhoto} alt={`headshot of ${firstName}`} />
       <h1>{firstName + " " + middleName[0] + ". " + lastName}</h1>
       <p>{email}</p>
