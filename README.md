@@ -1,5 +1,5 @@
 # React Mid-Module Project
-
+![Landing page.](./instruction-assets/mylanding.png)
 ![Landing page.](./instruction-assets/landing.png)
 
 For this assignment, you will build a student dashboard that will make use of some randomized data. The dashboard should show easy to understand data, formatted in a way that is easy for a user to use.
