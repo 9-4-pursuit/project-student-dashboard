@@ -1,6 +1,4 @@
-
-https://mystudent-dashboard.netlify.app
-
+<a href="https://mystudent-dashboard.netlify.app/" target="_blank">Click here -mystudent-dashboard App</a>
 
 # React Mid-Module Project
 ![Landing page.](./instruction-assets/mylanding.png)
